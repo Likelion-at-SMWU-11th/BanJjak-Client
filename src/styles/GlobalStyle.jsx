@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
-import react from "styled-reset";
+import reset from "styled-reset";
 
-const GlobalStyles = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
     ${reset};
     
     body{
