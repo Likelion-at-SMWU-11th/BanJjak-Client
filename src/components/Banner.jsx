@@ -10,16 +10,16 @@ const BtnList = styled.button`
     width : 97.5px;
     height : 30px;
     text-align : center;
-    font-size : 10px;
+    font-size : 12px;
 `
 
 const Banner = () => {
     return (
         <>
         <div id="BannerBar">
-            <img src={process.env.PUBLIC_URL + '/assets/icons/my.png'} id="my"/>
-            <img src={process.env.PUBLIC_URL + '/assets/icons/logo2.png'} id="logo2"/>
-            <img src={process.env.PUBLIC_URL + '/assets/icons/search1.png'} id="search1"/>           
+            <img src={process.env.PUBLIC_URL + '/assets/icons/my.png'} id="my" alt="my"/>
+            <img src={process.env.PUBLIC_URL + '/assets/icons/logo2.png'} id="logo2" alt="logo2"/>
+            <img src={process.env.PUBLIC_URL + '/assets/icons/search1.png'} id="search1" alt="search"/>           
         </div>
         <div id="BannerBtn">
             <div>
