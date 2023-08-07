@@ -1,12 +1,15 @@
 import "./App.css";
+import { Routes, Route } from "react-router-dom";
 import GlobalStyle from "./styles/GlobalStyle";
-import Banner from "./components/Banner";
+import FAQ from "./pages/mypage/FAQ";
 
 function App() {
   return (
     <div id="frame">
       <GlobalStyle />
-      <Banner/>
+      <Routes>
+      <Route path="/FAQ" element={<FAQ/>}></Route>
+      </Routes>
     </div>
   );
 }
