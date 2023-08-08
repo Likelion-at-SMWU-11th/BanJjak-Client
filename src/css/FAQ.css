@@ -1,0 +1,89 @@
+#title { /* FAQ.js의 "자주 묻는 질문" 문구*/
+    color : #00AC78;
+    text-align : center;
+    margin : 15px;
+    font-size : 15px;
+    font-weight: bold;
+}
+
+#hr1 { /* FAQ.js의 초록 가로줄 */
+    border-color : #00AC78;
+    border-width : 1px;
+    border-style : solid;
+}
+
+#hr2 { /* Question.jsx의 질문컴포넌트별 가로줄*/
+    border : none;
+    border-top : 1px solid #D9D9D9;
+    margin-top : 22px;
+}
+
+#question { /* Question.jsx에 사용된 question.png 이미지파일*/
+    width : 20px;
+    height : 25px;
+    margin-top : 12px;
+    margin-left : 15px;
+    margin-bottom : -8px
+}
+
+#contents { /* 자주 묻는 질문 문구로 사용된 props를 포함하는 p태그*/
+    display : inline;
+    font-size : 14px;
+    font-weight : bold;
+    color : #3E3E3E;
+    margin-left : 10px;
+    word-spacing : -2px;
+}
+
+#h2 { /* FAQ.js의 "도움말을 통해 문제를 해결하지 못하셨나요?" 문구 h2태그 */
+    text-align : center;
+    font-weight : bolder;
+    margin-top : 30px;
+    font-size : 18px;
+    line-height : 25px;
+}
+
+#inquiry { /*FAQ.js에 사용된 inquiry.png 이미지 파일 */
+    width : 27px;
+    height : 27px;
+    margin-top : 40px;
+    margin-left : 30px;
+    margin-right : 20px;
+}
+
+#mail { /* FAQ.js에 사용된 mail.png 이미지 파일*/
+    width : 30px;
+    height : 24px;
+    margin-top : 30px;
+    margin-left : 30px;
+    margin-right : 20px
+}
+
+#more1 { /* FAQ.js에 사용된 첫번째(위쪽) more.png 이미지 파일*/
+    display : inline-block;
+    width : 12px;
+    height : 15px;
+    margin-left: 50px;
+}
+
+#more2 { /* FAQ.js에 사용된 두번째(아래쪽) more.png 이미지 파일*/
+    display : inline-block;
+    width : 12px;
+    height : 15px;
+    margin-left: 45px;
+}
+
+#solve { /* FAQ.js의 div태그 (코드참조)*/
+    display : inline-block;
+    line-height : 20px;
+}
+
+#h4 { /* h4태그 (코드참조) */
+    font-weight : bold;
+    font-size : 15px;
+}
+
+#p1 { /* p태그 (코드참조) */
+    font-size : 12px;
+    color : #828282
+}
