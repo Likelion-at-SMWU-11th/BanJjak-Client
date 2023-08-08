@@ -1,16 +1,18 @@
 import React from 'react';
 import styled from "styled-components";
 import '../css/Banner.css';
+//import { Link } from "react-router-dom";
 
 const BtnList = styled.button`
     color: grey;
     background : white;
-    border: 0.5px solid grey;
+    border: 0.5px solid #BCBCBC;
     display : inline-block;
     width : 97.5px;
     height : 30px;
     text-align : center;
     font-size : 12px;
+    font-weight : bold;
 `
 
 const Banner = () => {
