@@ -1,0 +1,52 @@
+#center {
+    display : inline-block;
+    margin: 0px;
+    width : 195px;
+    height : 25px;
+    padding : 10px 0px;
+    text-align : center;
+    font-size : 15px;
+    font-weight : bold;
+    color : #828282;
+    border-bottom : 1px solid #ECECEC;
+}
+
+#temporary {
+    display : inline-block;
+    margin : 0px;
+    width : 195px;
+    padding : 20px 0px;
+    text-align : center;
+    font-size : 15px;
+    font-weight : bold;
+    color : #828282;
+    border-bottom : 1px solid #ECECEC;
+}
+
+#list {
+    width : 340px;
+    height : 195px;
+    border : 1px solid #BCBCBC;
+    border-radius : 10px;
+    margin : 25px;
+}
+
+#animalphoto {
+    width: 340px;
+    height : 150px;
+    border-top-left-radius : 10px;
+    border-top-right-radius : 10px;
+}
+
+#main {
+    margin : 3px 10px;
+    color : #3E3E3E;
+    font-size : 15px;
+    font-weight : bold;
+}
+
+#sub {
+    margin : 8px 10px;
+    color : #3E3E3E;
+    font-size : 11px
+}
