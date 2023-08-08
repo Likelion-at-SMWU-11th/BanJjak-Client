@@ -53,7 +53,7 @@ function MyPage() {
         </div>
 
         <div id="mypagelist">
-            <Link to="/FAQ">
+            <Link to="/MyPage/FAQ">
             <img src={process.env.PUBLIC_URL + '/assets/icons/faq.png'} id="mypageicons" alt="faq"/>
             <h4 id="mypagename">자주 묻는 질문</h4>
             <img src={process.env.PUBLIC_URL + '/assets/icons/more.png'} id="mypage_more2" alt="more"/><br/>
