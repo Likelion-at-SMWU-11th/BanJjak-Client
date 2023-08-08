@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import Banner from '../../components/Banner';
+//import { Routes, Route } from "react-router-dom";
 import '../../css/MyPage.css';
+import Banner from '../../components/Banner';
+//import FAQ from './FAQ';
 
 function MyPage() {
     return (
@@ -51,9 +53,11 @@ function MyPage() {
         </div>
 
         <div id="mypagelist">
+            <Link to="/FAQ">
             <img src={process.env.PUBLIC_URL + '/assets/icons/faq.png'} id="mypageicons" alt="faq"/>
             <h4 id="mypagename">자주 묻는 질문</h4>
             <img src={process.env.PUBLIC_URL + '/assets/icons/more.png'} id="mypage_more2" alt="more"/><br/>
+            </Link>
         </div>
 
         <div id="mypagelist">
