@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../css/Adoption.css'
-import Banner from '../../components/Banner';
 import styled from 'styled-components';
+import Banner from '../../components/Banner';
 import AdoptList from '../../components/AdoptList';
 
 const GreenBtn = styled.button`
@@ -36,18 +36,21 @@ function Adoption(props) {
     return (
         <>
         <Banner/>
+
         <div id="center">
             <p>보호소</p>
         </div>
         <div id="temporary">
             <p>임시보호</p>
-        </div>
-        <br/>
+        </div><br/>
+
         <GreenBtn>동물</GreenBtn>
-        <SpeciesBtn>강아지</SpeciesBtn>
-        <br/>
+        <SpeciesBtn>강아지</SpeciesBtn><br/>
+
+        <div id="adoptlist">
         <AdoptList/>
         <AdoptList/>
+        </div>
         </>
     );
 }
