@@ -10,6 +10,8 @@ import Missing from "./pages/missing/Missing";
 import MissingDetail from "./pages/missing/MissingDetail";
 import Protection from "./pages/protection/Protection";
 import ProtectDetail from "./pages/protection/ProtectDetail";
+import Review from "./pages/review/Review";
+import ReviewDetail from "./pages/review/ReviewDetail";
 
 
 function App() {
@@ -26,6 +28,8 @@ function App() {
       <Route path="/Missing/MissingDetail" element={<MissingDetail/>}></Route>
       <Route path="/Protection" element={<Protection/>}></Route>
       <Route path="/Protection/ProtectDetail" element={<ProtectDetail/>}></Route>
+      <Route path="/Review" element={<Review/>}></Route>
+      <Route path="/Review/ReviewDetail" element={<ReviewDetail/>}></Route>
       </Routes>
     </div>
   );

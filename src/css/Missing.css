@@ -39,10 +39,11 @@
 #missinglist {
     width: 340px;
     height : 111px;
-    border : 1px solid #BCBCBC;
+    border : 1px solid #D9D9D9;
     border-radius : 10px;
     margin : 25px;
     padding : 0px;
+    background-color : #FBFBFB;
 }
 
 #missingphoto { /* 동물 사진 img태그*/
@@ -112,7 +113,7 @@
     color : #00AC78
 }
 
-#time { /* 프로필 전화번호*/
+#time {
     font-size : 13px;
     color : #D9D9D9;
 }
