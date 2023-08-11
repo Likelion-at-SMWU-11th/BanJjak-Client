@@ -5,7 +5,7 @@ import '../css/Missing.css';
 const MissingList = () => {
     return (
         <>
-        <Link to="/" style={{ textDecoration: 'none' }}>
+        <Link to="/Missing/MissingDetail" style={{ textDecoration: 'none' }}>
         <div id="missinglist">
             <img src={process.env.PUBLIC_URL + '/assets/images/missingdog1.png'} id="missingphoto" alt="missingphoto"/>
             <div id="listinform">

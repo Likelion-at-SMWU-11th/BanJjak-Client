@@ -47,6 +47,8 @@ function Adoption(props) {
         <GreenBtn>동물</GreenBtn>
         <SpeciesBtn>강아지</SpeciesBtn><br/>
 
+        <p id="count">n마리</p><br/>
+
         <div id="adoptlist">
         <AdoptList/>
         <AdoptList/>

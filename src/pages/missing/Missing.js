@@ -46,11 +46,15 @@ function Missing(props) {
 
         <GreenBtn>동물</GreenBtn>
         <SpeciesBtn>모든 동물</SpeciesBtn><br/>
-        <MissingList/>
-        <MissingList/>
-        <MissingList/>
-        <MissingList/>
+        <p id="count">n마리</p>
 
+        <br/>
+        <div>
+        <MissingList/>
+        <MissingList/>
+        <MissingList/>
+        <MissingList/>
+        </div>
         </>
     );
 }

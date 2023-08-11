@@ -35,13 +35,15 @@
     border : 1px solid #BCBCBC;
     border-radius : 10px;
     margin : 25px;
+    line-height : 15px;
 }
 
 #animalphoto { /* 동물 사진 img태그*/
     width: 340px;
-    height : 150px;
+    height : 140px;
     border-top-left-radius : 10px;
     border-top-right-radius : 10px;
+    margin-bottom : -5px;
 }
 
 #main { /*주요정보 P태그*/
@@ -158,7 +160,6 @@
     display : inline;
     float : right;
     margin : 40px -65px;
-    
 }
 
 #likebtn {
@@ -170,6 +171,7 @@
 #likeicon {
     width : 24px;
     height :22px;
+    margin-bottom : -7px;
 }
 
 #likednum {

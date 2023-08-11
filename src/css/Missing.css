@@ -25,6 +25,14 @@
     border-bottom : 1px solid #ECECEC;
 }
 
+#count {
+    float : right;
+    font-size : 15px;
+    margin : 10px 20px;
+    color : #3E3E3E;
+}
+
+
 
 /* MissingList.jsx 컴포넌트에 사용되는 css*/
 
@@ -78,4 +86,87 @@
     font-weight : bold;
     line-height : 17px;
     padding-top : 7px;
+}
+
+
+
+/* MissingDetail.js 페이지에 사용되는 css */
+
+#profile {
+    width : 57px;
+    height : 57px;
+    margin-top : 20px;
+    margin-left : 20px;
+    margin-bottom : -15px;
+}
+
+#information { /* 프로필 간단정보 div태그*/
+    display : inline-block;
+    margin-left : 20px;
+    line-height : 20px;
+}
+
+#writer {
+    font-size : 17px;
+    font-weight : bolder;
+    color : #00AC78
+}
+
+#time { /* 프로필 전화번호*/
+    font-size : 13px;
+    color : #D9D9D9;
+}
+
+
+#m1 {
+    display : inline-block;
+    width : 167px;
+    height : 167px;
+    border-radius : 10px;
+    margin : 25px 10px 0px 22px;
+}
+
+#m2 {
+    display : inline-block;
+    width : 167px;
+    height : 167px;
+    border-radius : 10px;
+}
+
+#hr {
+    width : 340px;
+    border : 0.5px solid #ECECEC;
+    margin : 20px;
+}
+
+#text {
+    margin : 20px;
+}
+
+#misstitle {
+    font-size : 18px;
+    color : #3E3E3E;
+    text-align : left;
+    font-weight : bolder;
+    margin-bottom : 20px;
+}
+
+#content {
+    font-size : 14px;
+    color : #3E3E3E;
+    line-height : 20px;
+}
+
+
+
+/* MissingTag.jsx 컴포넌트에서 사용되는 css */
+
+#missingtag {
+    margin-left : 25px;
+    line-height : 35px;
+}
+
+#tagname {
+    display : inline;
+    margin-left : 20px;
 }
