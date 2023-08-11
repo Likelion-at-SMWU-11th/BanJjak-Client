@@ -8,6 +8,9 @@ import Adoption from "./pages/adoption/Adoption";
 import AdoptDetail from "./pages/adoption/AdoptDetail";
 import Missing from "./pages/missing/Missing";
 import MissingDetail from "./pages/missing/MissingDetail";
+import Protection from "./pages/protection/Protection";
+import ProtectDetail from "./pages/protection/ProtectDetail";
+
 
 function App() {
   return (
@@ -21,6 +24,8 @@ function App() {
       <Route path="/Adoption/AdoptDetail" element={<AdoptDetail/>}></Route>
       <Route path="/Missing" element={<Missing/>}></Route>
       <Route path="/Missing/MissingDetail" element={<MissingDetail/>}></Route>
+      <Route path="/Protection" element={<Protection/>}></Route>
+      <Route path="/Protection/ProtectDetail" element={<ProtectDetail/>}></Route>
       </Routes>
     </div>
   );
