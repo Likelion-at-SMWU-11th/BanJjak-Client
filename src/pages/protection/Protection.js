@@ -1,8 +1,8 @@
 import React from 'react';
-import '../../css/Adoption.css';
+import '../../css/Protection.css';
 import styled from 'styled-components';
 import Banner from '../../components/Banner';
-import AdoptList from '../../components/AdoptList';
+import ProtectList from '../../components/ProtectList';
 
 const GreenBtn = styled.button`
     color: white;
@@ -32,29 +32,29 @@ const SpeciesBtn = styled.button`
     font-weight : bold;
 `;
 
-function Adoption(props) {
+function Protection() {
     return (
         <>
         <Banner/>
 
-        <div id="center">
-            <p>보호소</p>
+        <div id="lookfor">
+            <p>임보구함</p>
         </div>
-        <div id="temporary">
-            <p>임시보호</p>
+        <div id="protection_adopt">
+            <p>임보동물입양</p>
         </div><br/>
 
         <GreenBtn>동물</GreenBtn>
-        <SpeciesBtn>강아지</SpeciesBtn><br/>
+        <SpeciesBtn>개</SpeciesBtn><br/>
+        <p id="count">n마리</p>
 
-        <p id="count">n마리</p><br/>
-
-        <div id="adoptlist">
-        <AdoptList/>
-        <AdoptList/>
+        <br/>
+        <div id="protectlist">
+        <ProtectList/>
+        <ProtectList/>
         </div>
         </>
     );
 }
 
-export default Adoption;
+export default Protection;
