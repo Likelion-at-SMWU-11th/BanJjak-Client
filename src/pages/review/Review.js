@@ -1,8 +1,8 @@
 import React from 'react';
-import '../../css/Adoption.css';
+import '../../css/Review.css';
 import styled from 'styled-components';
 import Banner from '../../components/Banner';
-import AdoptList from '../../components/AdoptList';
+import ReviewList from '../../components/ReviewList';
 
 const GreenBtn = styled.button`
     color: white;
@@ -32,29 +32,30 @@ const SpeciesBtn = styled.button`
     font-weight : bold;
 `;
 
-function Adoption(props) {
+function Review() {
     return (
         <>
         <Banner/>
 
-        <div id="center">
-            <p>보호소</p>
+        <div id="adopt_review">
+            <p>입양후기</p>
         </div>
-        <div id="temporary">
-            <p>임시보호</p>
+        <div id="reunion_review">
+            <p>재회후기</p>
         </div><br/>
 
         <GreenBtn>동물</GreenBtn>
-        <SpeciesBtn>강아지</SpeciesBtn><br/>
+        <SpeciesBtn>모든 동물</SpeciesBtn><br/>
+        <p id="count">n마리</p>
 
-        <p id="count">n마리</p><br/>
-
-        <div id="adoptlist">
-        <AdoptList/>
-        <AdoptList/>
+        <br/>
+        <div id="reviewlist">
+        <ReviewList/>
+        <ReviewList/>
         </div>
         </>
+    
     );
 }
 
-export default Adoption;
+export default Review;

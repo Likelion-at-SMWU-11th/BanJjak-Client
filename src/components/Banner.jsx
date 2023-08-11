@@ -21,7 +21,7 @@ const Banner = () => {
         <div id="BannerBar">
             <Link to="/MyPage"><img src={process.env.PUBLIC_URL + '/assets/icons/my.png'} id="my" alt="my"/></Link>
             <img src={process.env.PUBLIC_URL + '/assets/icons/logo2.png'} id="logo2" alt="logo2"/>
-            <img src={process.env.PUBLIC_URL + '/assets/icons/search1.png'} id="search1" alt="search"/>           
+            <img src={process.env.PUBLIC_URL + '/assets/icons/logout2.png'} id="logout2" alt="logout"/>           
         </div>
         <div id="BannerBtn">
             <div>
@@ -32,9 +32,9 @@ const Banner = () => {
                 </div>
                 <div>
                 <Link to="/Adoption"><BtnList>입양하기</BtnList></Link>
-                <BtnList>실종/목격</BtnList>
-                <BtnList>임시보호</BtnList>
-                <BtnList>입양후기</BtnList>
+                <Link to="/Missing"><BtnList>실종/목격</BtnList></Link>
+                <Link to="/Protection"><BtnList>임시보호</BtnList></Link>
+                <Link to="/Review"><BtnList>입양후기</BtnList></Link>
                 </div>
         </div>
         </>

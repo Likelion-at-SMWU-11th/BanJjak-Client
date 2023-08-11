@@ -1,21 +1,23 @@
-#center {
+/*Adoption.js 페이지에 사용되는 css*/
+
+#center { /*보호소 div태그*/
     display : inline-block;
     margin: 0px;
     width : 195px;
-    height : 25px;
+    height : 20px;
     padding : 10px 0px;
     text-align : center;
     font-size : 15px;
     font-weight : bold;
-    color : #828282;
-    border-bottom : 1px solid #ECECEC;
+    color : #00AC78;
+    border-bottom : 1px solid #00AC78;
 }
 
-#temporary {
+#temporary { /*임시보호 div태그*/
     display : inline-block;
     margin : 0px;
     width : 195px;
-    padding : 20px 0px;
+    padding : 15px 0px;
     text-align : center;
     font-size : 15px;
     font-weight : bold;
@@ -23,30 +25,157 @@
     border-bottom : 1px solid #ECECEC;
 }
 
-#list {
+
+
+/*AdoptList.jsx 컴포넌트에서 사용되는 Css*/
+
+#list { /* AdoptList.jsx 컴포넌트 전체를 묶는 div태그*/
     width : 340px;
     height : 195px;
     border : 1px solid #BCBCBC;
     border-radius : 10px;
     margin : 25px;
+    line-height : 15px;
 }
 
-#animalphoto {
+#animalphoto { /* 동물 사진 img태그*/
     width: 340px;
-    height : 150px;
+    height : 140px;
     border-top-left-radius : 10px;
     border-top-right-radius : 10px;
+    margin-bottom : -5px;
 }
 
-#main {
-    margin : 3px 10px;
+#main { /*주요정보 P태그*/
+    margin : 10px 10px;
     color : #3E3E3E;
     font-size : 15px;
     font-weight : bold;
 }
 
-#sub {
+#sub { /*상세정보 p태그*/
     margin : 8px 10px;
     color : #3E3E3E;
     font-size : 11px
+}
+
+
+
+/*AdoptDetail.js에서 사용되는 CSS*/
+
+#detail_photo { /* AdoptDetail.js에서 사용되는 이미지 파일*/
+    width : 340px;
+    height : 220px;
+    margin : 25px;
+    margin-bottom : 0px;
+    border-radius : 20px;
+}
+
+#detail_main {
+    margin : 15px 0px 25px 25px;
+}
+
+#detail_name { /* 해당 동물의 이름*/
+    display : inline-block;
+    font-size : 25px;
+    font-weight : bold;
+    color : #3E3E3E;
+}
+
+#detail_info { /* 해당 동물의 상세정보*/
+    display : inline-block;
+    font-size : 13px;
+    color :#3E3E3E;
+    margin-left : 10px;
+}
+
+#hashtag {
+    width : 340px;
+    height : 100px;
+    margin : 20px;
+    border : 1px solid #BCBCBC
+}
+
+#balloon {
+    display: inline-block;
+    width : 330px;
+    height : 100px;
+    margin : 0px 25px;
+}
+
+#ballooncontents {
+    display : inline-block;
+    position : absolute;
+    color : #828282;
+    margin : 20px -340px;
+    text-align : center;
+    line-height : 20px;
+    font-size : 13px;
+}
+
+#from {
+    position : absolute;
+    font-size : 10px;
+    color : #828282;
+    margin : -15px 70px;
+    font-weight : 100;
+}
+
+#progress {
+    margin : 10px 20px;
+    color : #8e8e8e;
+    font-size : 13px;
+    line-height : 25px;
+}
+
+#place {
+    color :#00AC78;
+    font-weight : bold;
+}
+
+#gotoread {
+    float : right;
+    margin-right : 20px;
+    margin-top : -10px;
+}
+
+#mark {
+    width : 10px;
+    height : 10px;
+}
+
+#mark_p {
+    display : inline-block;
+    color : #F98C96;
+    font-size : 11px;
+    margin : 5px;
+}
+
+
+
+/* LikeBtn.jsx 컴포넌트에 사용되는 css*/
+
+#liked {
+    position : absolute;
+    display : inline;
+    float : right;
+    margin : 40px -65px;
+}
+
+#likebtn {
+    border : none;
+    background : none;
+    padding : 0;
+}
+
+#likeicon {
+    width : 24px;
+    height :22px;
+    margin-bottom : -7px;
+}
+
+#likednum {
+    padding-left : 0px;
+    font-size : 15px;
+    color : #00AC78
 }
