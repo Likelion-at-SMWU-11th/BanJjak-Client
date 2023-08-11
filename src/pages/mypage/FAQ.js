@@ -21,7 +21,7 @@ function FAQ() {
                 <h2 id="h2">도움말을 통해<br/>문제를 해결하지 못하셨나요?</h2>
 
                 <div id="solvingbtn">
-                    <Link to="">
+                    <Link to="https://open.kakao.com/o/gdi0MYyf">
                     <img src={process.env.PUBLIC_URL + '/assets/icons/inquiry.png'} id="inquiry" alt="inquiry"/>
                     <div id="solve">
                         <h4 id="h4">문의하기</h4>

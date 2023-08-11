@@ -1,8 +1,8 @@
 import React from 'react';
-import '../../css/Adoption.css';
+import '../../css/Missing.css';
 import styled from 'styled-components';
 import Banner from '../../components/Banner';
-import AdoptList from '../../components/AdoptList';
+import MissingList from '../../components/MissingList';
 
 const GreenBtn = styled.button`
     color: white;
@@ -32,27 +32,27 @@ const SpeciesBtn = styled.button`
     font-weight : bold;
 `;
 
-function Adoption(props) {
+function Missing(props) {
     return (
         <>
         <Banner/>
 
-        <div id="center">
-            <p>보호소</p>
+        <div id="miss">
+            <p>실종</p>
         </div>
-        <div id="temporary">
-            <p>임시보호</p>
+        <div id="seen">
+            <p>목격</p>
         </div><br/>
 
         <GreenBtn>동물</GreenBtn>
-        <SpeciesBtn>강아지</SpeciesBtn><br/>
+        <SpeciesBtn>모든 동물</SpeciesBtn><br/>
+        <MissingList/>
+        <MissingList/>
+        <MissingList/>
+        <MissingList/>
 
-        <div id="adoptlist">
-        <AdoptList/>
-        <AdoptList/>
-        </div>
         </>
     );
 }
 
-export default Adoption;
+export default Missing;

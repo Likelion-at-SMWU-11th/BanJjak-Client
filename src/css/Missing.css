@@ -1,0 +1,81 @@
+/*Missing.js 실종목격 페이지에 사용되는 css*/
+
+#miss { /*실종 div태그*/
+    display : inline-block;
+    margin: 0px;
+    width : 195px;
+    height : 20px;
+    padding : 10px 0px;
+    text-align : center;
+    font-size : 15px;
+    font-weight : bold;
+    color : #00AC78;
+    border-bottom : 1px solid #00AC78;
+}
+
+#seen { /*목격 div태그*/
+    display : inline-block;
+    margin : 0px;
+    width : 195px;
+    padding : 15px 0px;
+    text-align : center;
+    font-size : 15px;
+    font-weight : bold;
+    color : #828282;
+    border-bottom : 1px solid #ECECEC;
+}
+
+
+/* MissingList.jsx 컴포넌트에 사용되는 css*/
+
+#missinglist {
+    width: 340px;
+    height : 111px;
+    border : 1px solid #BCBCBC;
+    border-radius : 10px;
+    margin : 25px;
+    padding : 0px;
+}
+
+#missingphoto { /* 동물 사진 img태그*/
+    width: 120px;
+    height : 111px;
+    border-top-left-radius : 8px;
+    border-bottom-left-radius : 8px;
+    display : inline-block;
+    margin-bottom : -15px;
+}
+
+#listinform { /* 정보 p태그를 묶는 div태그*/
+    display : inline-block;
+    width : 220px;
+    height : 110px;
+    border-top-right-radius : 10px;
+    border-bottom-right-radius : 10px;
+    margin : 0px;
+}
+
+#main { /*주요정보 P태그*/
+    margin : 15px 10px;
+    margin-bottom : 5px;
+    color : #3E3E3E;
+    font-size : 15px;
+    font-weight : bold;
+    padding-bottom : -10px;
+}
+
+#sub { /*상세정보 p태그*/
+    margin : 0px 10px;
+    color : #3E3E3E;
+    font-size : 11px
+}
+
+#missinform {
+    margin : 10px 10px;
+    color : #3E3E3E;
+    border-top : 1px solid #BCBCBC;
+    font-size : 11px;
+    font-weight : bold;
+    line-height : 17px;
+    padding-top : 7px;
+}

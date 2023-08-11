@@ -6,6 +6,7 @@ import FAQ from "./pages/mypage/FAQ";
 import MyPage from "./pages/mypage/MyPage";
 import Adoption from "./pages/adoption/Adoption";
 import AdoptDetail from "./pages/adoption/AdoptDetail";
+import Missing from "./pages/missing/Missing";
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
       <Route path="/MyPage/FAQ" element={<FAQ/>}></Route>
       <Route path="/Adoption" element={<Adoption/>}></Route>
       <Route path="/Adoption/AdoptDetail" element={<AdoptDetail/>}></Route>
+      <Route path="/Missing" element={<Missing/>}></Route>
+
       </Routes>
     </div>
   );
