@@ -1,0 +1,40 @@
+#logo {
+  display: block;
+  width: 7rem;
+  margin: 3rem auto;
+}
+
+hr {
+  margin: 2rem auto;
+  border-top: 1px solid #ececec;
+}
+
+#find {
+  text-align: center;
+  color: #828282;
+}
+
+#find a {
+  color: #828282;
+  font-size: 15px;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+#findForShelter {
+  font-size: 20px;
+  text-align: center;
+  color: #828282;
+}
+
+#findForShelter a {
+  color: #828282;
+  font-size: 20px;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+#find a:hover,
+#findForShelter a:hover {
+  color: #00ac78;
+}
