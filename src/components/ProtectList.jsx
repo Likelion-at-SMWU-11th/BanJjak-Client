@@ -7,9 +7,9 @@ const ProtectList = () => {
         <>
             <Link to="/Protection/ProtectDetail" style={{ textDecoration: 'none' }}>
             <div id="list">
-                <img src={process.env.PUBLIC_URL + '/assets/images/dog1.png'} id="animalphoto" alt="animalphoto"/>
-                <p id="main">[개] 포메라니안 (암)</p>
-                <p id="sub">중성화O, 16년생 추정, 5kg, 인천 멋사보호소</p>
+                <img src={process.env.PUBLIC_URL + '/assets/images/protect_dog1.png'} id="animalphoto" alt="animalphoto"/>
+                <p id="main">[개] 포메라니안 (수)</p>
+                <p id="sub">중성화X, 22년생 추정, 3kg, 방치견 구조</p>
             </div>
             </Link>
         </>

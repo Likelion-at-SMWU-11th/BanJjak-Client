@@ -35,7 +35,7 @@
     border : 1px solid #BCBCBC;
     border-radius : 10px;
     margin : 25px;
-    line-height : 15px;
+    line-height : 12px;
 }
 
 #animalphoto { /* 동물 사진 img태그*/
@@ -43,7 +43,7 @@
     height : 140px;
     border-top-left-radius : 10px;
     border-top-right-radius : 10px;
-    margin-bottom : -5px;
+    margin-bottom : 0px;
 }
 
 #main { /*주요정보 P태그*/
