@@ -1,0 +1,87 @@
+#i_title { 
+    color : #00AC78;
+    text-align : center;
+    margin : 15px;
+    font-size : 15px;
+    font-weight: bold;
+}
+
+#i_hr1 {
+    border-color : #00AC78;
+    border-width : 1px;
+    border-style : solid;
+}
+
+#i_hr2 { 
+    margin-top : 30px;
+    border : 1px solid #F7F7F7;
+}
+
+#i_p1 {
+    color : #00AC78;
+    text-align : center;
+    font-size : 18px;
+    font-weight : bolder;
+    margin-top : 45px;
+}
+
+#i_about1 {
+    margin-top : 40px;
+}
+
+#i_about2 {
+    float : right;
+    margin-top : 40px;
+}
+
+#i_about3 {
+    margin-top : 40px;
+}
+
+#i_div1 {
+    margin-left : 15px;
+    line-height : 15px;
+    word-spacing : -2px;
+}
+
+#i_div2 {
+    float : right;
+    margin-right : 15px;
+    line-height : 15px;
+    word-spacing : -2px;
+    text-align : right;
+}
+
+#i_div3 {
+    margin-left : 15px;
+    line-height : 15px;
+    word-spacing : -2px;
+}
+
+#i_div4 {
+    margin-top : 20px;
+    margin-left : 10px;
+    line-height : 15px;
+    word-spacing : -2px;
+    font-size : 7px;
+    color : #3E3E3E;
+}
+
+#i_div5 {
+    margin-top : 20px;
+    margin-left : 10px;
+    line-height : 15px;
+    word-spacing : -2px;
+    font-size : 7px;
+    color : #828282;
+}
+
+#i_p2 {
+    font-size : 15px;
+    margin : 15px 0px;
+    font-weight : bold;
+}
+
+#i_p3 {
+    font-size : 9px;
+}

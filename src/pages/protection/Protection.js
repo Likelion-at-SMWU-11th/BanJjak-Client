@@ -42,7 +42,7 @@ function Protection() {
         </div><br/>
 
         <GreenBtn>동물</GreenBtn>
-        <SpeciesBtn>개</SpeciesBtn><br/>
+        <SpeciesBtn>모든 동물</SpeciesBtn><br/>
         <p id="count">n마리</p>
 
         <br/>
