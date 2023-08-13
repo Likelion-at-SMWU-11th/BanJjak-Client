@@ -33,6 +33,9 @@ const GlobalStyle = createGlobalStyle`
         visibility: hidden
     }
     
+    button::hover {
+        cursor: pointer;
+    }
 `
 
 

@@ -46,10 +46,9 @@ const EachCheck=styled(AllCheck)`
 `
 
 const CompleteSignInBtn=styled(SubmitBtn)`
-    display: block;
-    width: 100%;
     font-size:25px;
     margin-bottom:1rem;
+    flex: 1; /* 버튼이 사용 가능한 공간을 차지하도록 설정 */
 `
 
 const hrStyle={
@@ -57,8 +56,9 @@ const hrStyle={
 }
 
 const termDiv={
-    boxSizing:"content-box",
-    padding:"0.5rem 1.5rem"
+    margin:"0.5rem 1.5rem",
+    display: "flex", /* 플렉스박스 사용하여 레이아웃 제어 */
+    alignItems: "center", /* 아이템을 수직 가운데 정렬 */
 }
 
 
@@ -88,7 +88,7 @@ const SignInCheckbox2 = () => {
                 </Container>
                 <div style={termDiv}>
                 <CompleteSignInBtn>동의하고 가입하기</CompleteSignInBtn>
-            </div>
+                </div>
         </>
     );
 };

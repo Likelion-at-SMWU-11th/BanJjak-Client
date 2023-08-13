@@ -4,6 +4,7 @@ import { UserSelectButtonForShelter } from './UserTypeSelect';
 
 const StyledInput = styled.input`
     display: block;
+    flex: 1;
     border: 1px solid #828282;
     border-radius: 5px 5px 0px 0px;
     padding: 15px;

@@ -1,0 +1,24 @@
+.logoDiv {
+  font-family: "JalanOTF";
+  font-weight: bold;
+  color: #00ac78;
+}
+
+#shelterName {
+  margin-top: 0.5rem;
+  font-size: 50px;
+  margin-bottom: 1rem;
+}
+
+#pageText {
+  font-size: 25px;
+}
+
+#telInfo {
+  margin-top: 4rem;
+  text-align: center;
+  color: black;
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 40px;
+}
