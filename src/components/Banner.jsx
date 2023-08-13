@@ -33,7 +33,7 @@ const Banner = () => {
                 <div>
                 <Link to="/Adoption"><BtnList>입양하기</BtnList></Link>
                 <Link to="/Missing"><BtnList>실종/목격</BtnList></Link>
-                <Link to="/Protection"><BtnList>임시보호</BtnList></Link>
+                <Link to="/Protection"><BtnList>임보요청</BtnList></Link>
                 <Link to="/Review"><BtnList>입양후기</BtnList></Link>
                 </div>
         </div>
