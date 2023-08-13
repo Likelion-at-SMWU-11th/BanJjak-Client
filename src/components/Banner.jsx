@@ -25,10 +25,10 @@ const Banner = () => {
         </div>
         <div id="BannerBtn">
             <div>
-                <BtnList>반짝소개</BtnList>
-                <BtnList>반짝활동</BtnList>
-                <BtnList>공지사항</BtnList>
-                <BtnList>입양안내</BtnList>
+                <Link to="/Introduction"><BtnList>반짝소개</BtnList></Link>
+                <Link to="/Activity"><BtnList>반짝활동</BtnList></Link>
+                <Link to="/Notice"><BtnList>공지사항</BtnList></Link>
+                <Link to="/Guidance"><BtnList>입양안내</BtnList></Link>
                 </div>
                 <div>
                 <Link to="/Adoption"><BtnList>입양하기</BtnList></Link>

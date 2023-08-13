@@ -1,0 +1,177 @@
+/*EditInfo.js에서 사용하는 css */
+
+#ei_editphoto {
+    border-bottom : 0.5px solid #f0f0f0;
+    padding-top : 15px;
+    padding-bottom : 15px;
+    background-color : #F9F9F9;
+}
+
+#ei_photo1 {
+    margin-left : 163px;
+    width : 66px;
+    height : 66px;
+}
+
+#ei_div{
+    margin : 20px;
+}
+
+#ei_p1 {
+    margin-top : 30px;
+    display : inline-block;
+    font-size : 15px;
+    font-weight : bold;
+    color : #828282;
+}
+
+#ei_p2 {
+    display : inline-block;
+    font-size : 10px;
+    margin-left : 10px;
+    color : #BCBCBC;
+    font-weight : bold;
+}
+
+#ei_p2 span {
+    color : #F98C96;
+}
+
+#ei_form1 {
+    margin-top : 5px;
+    margin-right : 10px;
+    width : 250px;
+    height : 30px;
+    border : 1px solid #BCBCBC;
+    border-radius: 5px;
+}
+
+#ei_form2 {
+    margin-top : 5px;
+    width : 345px;
+    height : 35px;
+    border : 1px solid #BCBCBC;
+    border-radius: 5px;
+    background-color : #ECECEC;
+}
+
+#ei_form3 {
+    display : inline-block;
+    margin : 5px 10px -11px 0px;
+    width : 210px;
+    height : 30px;
+    border : 1px solid #BCBCBC;
+    border-radius: 5px;
+}
+#ei_form4 {
+    margin-top : 10px;
+    margin-right : 10px;
+    width : 250px;
+    height : 30px;
+    border : 1px solid #BCBCBC;
+    border-radius: 5px;
+}
+
+#ei_btn1 {
+    width : 80px;
+    height : 35px;
+    border : 1px solid #00AC78;
+    border-radius : 5px;
+    color : #00AC78;
+    font-weight : bold;
+    background-color : #FFFFFF;
+}
+
+#ei_btn2 {
+    display : inline-block;
+    width : 120px;
+    height : 35px;
+    border : none;
+    border-radius : 5px;
+    color : #FFFFFF;
+    font-weight : bold;
+    background-color : #00AC78;
+}
+
+#ei_btn3 {
+    width : 80px;
+    height : 35px;
+    border : 1px solid #00AC78;
+    border-radius : 5px;
+    color : #00AC78;
+    font-weight : bold;
+    background-color : #FFFFFF;
+}
+
+
+
+
+/*EditPW.js에서 사용하는 css */
+#ep_bar {
+    width : 390px;
+    height : 40px;
+    border-bottom : 1px solid #BCBCBC;
+    text-align : center;
+    color : #3E3E3E;
+    font-size : 20px;
+    font-weight :bold;
+    padding-top : 20px;
+}
+
+#ep_div {
+    margin : 20px;
+}
+
+#ep_p1 {
+    margin-top : 30px;
+    display : inline-block;
+    font-size : 15px;
+    font-weight : bold;
+    color : #828282;
+}
+
+#ep_exit {
+    float : right;
+    margin-right : 20px;
+    margin-top : -20px;
+}
+
+#ep_form1 {
+    margin-top : 5px;
+    width : 345px;
+    height : 35px;
+    border : 1px solid #BCBCBC;
+    border-radius: 5px;
+}
+
+#ep_form2 {
+    margin-top : 5px;
+    width : 340px;
+    height : 35px;
+    border : 1px solid #BCBCBC;
+    border-radius: 5px;
+    padding-left : 5px;
+}
+
+#ep_form3 {
+    margin-top : 5px;
+    width : 340px;
+    height : 35px;
+    border : 1px solid #BCBCBC;
+    border-radius: 5px;
+    padding-left : 5px;
+}
+
+#ep_btn {
+    width : 340px;
+    height : 50px;
+    border : none;
+    border-radius : 20px;
+    color : #FFFFFF;
+    font-size : 18px;
+    font-weight : bold;
+    background-color : #00AC78;
+    margin-top : 450px;
+    margin-left : 5px;
+}
+
