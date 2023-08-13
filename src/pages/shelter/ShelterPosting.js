@@ -1,20 +1,13 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import styled from "styled-components";
-import SignInCheckbox2 from "../../components/SignInCheckbox2";
-import SignInForm2 from "../../components/SignInForm2";
+import { Link, useNavigate } from "react-router-dom";
+import Posting from "../../components/Posting";
+import { ScrollableDiv } from "../login/SignInForShelter";
 
-const ScrollableDiv = styled.div`
-  height: 100vh;
-  overflow: auto;
-`;
-
-const SignInForShelter = () => {
+const ShelterPosting = () => {
   const navigate = useNavigate();
-
   const handleExitClick = () => {
-    // SignIn 페이지로 이동
-    navigate("/SignIn");
+    // Login 페이지로 이동
+    navigate("/HomeShelter");
   };
 
   return (
@@ -24,9 +17,10 @@ const SignInForShelter = () => {
           <img
             src={process.env.PUBLIC_URL + "/assets/icons/exit.png"}
             alt="exit"
+            id="exitBtn"
             id="invisibleContent"
           />
-          <span>회원가입</span>
+          <span>입양 공고글 쓰기</span>
           <img
             src={process.env.PUBLIC_URL + "/assets/icons/exit.png"}
             alt="exit"
@@ -34,12 +28,10 @@ const SignInForShelter = () => {
             onClick={handleExitClick}
           />
         </div>
-        <SignInForm2 />
-        <SignInCheckbox2 />
+        <Posting />
       </ScrollableDiv>
     </>
   );
 };
 
-export default SignInForShelter;
-export { ScrollableDiv };
+export default ShelterPosting;

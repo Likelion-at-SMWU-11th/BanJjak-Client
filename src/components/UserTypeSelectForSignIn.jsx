@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 //styled components
 const UserSelectButton=styled.button`
-    width: 100%;
+    flex: 1;
     padding: 30px 50px;
     font-size: 40px;
     font-weight: bold;
@@ -58,14 +58,19 @@ const borderBottomSpan={
     marginRight:"1rem"
 }
 
+const btnContainer={
+    display:"flex",
+    alignItems: "center",
+}
+
 const UserTypeSelectForSignIn = () => {
     return (
         <>
             <p style={pStyle}>저는<span style={borderBottomSpan}>보호소관</span>입니다</p>
-            <div>
+            <div style={btnContainer}>
                 <UserSelectButton><Link to="/SignIn/ForCommon"><span style={spanStyle}>(예비) </span>반려인</Link></UserSelectButton>
             </div>
-            <div>
+            <div style={btnContainer}> 
                 <UserSelectButtonForShelter><Link to="/SignIn/ForShelter">보호소 관리자</Link></UserSelectButtonForShelter>
             </div>
         </>

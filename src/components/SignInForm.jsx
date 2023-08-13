@@ -37,26 +37,37 @@ const InputDiv=styled.div`
 `;
 
 
-const SignInForm = () => {
+const SignInForm = ({ formData, onFormDataChange }) => {
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    onFormDataChange(name, value);
+  };
+
+  //비밀번호 재입력 확인
+  const isPasswordMismatched = formData.password !== formData.confirmPassword;
+
     return (
         <>
           <form style={formStyle}>
               <InputDiv>
                 <p>이메일</p>
-                <input type="email" placeholder="likelion@likelion.com"/>
+                <input type="email" name="email" placeholder="likelion@likelion.com" value={formData.email} onChange={handleInputChange}/>
               </InputDiv>
               <InputDiv>
                 <p>비밀번호</p>
-                <input type="password" placeholder="영문/숫자/특수문자 혼합 8~20자"/>
-                <input type="password" placeholder="비밀번호를 한 번 더 입력해 주세요."/>
+                <input type="password" name="password" placeholder="영문/숫자/특수문자 혼합 8~20자"  value={formData.password} onChange={handleInputChange}/>
+                <input type="password" name="confirmPassword" placeholder="비밀번호를 한 번 더 입력해 주세요." 
+                value={formData.confirmPassword} onChange={handleInputChange}
+                />
               </InputDiv>
               <InputDiv>
                 <p>닉네임</p>
-                <input type="text" placeholder="2~16자 이내로 입력해 주세요."/>
+                <input type="text" name="nickname" placeholder="2~16자 이내로 입력해 주세요." value={formData.nickname} onChange={handleInputChange}/>
               </InputDiv>
               <InputDiv>
                 <p>연락처</p>
-                <input type="tel" placeholder="'-' 를 제외한 숫자만 입력해 주세요."/>
+                <input type="tel" name="phoneNumber" placeholder="'-' 를 제외한 숫자만 입력해 주세요." value={formData.phoneNumber} onChange={handleInputChange}/>
               </InputDiv>
           </form>
           

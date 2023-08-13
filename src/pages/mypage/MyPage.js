@@ -10,31 +10,16 @@ function MyPage() {
     <>
       <Banner />
 
-
-        {/*프로필 정보 및 수정 */}
-        <div id="editprofile">
-            <img src={process.env.PUBLIC_URL + '/assets/icons/editphoto.png'} id="editphoto" alt="editphoto"/>
-            <div id="information">
-                <p id="name">name</p>
-                <p id="num">+82 010-0000-0000</p>
-            </div>
-            <img src={process.env.PUBLIC_URL + '/assets/icons/more.png'} id="mypage_more1" alt="more"/><br/>
-        </div>
-        
-        {/* 광고 배너2*/}
-        <img src={process.env.PUBLIC_URL + '/assets/icons/ad2.png'} id="ad2" alt="ad2"/>
-        
-        {/* 마이페이지 리스트*/}
-        <div id="mypagelist">
-            <img src={process.env.PUBLIC_URL + '/assets/icons/mypost.png'} id="mypageicons" alt="like1"/>
-            <h4 id="mypagename">내가 쓴 글</h4>
-        <img src={process.env.PUBLIC_URL + '/assets/icons/more.png'} id="mypage_more2" alt="more"/><br/>
-        </div>
-
-        <div id="mypagelist">
-            <img src={process.env.PUBLIC_URL + '/assets/icons/like1.png'} id="mypageicons" alt="like1"/>
-            <h4 id="mypagename">나의 관심 동물</h4>
-        <img src={process.env.PUBLIC_URL + '/assets/icons/more.png'} id="mypage_more2" alt="more"/><br/>
+      {/*프로필 정보 및 수정 */}
+      <div id="editprofile">
+        <img
+          src={process.env.PUBLIC_URL + "/assets/icons/editphoto.png"}
+          id="editphoto"
+          alt="editphoto"
+        />
+        <div id="information">
+          <p id="name">name</p>
+          <p id="num">+82 010-0000-0000</p>
         </div>
         <img
           src={process.env.PUBLIC_URL + "/assets/icons/more.png"}
@@ -43,6 +28,50 @@ function MyPage() {
         />
         <br />
       </div>
+
+      {/* 광고 배너2*/}
+      <img
+        src={process.env.PUBLIC_URL + "/assets/icons/ad2.png"}
+        id="ad2"
+        alt="ad2"
+      />
+
+      {/* 마이페이지 리스트*/}
+      <div id="mypagelist">
+        <img
+          src={process.env.PUBLIC_URL + "/assets/icons/mypost.png"}
+          id="mypageicons"
+          alt="like1"
+        />
+        <h4 id="mypagename">내가 쓴 글</h4>
+        <img
+          src={process.env.PUBLIC_URL + "/assets/icons/more.png"}
+          id="mypage_more2"
+          alt="more"
+        />
+        <br />
+      </div>
+
+      <div id="mypagelist">
+        <img
+          src={process.env.PUBLIC_URL + "/assets/icons/like1.png"}
+          id="mypageicons"
+          alt="like1"
+        />
+        <h4 id="mypagename">나의 관심 동물</h4>
+        <img
+          src={process.env.PUBLIC_URL + "/assets/icons/more.png"}
+          id="mypage_more2"
+          alt="more"
+        />
+        <br />
+      </div>
+      <img
+        src={process.env.PUBLIC_URL + "/assets/icons/more.png"}
+        id="mypage_more1"
+        alt="more"
+      />
+      <br />
 
       {/* 광고 배너2*/}
       <img
