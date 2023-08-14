@@ -54,7 +54,7 @@ const SignInForCommon = () => {
         <img
           src={process.env.PUBLIC_URL + "/assets/icons/exit.png"}
           alt="exit"
-          id="invisibleContent"
+          class="invisibleContent"
         />
         <span>회원가입</span>
         <img

@@ -29,7 +29,7 @@ const GlobalStyle = createGlobalStyle`
         cursor: pointer;
     };
 
-    #invisibleContent {
+    .invisibleContent {
         visibility: hidden
     }
     
