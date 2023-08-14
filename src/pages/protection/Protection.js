@@ -38,14 +38,11 @@ function Protection() {
         <Banner/>
 
         <div id="lookfor">
-            <p>임보구함</p>
-        </div>
-        <div id="protection_adopt">
-            <p>임보동물입양</p>
+            <p>임보요청</p>
         </div><br/>
 
         <GreenBtn>동물</GreenBtn>
-        <SpeciesBtn>개</SpeciesBtn><br/>
+        <SpeciesBtn>모든 동물</SpeciesBtn><br/>
         <p id="count">n마리</p>
 
         <br/>

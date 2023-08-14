@@ -25,15 +25,15 @@ const Banner = () => {
         </div>
         <div id="BannerBtn">
             <div>
-                <BtnList>반짝소개</BtnList>
-                <BtnList>반짝활동</BtnList>
-                <BtnList>공지사항</BtnList>
-                <BtnList>입양안내</BtnList>
+                <Link to="/Introduction"><BtnList>반짝소개</BtnList></Link>
+                <Link to="/Activity"><BtnList>반짝활동</BtnList></Link>
+                <Link to="/Notice"><BtnList>공지사항</BtnList></Link>
+                <Link to="/Guidance"><BtnList>입양안내</BtnList></Link>
                 </div>
                 <div>
                 <Link to="/Adoption"><BtnList>입양하기</BtnList></Link>
                 <Link to="/Missing"><BtnList>실종/목격</BtnList></Link>
-                <Link to="/Protection"><BtnList>임시보호</BtnList></Link>
+                <Link to="/Protection"><BtnList>임보요청</BtnList></Link>
                 <Link to="/Review"><BtnList>입양후기</BtnList></Link>
                 </div>
         </div>
