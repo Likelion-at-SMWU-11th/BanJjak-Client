@@ -86,6 +86,7 @@ function MyPage() {
           />
           <br />
         </div>
+
       </Link>
 
       <Link to="https://www.animal.go.kr/front/index.do">

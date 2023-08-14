@@ -8,8 +8,10 @@ function FAQ() {
     return (
         <>
             <Banner/>
-            <p id="title">자주 묻는 질문</p>
-            <hr id="hr1"/>
+            <div id="title">
+            <p>자주 묻는 질문</p>
+            </div>
+
             <Question contents="유기동물 입양 방법을 알려주세요!"/>
             <Question contents="내가 잃어버린 동물이 입양되었다면 어떻게 하나요?"/>
             <Question contents="유기동물 입양은 무료인가요?"/>
