@@ -41,7 +41,7 @@ const SignInForm = ({ formData, onFormDataChange }) => {
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-    onFormDataChange(name, value);
+    onFormDataChange(name, value);  //부모 컴포넌트로 데이터 변경을 알림
   };
 
   //비밀번호 재입력 확인
@@ -58,16 +58,16 @@ const SignInForm = ({ formData, onFormDataChange }) => {
                 <p>비밀번호</p>
                 <input type="password" name="password" placeholder="영문/숫자/특수문자 혼합 8~20자"  value={formData.password} onChange={handleInputChange}/>
                 <input type="password" name="confirmPassword" placeholder="비밀번호를 한 번 더 입력해 주세요." 
-                value={formData.confirmPassword} onChange={handleInputChange}
+                
                 />
               </InputDiv>
               <InputDiv>
                 <p>닉네임</p>
-                <input type="text" name="nickname" placeholder="2~16자 이내로 입력해 주세요." value={formData.nickname} onChange={handleInputChange}/>
+                <input type="text" name="nickname" value={formData.nickname} onChange={handleInputChange} placeholder="2~16자 이내로 입력해 주세요." />
               </InputDiv>
               <InputDiv>
                 <p>연락처</p>
-                <input type="tel" name="phoneNumber" placeholder="'-' 를 제외한 숫자만 입력해 주세요." value={formData.phoneNumber} onChange={handleInputChange}/>
+                <input type="tel" name="phone" value={formData.phone} onChange={handleInputChange} placeholder="'-' 를 제외한 숫자만 입력해 주세요." />
               </InputDiv>
           </form>
           
