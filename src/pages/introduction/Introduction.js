@@ -6,9 +6,8 @@ function Introduction(props) {
     return (
         <div>
             <Banner/>
-            <div>
-                <p id="i_title">반짝 소개</p>
-                <hr id="i_hr1"/>
+            <div id="i_title">
+                <p>반짝 소개</p>
             </div>
 
             <img src={process.env.PUBLIC_URL + '/assets/icons/intro.png'} id="i_intro" alt="i_intro"/>
