@@ -9,9 +9,34 @@ const GlobalStyle = createGlobalStyle`
         height : 844px;
         margin-left : 45%;
         border : 1px solid #dbdbdb;
+    
     };
-    button {
+    #TopBar {
+        margin-bottom : 10px;
+        box-shadow: 0px 3px 4px -2px #9c9c9c;
+        padding: 20px;
 
-    }`;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        color: #3E3E3E;
+        font-size: 20px;
+        font-weight: 600;
+    };
+
+    #exitBtn {
+        cursor: pointer;
+    };
+
+    #invisibleContent {
+        visibility: hidden
+    }
+    
+    button::hover {
+        cursor: pointer;
+    }
+`
+
 
 export default GlobalStyle;
