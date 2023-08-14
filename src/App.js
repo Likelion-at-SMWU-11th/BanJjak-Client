@@ -15,10 +15,12 @@ import FAQ from "./pages/mypage/FAQ";
 import FaqDetail from "./pages/mypage/FaqDetail";
 import Adoption from "./pages/adoption/Adoption";
 import AdoptDetail from "./pages/adoption/AdoptDetail";
+import WriteAdoption from "./pages/adoption/WriteAdoption";
 import Missing from "./pages/missing/Missing";
 import MissingDetail from "./pages/missing/MissingDetail";
 import Protection from "./pages/protection/Protection";
 import ProtectDetail from "./pages/protection/ProtectDetail";
+import WriteProtection from "./pages/protection/WriteProtection";
 import Review from "./pages/review/Review";
 import ReviewDetail from "./pages/review/ReviewDetail";
 
@@ -42,10 +44,12 @@ function App() {
       <Route path="/MyPage/FAQ/FaqDetail" element={<FaqDetail/>}></Route>
       <Route path="/Adoption" element={<Adoption/>}></Route>
       <Route path="/Adoption/AdoptDetail" element={<AdoptDetail/>}></Route>
+      <Route path="/Adoption/WriteAdoption" element={<WriteAdoption/>}></Route>
       <Route path="/Missing" element={<Missing/>}></Route>
       <Route path="/Missing/MissingDetail" element={<MissingDetail/>}></Route>
       <Route path="/Protection" element={<Protection/>}></Route>
       <Route path="/Protection/ProtectDetail" element={<ProtectDetail/>}></Route>
+      <Route path="/Protection/WriteProtection" element={<WriteProtection/>}></Route>
       <Route path="/Review" element={<Review/>}></Route>
       <Route path="/Review/ReviewDetail" element={<ReviewDetail/>}></Route>
       </Routes>

@@ -52,11 +52,13 @@ function MyPage() {
         </div>    
         </Link><br/><br/>
 
+        <Link to="/Notice">
         <div id="mypagelist">
             <img src={process.env.PUBLIC_URL + '/assets/icons/notice.png'} id="mypageicons" alt="notice"/>
             <h4 id="mypagename">공지사항</h4>
             <img src={process.env.PUBLIC_URL + '/assets/icons/more.png'} id="mypage_more2" alt="more"/><br/>
         </div>
+        </Link>
 
         <Link to="/MyPage/FAQ">
         <div id="mypagelist">    

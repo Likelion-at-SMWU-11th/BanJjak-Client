@@ -1,0 +1,31 @@
+#n_notice {
+    display : inline-block;
+    margin: 0px;
+    width : 195px;
+    height : 20px;
+    padding : 10px 0px;
+    text-align : center;
+    font-size : 15px;
+    font-weight : bold;
+    color : #00AC78;
+    border-bottom : 1px solid #00AC78;
+}
+
+#n_event {
+    display : inline-block;
+    margin : 0px;
+    width : 195px;
+    padding : 15px 0px;
+    text-align : center;
+    font-size : 15px;
+    font-weight : bold;
+    color : #828282;
+    border-bottom : 1px solid #ECECEC;
+}
+
+#n_ad3 {
+    float : left;
+    position : fixed;
+    top : 700px;
+    margin-left : 12px;
+}
