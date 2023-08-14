@@ -19,7 +19,7 @@ const LoginForCommon = () => {
           src={process.env.PUBLIC_URL + "/assets/icons/exit.png"}
           alt="exit"
           id="exitBtn"
-          id="invisibleContent"
+          class="invisibleContent"
         />
         <span>로그인</span>
         <img

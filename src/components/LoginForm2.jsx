@@ -16,7 +16,7 @@ const StyledInput = styled.input`
 const StyledPasswordInput = styled.div`
     position: relative;
     width: 18rem;
-    margin-left: -2rem; /* 왼쪽으로 이동하는 여백 설정 */
+    margin-left: 0rem; /* 왼쪽으로 이동하는 여백 설정 */
     
     input {
         width: 100%;
@@ -33,7 +33,7 @@ const StyledPasswordInput = styled.div`
     img {
         position : absolute;
         top: 50%;
-        right: -15px;
+        right: 5%;
         margin: 0;
         transform: translateY(-50%); /* 세로 중앙 정렬 */
     }
