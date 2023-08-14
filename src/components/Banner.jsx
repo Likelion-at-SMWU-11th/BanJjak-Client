@@ -8,7 +8,7 @@ const BtnList = styled.button`
     background : white;
     border: 0.5px solid #BCBCBC;
     display : inline-block;
-    width : 97.5px;
+    width : 25%;
     height : 30px;
     text-align : center;
     font-size : 12px;
