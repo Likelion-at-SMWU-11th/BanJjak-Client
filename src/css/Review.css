@@ -4,8 +4,8 @@
     display : inline-block;
     margin: 0px;
     width : 195px;
-    height : 20px;
-    padding : 10px 0px;
+    height : 47px;
+    padding : 15px 10px 0px;
     text-align : center;
     font-size : 15px;
     font-weight : bold;
@@ -16,8 +16,8 @@
 #reunion_review { /*재회후기 div태그*/
     display : inline-block;
     margin : 0px;
-    width : 195px;
-    padding : 15px 0px;
+    width : 190px;
+    padding : 16px 0px;
     text-align : center;
     font-size : 15px;
     font-weight : bold;

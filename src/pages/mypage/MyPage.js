@@ -76,77 +76,7 @@ function MyPage() {
             <img src={process.env.PUBLIC_URL + '/assets/icons/more.png'} id="mypage_more2" alt="more"/><br/>
         </div>    
         </Link><br/><br/>
-
-      <div id="mypagelist">
-        <Link to="https://www.animal.go.kr/front/index.do">
-          <img
-            src={process.env.PUBLIC_URL + "/assets/icons/national.png"}
-            id="mypageicons"
-            alt="national"
-          />
-          <h4 id="mypagename">국가동물등록</h4>
-          <img
-            src={process.env.PUBLIC_URL + "/assets/icons/more.png"}
-            id="mypage_more2"
-            alt="more"
-          />
-          <br />
-        </Link>
-      </div>
-      <br />
-      <br />
-
-      <div id="mypagelist">
-        <img
-          src={process.env.PUBLIC_URL + "/assets/icons/notice.png"}
-          id="mypageicons"
-          alt="notice"
-        />
-        <h4 id="mypagename">공지사항</h4>
-        <img
-          src={process.env.PUBLIC_URL + "/assets/icons/more.png"}
-          id="mypage_more2"
-          alt="more"
-        />
-        <br />
-      </div>
-
-      <div id="mypagelist">
-        <Link to="/MyPage/FAQ">
-          <img
-            src={process.env.PUBLIC_URL + "/assets/icons/faq.png"}
-            id="mypageicons"
-            alt="faq"
-          />
-          <h4 id="mypagename">자주 묻는 질문</h4>
-          <img
-            src={process.env.PUBLIC_URL + "/assets/icons/more.png"}
-            id="mypage_more2"
-            alt="more"
-          />
-          <br />
-        </Link>
-      </div>
-
-      <div id="mypagelist">
-        <Link to="https://open.kakao.com/o/gdi0MYyf">
-          <img
-            src={process.env.PUBLIC_URL + "/assets/icons/inquiry.png"}
-            id="mypageicons"
-            alt="inquiry"
-          />
-          <h4 id="mypagename">문의하기</h4>
-          <img
-            src={process.env.PUBLIC_URL + "/assets/icons/more.png"}
-            id="mypage_more2"
-            alt="more"
-          />
-          <br />
-        </Link>
-      </div>
-      <br />
-      <br />
-
+      
       <div id="mypagelist">
         <img
           src={process.env.PUBLIC_URL + "/assets/icons/logout.png"}
