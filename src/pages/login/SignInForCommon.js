@@ -20,9 +20,9 @@ const SignInForCommon = () => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
-    confirmPassword: "",
+    // confirmPassword: "",
     nickname: "",
-    phoneNumber: "",
+    phone: "",
     terms: {
       all: false,
       check1: false,
@@ -50,14 +50,27 @@ const SignInForCommon = () => {
   };
 
   const handleCompleteSignInClick = (formData) => {
-    console.log("회원가입 정보를 서버로 전송합니다.");
+    const { email, password, phone, nickname } = formData; // 특정 필드만 추출
+
+    const dataToSend = {
+      email: email,
+      username: nickname,
+      password: password,
+      phone: phone,
+    };
+
+    console.log("전송할 formData:", dataToSend);
     // axios POST 요청을 사용하여 formData를 서버로 보냅니다.
     axios
-      .post("http://127.0.0.1:8000/accounts/user/signin/", formData)
+      .post("http://127.0.0.1:8000/accounts/user/signin/", dataToSend, {
+        headers: {
+          "Content-Type": "application/json", // JSON 데이터 전송을 위한 헤더 설정
+        },
+      })
       .then((response) => {
         // 성공 응답을 처리합니다.
         console.log("회원가입 성공:", response.data);
-        navigate("/SignIn"); // SignIn 페이지로 리다이렉트합니다.
+        navigate("/Login"); // Login 페이지로 리다이렉트합니다.
       })
       .catch((error) => {
         // 오류 응답을 처리합니다.
@@ -72,7 +85,7 @@ const SignInForCommon = () => {
           <img
             src={process.env.PUBLIC_URL + "/assets/icons/exit.png"}
             alt="exit"
-            class="invisibleContent"
+            className="invisibleContent"
           />
           <span>회원가입</span>
           <img

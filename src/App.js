@@ -65,16 +65,22 @@ function App() {
         ></Route>
         <Route path="/Review" element={<Review />}></Route>
         <Route path="/Review/ReviewDetail" element={<ReviewDetail />}></Route>
-      <Route path="/Introduction" element={<Introduction/>}></Route>
-      <Route path="/Activity" element={<Activity/>}></Route>
-      <Route path="/Notice" element={<Notice/>}></Route>
-      <Route path="/Guidance" element={<Guidance/>}></Route>
-      <Route path="/Adoption/WriteAdoption" element={<WriteAdoption/>}></Route>
-      <Route path="/MyPage/EditInfo" element={<EditInfo/>}></Route>
-      <Route path="/MyPage/EditInfo/EditPW" element={<EditPW/>}></Route>  
-      <Route path="/MyPage/MyPost" element={<MyPost/>}></Route>
-      <Route path="/MyPage/Liked" element={<Liked/>}></Route>
-      <Route path="/Protection/WriteProtection" element={<WriteProtection/>}></Route>
+        <Route path="/Introduction" element={<Introduction />}></Route>
+        <Route path="/Activity" element={<Activity />}></Route>
+        <Route path="/Notice" element={<Notice />}></Route>
+        <Route path="/Guidance" element={<Guidance />}></Route>
+        <Route
+          path="/Adoption/WriteAdoption"
+          element={<WriteAdoption />}
+        ></Route>
+        <Route path="/MyPage/EditInfo" element={<EditInfo />}></Route>
+        <Route path="/MyPage/EditInfo/EditPW" element={<EditPW />}></Route>
+        <Route path="/MyPage/MyPost" element={<MyPost />}></Route>
+        <Route path="/MyPage/Liked" element={<Liked />}></Route>
+        <Route
+          path="/Protection/WriteProtection"
+          element={<WriteProtection />}
+        ></Route>
       </Routes>
     </div>
   );

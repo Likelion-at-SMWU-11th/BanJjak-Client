@@ -9,6 +9,7 @@ const GlobalStyle = createGlobalStyle`
         height : 844px;
         margin-left : 45%;
         border : 1px solid #dbdbdb;
+        overflow: auto;
     
     };
     #TopBar {

@@ -94,6 +94,7 @@ const SubmitBtn = styled(UserSelectButtonForShelter)`
 `
 
 const LoginForm = () => {
+    
     return (
         <>
         <CenteredForm>
@@ -108,7 +109,7 @@ const LoginForm = () => {
                 <CustomCheckbox type="checkbox" id="saveIdCheck" />
                 <label htmlFor="saveIdCheck">아이디 저장</label>
             </CheckboxContainer>
-            <SubmitBtn>로그인</SubmitBtn>
+            <SubmitBtn >로그인</SubmitBtn>
         </CenteredForm>
         </>
     );
