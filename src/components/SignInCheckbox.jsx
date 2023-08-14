@@ -61,7 +61,7 @@ const termDiv={
 }
 
 
-const SignInCheckbox = ({ formData, onCheckboxChange }) => {
+const SignInCheckbox = ({ formData, onCheckboxChange, onFormSubmit }) => {
 
     const handleCheckboxInputChange = (event) => {
         const { id, checked } = event.target;
@@ -92,7 +92,7 @@ const SignInCheckbox = ({ formData, onCheckboxChange }) => {
           alert("필수 약관에 동의해야 가입할 수 있습니다.");
         } else {
           console.log("회원가입 정보를 서버로 전송합니다.");
-          // 여기에 axios를 사용하여 formData를 서버로 보내는 코드를 추가할 수 있습니다.
+          onFormSubmit(formData); // formData를 SignInForCommon 컴포넌트로 전달하여 서버로 보냅니다.
         }
     };
 
