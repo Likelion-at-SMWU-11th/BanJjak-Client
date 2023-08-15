@@ -6,8 +6,8 @@ import UserTypeSelectForSignIn from "../../components/UserTypeSelectForSignIn";
 const SignInSelect = () => {
   return (
     <>
-      <div class="loginMain">
-        <div class="logoDiv">
+      <div className="loginMain">
+        <div className="logoDiv">
           <div>
             <img
               src={process.env.PUBLIC_URL + "/assets/icons/logo_top_text.png"}
