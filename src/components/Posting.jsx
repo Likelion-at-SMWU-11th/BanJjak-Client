@@ -159,8 +159,19 @@ const SubmitDiv=styled.div`
 
 `
 
+const ImgContainer=styled.div`
+    background: pink;
+`
+
 const smallFont={
     fontSize: "30px"
+}
+
+const ImgDiv={
+    display: "flex",
+    alignItems:"center",
+    flexDirection:"row",
+    background:"gray"
 }
 
 const Posting = () => {
@@ -201,11 +212,16 @@ const Posting = () => {
                 </InputDiv>
                 <ImgInputDiv>
                     <label>공고동물 사진 <span style={smallFont}>(최대 3장)</span></label>
-                    <div>
-                        <img
-                        src={process.env.PUBLIC_URL + "/assets/icons/editphoto.png"}
-                        alt="editphoto"
-                        />
+                    <div style={ImgDiv}>
+                        <ImgContainer>
+                            <img
+                                src={process.env.PUBLIC_URL + "/assets/icons/editphoto.png"}
+                                alt="editphoto"
+                            />
+                        </ImgContainer>
+                        <ImgContainer>
+                        
+                        </ImgContainer>
                         <img
                         src={process.env.PUBLIC_URL + "/assets/icons/editphoto.png"}
                         alt="editphoto"

@@ -16,7 +16,8 @@ const LoginForShelter = () => {
   const handleLoginSuccess = (token) => {
     const managerToken = token;
     console.log("로그인 성공", managerToken);
-    navigate("/HomeShelter");
+    // HomeShelter로 페이지 이동 및 토큰 전달
+    navigate("/HomeShelter", { state: { managerToken } });
   };
 
   return (
