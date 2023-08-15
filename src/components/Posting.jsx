@@ -153,9 +153,20 @@ const SubmitDiv = styled.div`
   }
 `;
 
-const smallFont = {
-  fontSize: "30px",
-};
+const ImgContainer=styled.div`
+    background: pink;
+`
+
+const smallFont={
+    fontSize: "30px"
+}
+
+const ImgDiv={
+    display: "flex",
+    alignItems:"center",
+    flexDirection:"row",
+    background:"gray"
+}
 
 const Posting = () => {
   // dropdown 관련
