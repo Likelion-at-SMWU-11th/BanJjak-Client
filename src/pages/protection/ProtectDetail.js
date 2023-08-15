@@ -1,7 +1,6 @@
 import React from 'react';
 import '../../css/Protection.css';
 import Banner from '../../components/Banner';
-/* import LikeBtn from '../../components/LikeBtn'; */
 
 function ProtectDetail(props) {
     return (
@@ -35,6 +34,7 @@ function ProtectDetail(props) {
                                 이 아이가 캐나다에 있는 가족을 만나기전 가정생활에 잘 적응하고 따뜻한 사랑을 느낄 수 있게 도와주세요🙏
                 </p>
         </div>
+        <img src={process.env.PUBLIC_URL + '/assets/icons/floatingchat.png'} id="floatingchat" alt="floatingchat"/>
 
         <div id="property">
             <p id="property_name">동물정보</p>

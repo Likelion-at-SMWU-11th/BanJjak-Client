@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../../css/Adoption.css';
 import styled from 'styled-components';
 import Banner from '../../components/Banner';
-import AdoptList from '../../components/AdoptList';
+import ShelterAdopt from './ShelterAdopt';
+import PersonalAdopt from './PersonalAdopt';
 
 const GreenBtn = styled.button`
     color: white;
@@ -32,17 +34,46 @@ const SpeciesBtn = styled.button`
     font-weight : bold;
 `;
 
+
 function Adoption(props) {
+    const [isShelterAdopt, setIsShelterAdopt] = useState(true);
+
+    const ShelterAdoptStyle = {
+        color: isShelterAdopt ? '#00AC78' : '#828282', 
+        borderBottom: isShelterAdopt ? '1px solid #00AC78' : '1px solid #ECECEC', 
+        cursor: isShelterAdopt ? 'default' : 'pointer', 
+    };
+
+    const PersonalAdoptStyle = {
+        color: isShelterAdopt ? '#828282' : '#00AC78', 
+        borderBottom: isShelterAdopt ? '1px solid #ECECEC' : '1px solid #00AC78', 
+        cursor: isShelterAdopt ? 'pointer' : 'default', 
+    };
+
+    const handleAdoptTypeChange = () => {
+        if (!isShelterAdopt) {
+            setIsShelterAdopt(true);
+        }
+    };
+    
+    
     return (
         <>
         <Banner/>
 
-        <div id="center">
+        <Link to="/Adoption/ShelterAdopt">
+        <div id="shelter"
+            style={ShelterAdoptStyle}
+            onClick={handleAdoptTypeChange}>
             <p>보호소</p>
-        </div>
-        <div id="temporary">
+        </div></Link>
+
+        <Link to="/Adoption/PersonalAdopt">
+        <div id="temporary"
+            style={PersonalAdoptStyle}
+            onClick={() => setIsShelterAdopt(false)}>
             <p>임시보호</p>
-        </div><br/>
+        </div></Link><br/>
 
         <GreenBtn>동물</GreenBtn>
         <SpeciesBtn>모든 동물</SpeciesBtn><br/>
@@ -50,8 +81,8 @@ function Adoption(props) {
         <p id="count">n마리</p><br/>
 
         <div id="adoptlist">
-        <AdoptList/>
-        <AdoptList/>
+        {isShelterAdopt && <ShelterAdopt />}
+        {!isShelterAdopt && <PersonalAdopt />}
         </div>
         </>
     );

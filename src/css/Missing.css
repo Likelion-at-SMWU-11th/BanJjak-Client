@@ -32,6 +32,12 @@
     color : #3E3E3E;
 }
 
+#floatingwrite {
+    position : fixed;
+    bottom : 15%;
+    left : 78%;
+}
+
 
 
 /* MissingList.jsx 컴포넌트에 사용되는 css*/
@@ -154,6 +160,13 @@
     color : #3E3E3E;
     line-height : 20px;
 }
+
+#floatingchat {
+    position : fixed;
+    bottom : 15%;
+    left : 78%;
+}
+
 
 
 

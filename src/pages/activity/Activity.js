@@ -8,7 +8,7 @@ function Activity(props) {
             <Banner/>
 
             <div id="ac_title">
-                <p>반짝 소개</p>
+                <p>반짝 활동</p>
             </div>
 
             <img src={process.env.PUBLIC_URL + '/assets/icons/intro.png'} id="ac_intro" alt="ac_intro"/>

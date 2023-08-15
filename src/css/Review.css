@@ -25,7 +25,11 @@
     border-bottom : 1px solid #ECECEC;
 }
 
-
+#floatingwrite {
+    position : fixed;
+    bottom : 15%;
+    left : 78%;
+}
 
 
 /*ReviewList.jsx 컴포넌트에서 사용되는 Css*/
