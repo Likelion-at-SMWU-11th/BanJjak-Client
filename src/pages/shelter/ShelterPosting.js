@@ -18,7 +18,7 @@ const ShelterPosting = () => {
             src={process.env.PUBLIC_URL + "/assets/icons/exit.png"}
             alt="exit"
             id="exitBtn"
-            id="invisibleContent"
+            className="invisibleContent"
           />
           <span>입양 공고글 쓰기</span>
           <img

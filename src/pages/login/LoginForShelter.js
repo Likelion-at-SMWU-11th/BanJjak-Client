@@ -12,6 +12,14 @@ const LoginForShelter = () => {
     navigate("/Login");
   };
 
+  //로그인 성공시
+  const handleLoginSuccess = (token) => {
+    const managerToken = token;
+    console.log("로그인 성공", managerToken);
+    // HomeShelter로 페이지 이동 및 토큰 전달
+    navigate("/HomeShelter", { state: { managerToken } });
+  };
+
   return (
     <>
       <div id="TopBar">
@@ -19,7 +27,7 @@ const LoginForShelter = () => {
           src={process.env.PUBLIC_URL + "/assets/icons/exit.png"}
           alt="exit"
           id="exitBtn"
-          class="invisibleContent"
+          className="invisibleContent"
         />
         <span>로그인</span>
         <img
@@ -33,7 +41,7 @@ const LoginForShelter = () => {
         src={process.env.PUBLIC_URL + "/assets/icons/logo3D.png"}
         id="logo"
       />
-      <LoginForm2 />
+      <LoginForm2 onLoginSuccess={handleLoginSuccess} />
       <hr />
       <div id="findForShelter">
         <Link to>아이디 찾기</Link>

@@ -1,5 +1,7 @@
-import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import axios from "axios";
+
 import "../../css/HomeShelter.css";
 import styled from "styled-components";
 import { UserSelectButtonForShelter } from "../../components/UserTypeSelect";
@@ -32,15 +34,41 @@ const btnContainer = {
 };
 
 const HomeShelter = () => {
+  const location = useLocation();
+  const managerToken = location.state?.managerToken;
+  console.log("managerToken:", managerToken);
+
+  const [username, setUsername] = useState("");
+
+  useEffect(() => {
+    if (managerToken) {
+      // 서버로 사용자 정보 요청 보내기
+      axios
+        .get("http://127.0.0.1:8000/users/get_username/", {
+          headers: {
+            Authorization: `Token ${managerToken}`,
+          },
+        })
+        .then((response) => {
+          const user = response.data;
+          console.log(user);
+          setUsername(user.username);
+        })
+        .catch((error) => {
+          console.error("Error fetching user info:", error);
+        });
+    }
+  }, [managerToken]);
+
   return (
     <>
-      <div class="logoDiv">
+      <div className="logoDiv">
         <div>
           <img
             src={process.env.PUBLIC_URL + "/assets/icons/logo_top_text.png"}
           />
         </div>
-        <p id="shelterName">멋사네 보호소</p>
+        <p id="shelterName">{username}</p>
         <p id="pageText">관리자용 페이지</p>
       </div>
       <div style={btnContainer}>
