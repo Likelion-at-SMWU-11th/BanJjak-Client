@@ -1,0 +1,127 @@
+#homebox {
+    margin : 20px;
+}
+
+#homebanner {
+    width: 390px;
+    height : 200px;
+    overflow: hidden;
+}
+
+#homebanner1 {
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+    z-index : 2;
+}
+
+#clock {
+    padding-bottom : 10px;
+    border-bottom : 1px solid #ECECEC
+}
+
+#title_p1 {
+    display : inline-block;
+    font-size : 20px;
+    color : #3E3E3E;
+    font-weight : bold;
+    margin-right : 5px;
+}
+
+#clock_p2 {
+    display : inline-block;
+    font-size : 15px;
+    color : #00AC78;
+    margin-left : 5px;
+}
+
+#clock_p2 span {
+    margin-right : 5px;
+}
+
+#statistics {
+    margin-top : 20px;
+    margin-bottom : 10px;
+}
+
+#percentage {
+    display : inline-block;
+    width : 170px;
+    height : 100px;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+    background: linear-gradient(to right, #00AC78, #84dbc0);
+    text-align : right;
+    padding-top : 30px;
+    padding-right : 10px;
+    box-shadow : 2px 2px 2px #ECECEC;
+}
+
+#percentage p {
+    margin : 10px;
+    margin-top :0px;
+    font-size : 16px;
+    color : #FFFFFF;
+    font-weight : bold;
+}
+
+
+#rescue {
+    display : inline-block;
+    width : 170px;
+    height : 100px;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    background-color : #F9F9F9;
+    text-align : center;
+    padding-top : 14px;
+    padding-right : 10px;
+    box-shadow : 3px 3px 3px #ECECEC;
+}
+
+#rescue p {
+    margin : 7px;
+    color : #3E3E3E;
+    font-size : 16px;
+}
+
+#rescue span {
+    margin-left : 6px;
+}
+
+#gotoreview {
+    padding-bottom : 10px;
+    border-bottom : 1px solid #ECECEC
+}
+
+#gotoreview p {
+    display : inline-block;
+    margin-top : 25px;
+    color : #3E3E3E;
+}
+
+#viewmore1 {
+    margin-left : 200px;
+    font-size : 15px;
+}
+
+#gotoprotect {
+    padding-bottom : 10px;
+    border-bottom : 1px solid #ECECEC;
+    margin-top : 10px;
+}
+
+#gotoprotect p {
+    display : inline-block;
+    margin-top : 25px;
+    color : #3E3E3E;
+}
+
+#viewmore2 {
+    margin-left : 133px;
+    font-size : 15px;
+}
+
+#preview {
+    height : 100px;
+}

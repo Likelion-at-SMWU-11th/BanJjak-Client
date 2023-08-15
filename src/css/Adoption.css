@@ -1,6 +1,6 @@
 /*Adoption.js 페이지에 사용되는 css*/
 
-#center { /*보호소 div태그*/
+#shelter { /*보호소 div태그*/
     display : inline-block;
     margin: 0px;
     width : 195px;
@@ -23,6 +23,12 @@
     font-weight : bold;
     color : #828282;
     border-bottom : 1px solid #ECECEC;
+}
+
+#floatingread {
+    position : fixed;
+    bottom : 15%;
+    left : 78%;
 }
 
 
@@ -149,6 +155,12 @@
     color : #F98C96;
     font-size : 11px;
     margin : 5px;
+}
+
+#floatingchat {
+    position : fixed;
+    bottom : 15%;
+    left : 78%;
 }
 
 

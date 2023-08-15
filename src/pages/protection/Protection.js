@@ -44,6 +44,7 @@ function Protection() {
         <GreenBtn>동물</GreenBtn>
         <SpeciesBtn>모든 동물</SpeciesBtn><br/>
         <p id="count">n마리</p>
+        <img src={process.env.PUBLIC_URL + '/assets/icons/floatingwrite.png'} id="floatingwrite" alt="floatingwrite"/>
 
         <br/>
         <div id="protectlist">

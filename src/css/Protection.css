@@ -13,6 +13,13 @@
     border-bottom : 1px solid #00AC78;
 }
 
+#floatingwrite {
+    position : fixed;
+    bottom : 15%;
+    left : 78%;
+}
+
+
 /*ProtectList.jsx 컴포넌트에서 사용되는 Css*/
 
 #list { /* ProtectList.jsx 컴포넌트 전체를 묶는 div태그*/
@@ -129,4 +136,10 @@
 #property ul li {
     list-style: disc; /* 원하는 스타일로 변경 가능 (disc, circle, square 등) */
     margin-left : 40px;
+}
+
+#floatingchat {
+    position : fixed;
+    bottom : 15%;
+    left : 78%;
 }

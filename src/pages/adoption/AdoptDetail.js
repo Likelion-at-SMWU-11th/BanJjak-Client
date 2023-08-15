@@ -63,9 +63,11 @@ function AdoptDetail(props) {
             <p>특이사항</p>
         </div>
 
+        <img src={process.env.PUBLIC_URL + '/assets/icons/floatingchat.png'} id="floatingchat" alt="floatingchat"/>
+
+
         <div id="gotoread">
             <Link to="/">
-            <img src={process.env.PUBLIC_URL + '/assets/icons/mark.png'} id="mark" alt="mark"/>
             <p id="mark_p">입양 전 필독사항 바로가기</p>
             </Link>
         </div>

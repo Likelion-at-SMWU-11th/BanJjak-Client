@@ -32,7 +32,8 @@ function MissingDetail(props) {
                 요키 치고는 색이 밝고 꿀벌하네스를 하고 있었어요 <br/>
                 인근에서 닮은 강아지 발견하신다면 시간대 상관없이 꼭 연락 부탁드립니다</p>
             </div>
-        
+            <img src={process.env.PUBLIC_URL + '/assets/icons/floatingchat.png'} id="floatingchat" alt="floatingchat"/>
+
         <MissingTag/>
         </>
     );
