@@ -143,9 +143,8 @@ const LoginForm = ({ onLoginSuccess }) => {
         // 로그인 성공 시 처리
         console.log("로그인 성공", {email,password, rememberMe, rememberId})
         //서버로부터 userInfo와 token을 받아서 상위컴포넌트에 넘김
-        const userInfo=response.data.userInfo
         const token = response.data.token; // 서버 응답에서 토큰 추출
-        onLoginSuccess(token, userInfo);
+        onLoginSuccess(token);
       } 
     } catch (error) {
       // 에러 처리
