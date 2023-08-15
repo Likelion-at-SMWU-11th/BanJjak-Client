@@ -14,7 +14,8 @@ const LoginForShelter = () => {
 
   //로그인 성공시
   const handleLoginSuccess = (token) => {
-    console.log("로그인 성공", token);
+    const managerToken = token;
+    console.log("로그인 성공", managerToken);
     navigate("/HomeShelter");
   };
 
