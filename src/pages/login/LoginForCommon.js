@@ -16,6 +16,7 @@ const LoginForCommon = ({ onLoginSuccess }) => {
   const handleLoginSuccess = (token) => {
     const userToken = token;
     console.log("로그인 성공", userToken);
+    localStorage.setItem("token", token);
     navigate("/Home");
   };
 
