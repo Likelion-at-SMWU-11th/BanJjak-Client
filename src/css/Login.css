@@ -38,3 +38,7 @@ hr {
 #findForShelter a:hover {
   color: #00ac78;
 }
+
+.submitBtnContainer {
+  text-align: center;
+}
