@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useState} from 'react';
+import axios from "axios";
 import styled from 'styled-components';
 import { UserSelectButtonForShelter } from './UserTypeSelect';
 
@@ -92,22 +93,85 @@ const SubmitBtn = styled(UserSelectButtonForShelter)`
     padding: 13px;
 `
 
-const LoginForm2 = () => {
+const LoginForm2 = ({ onLoginSuccess }) => {
+    const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [rememberMe, setRememberMe] = useState(false);
+  const [rememberId, setRememberId] = useState(false);
+
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+
+  const handleRememberMeChange = (event) => {
+    setRememberMe(event.target.checked);
+  };
+
+  const handleRememberIdChange = (event) => {
+    setRememberId(event.target.checked);
+  };
+
+  const handleLoginSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      const response = await axios.post(
+        "http://127.0.0.1:8000/accounts/manager/login/",
+         //로그인 요청에 필요한 데이터
+        {
+          email: email,
+          password: password,
+          remember_me: rememberMe,
+          remember_id: rememberId,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            // Add any other headers if needed
+          },
+        }
+      );
+
+      // 서버로부터의 응답에 따른 처리
+      if (response.status === 200) {
+        // 로그인 성공 시 처리
+        console.log("로그인 성공", {email,password, rememberMe, rememberId})
+        //서버로부터 userInfo와 token을 받아서 상위컴포넌트에 넘김
+        const token = response.data.token; // 서버 응답에서 토큰 추출
+        onLoginSuccess(token);
+      } 
+    } catch (error) {
+      // 에러 처리
+      console.log("로그인 실패",error)
+    }
+  };
+
     return (
         <>
-        <CenteredForm>
-            <StyledInput type="text" placeholder="이메일"/>
+        <CenteredForm onSubmit={handleLoginSubmit}>
+            <StyledInput type="text" name="email" placeholder="이메일" value={email}
+          onChange={handleEmailChange}/>
             <StyledPasswordInput>
-                <input type="password" placeholder="비밀번호"/>
+                <input type="password" name="password" placeholder="비밀번호" value={password}
+            onChange={handlePasswordChange}/>
                 <img src={process.env.PUBLIC_URL + "/assets/icons/visible.png"}/>
             </StyledPasswordInput>
             <CheckboxContainer>
-                <CustomCheckbox type="checkbox" id="autoLoginCheck" />
+                <CustomCheckbox type="checkbox" id="autoLoginCheck"
+                name="rememberMe" checked={rememberMe}
+                onChange={handleRememberMeChange}/>
                 <label htmlFor="autoLoginCheck">자동로그인</label>
-                <CustomCheckbox type="checkbox" id="saveIdCheck" />
+                <CustomCheckbox type="checkbox" id="saveIdCheck"
+                name="rememberId"
+                checked={rememberId}
+                onChange={handleRememberIdChange} />
                 <label htmlFor="saveIdCheck">아이디 저장</label>
             </CheckboxContainer>
-            <SubmitBtn>로그인</SubmitBtn>
+            <SubmitBtn type="submit">로그인</SubmitBtn>
         </CenteredForm>
         </>
     );
