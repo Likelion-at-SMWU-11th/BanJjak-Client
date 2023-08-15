@@ -94,6 +94,7 @@ const SubmitBtn = styled(UserSelectButtonForShelter)`
 `;
 
 const LoginForm = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
@@ -103,7 +104,6 @@ const LoginForm = () => {
     console.log("test");
   };
   const handleLogin = async (email, password, rememberMe, rememberId) => {
-    const navigate = useNavigate();
     try {
       await axios
         .post(
@@ -122,7 +122,7 @@ const LoginForm = () => {
           }
         )
         .then((response) => {
-          console.log("response");
+          console.log(response);
           if (response.status === 200) {
             // 로그인 성공 시 리다이렉트 또는 상태 업데이트 등 처리
             console.log("로그인 성공:", response.data);
@@ -132,9 +132,6 @@ const LoginForm = () => {
     } catch (error) {
       // 로그인 실패 시 에러 처리
       console.log("로그인 실패");
-      setTimeout(() => {
-        console.clear(); // 일정 시간 후에 로그 지우기
-      }, 5000); // 5초 후에 로그 지우기
       navigate("/Home");
     }
   };
