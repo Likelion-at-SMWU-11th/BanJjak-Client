@@ -1,16 +1,23 @@
 import React from 'react';
 
 
-const Dropdown = ({value, setAnimalValue, setIsOpen, isOpen}) => {
-    const ValueClick=()=>{
-        setAnimalValue(value)
-        setIsOpen(!isOpen)
-    }
-    return (
-        <li onClick={ValueClick}>
-            {value}
-        </li>
-    );
+const Dropdown = ({value, setAnimalValue, setIsOpen1, isOpen1}) => {
+    // const ValueClick=()=>{
+    //     setAnimalValue(value)
+    //     setIsOpen(!isOpen)
+    // }
+    // return (
+    //     <li onClick={ValueClick}>
+    //         {value}
+    //     </li>
+    // );
+    const handleItemClick = () => {
+        setIsOpen1(false); // 드롭다운 닫기
+        setAnimalValue(value); // 선택된 값을 상태에 설정
+      };
+    
+      return <li onClick={handleItemClick}>{value}</li>;
+    
 };
 
 const Dropdown2 = ({value, setSexValue, setIsOpen2, isOpen2}) => {
