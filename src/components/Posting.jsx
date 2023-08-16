@@ -1,5 +1,5 @@
-import React, { useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useRef, useEffect, useState } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import useDetectClose from "../hooks/useDetectClose";
 import Dropdown from "./Dropdown";
@@ -183,6 +183,11 @@ const smallFont = {
 };
 
 const Posting = () => {
+  const location = useLocation();
+  const managerToken = location.state?.managerToken;
+  console.log("managerToken:", managerToken);
+
+  const [username, setUsername] = useState("");
   // dropdown 관련
   const dropDownRefs = {
     animal: useRef(),
@@ -209,12 +214,7 @@ const Posting = () => {
   const [isOpen2, setIsOpen2] = useDetectClose(dropDownRefs.sex, false);
   const [isOpen3, setIsOpen3] = useDetectClose(dropDownRefs.neutered, false);
 
-  // Modal 관련
-  //   const [modalOpen, setModalOpen] = useState(false); // 모달창 노출 여부 state
-  //   const showModal = () => {
-  //     //모달창 노출
-  //     setModalOpen(true);
-  //   };
+  const [modalOpen, setModalOpen] = useState(false); // 모달창 노출 여부 state
 
   //이미지 업로드 관련
   // const [images, setImages] = useState([null, null, null]);
@@ -226,17 +226,26 @@ const Posting = () => {
 
 
   const handleImageUpload = async (e) => {
-    
     setSelectedFile(e.target.files[0]);
-
       // 이미지 미리보기를 위한 임시 URL 생성 및 설정
       const imageObjectURL = URL.createObjectURL(e.target.files[0]);
       setImage(imageObjectURL);
-
-    
-      
   };
+  // const floatModal = async() =>{
+  //   try{
+  //     const token = localStorage.getItem("token");
+  //     const response = await axios.get("http://127.0.0.1:8000/users/get_username/",{
+  //       headers:{
+  //         Authorization: `Token ${token}`,
+  //      },
+  //     })
+  //   }
+  //   .then((response)=>
+  //     const user=response.data;
 
+  //     )
+  //   handlePostRequest();
+  // }
   //서버로 데이터 전송
   const handlePostRequest = async () => {
     // showModal();
@@ -260,12 +269,8 @@ const Posting = () => {
       formData.append("alert", alert);
       formData.append('image1',selectedFile)
   }
-
   
     // formData.append("hastags", null);
-
-    
-
     try {
       const response=axios.post(
         "http://127.0.0.1:8000/posts/",
@@ -282,6 +287,8 @@ const Posting = () => {
 
       // POST 요청이 성공한 경우의 처리
       console.log("POST 요청 성공:", response.data);
+      //handlePostSuccess(response.data);
+      setModalOpen(true); 
       // 추가적인 로직 또는 상태 업데이트 등을 처리할 수 있습니다.
     } catch (error) {
       // POST 요청이 실패한 경우의 처리
@@ -507,7 +514,12 @@ const Posting = () => {
             <Link>미리 보기</Link>
           </button>
           <input type="button" value="작성 완료" onClick={handlePostRequest} />
-          {/* {modalOpen && <PostingModal setModalOpen={setModalOpen} />} */}
+          {modalOpen && (
+            <PostingModal 
+              isOpen={modalOpen}
+              onClose={() => setModalOpen(false)}
+            />
+          )}
         </SubmitDiv>
       </form>
     </>

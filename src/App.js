@@ -121,7 +121,7 @@ function App() {
         <Route path="/Introduction" element={<Introduction />}></Route>
         <Route path="/Activity" element={<Activity />}></Route>
         <Route path="/Notice" element={<Notice />}>
-          <Route path="/Notice/Notices" element={<Notices />}></Route>
+          {/* <Route path="/Notice/Notices" element={<Notices />}></Route> */}
           <Route path="/Notice/Event" element={<Event />}></Route>
         </Route>
         <Route path="/Guidance" element={<Guidance />}>
