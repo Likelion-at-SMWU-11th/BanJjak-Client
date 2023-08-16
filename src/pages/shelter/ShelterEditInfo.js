@@ -15,7 +15,6 @@ const ShelterEditInfo = () => {
   };
 
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const [nickname, setNickname] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
 
@@ -46,7 +45,7 @@ const ShelterEditInfo = () => {
   }, []);
 
   const handleNicknameChange = async () => {
-    console.log(nickname);
+    //console.log(nickname);
     try {
       const token = localStorage.getItem("token");
       const response = await axios.put(
@@ -59,7 +58,7 @@ const ShelterEditInfo = () => {
           },
         }
       );
-      console.log("!!");
+      //console.log("!!");
       console.log("닉네임 변경 성공:", response.data);
       // 수정 성공 후의 로직 추가
     } catch (error) {
