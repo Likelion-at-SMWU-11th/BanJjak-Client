@@ -1,15 +1,23 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../../css/EditInfo.css";
-import Banner from "../../components/Banner";
 
-function EditInfo() {
-  const [newprofile, setNewProfile] = useState(null);
-  const [profileImage, setProfileImage] = useState(null);
+const DivCenter = {
+  paddingLeft: "5%",
+};
+
+const ShelterEditInfo = () => {
+  const navigate = useNavigate();
+  const handleExitClick = () => {
+    // Login 페이지로 이동
+    navigate("/HomeShelter");
+  };
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [nickname, setNickname] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
-  const [email, setEmail] = useState("");
 
   useEffect(() => {
     // 페이지가 처음 랜더링될 때 기존 정보를 가져오는 요청
@@ -17,7 +25,7 @@ function EditInfo() {
       try {
         const token = localStorage.getItem("token");
         const response = await axios.get(
-          "http://127.0.0.1:8000/users/getUserInfo/",
+          "http://127.0.0.1:8000/users/changemanagerinfo/",
           {
             headers: {
               Authorization: `Token ${token}`,
@@ -25,10 +33,7 @@ function EditInfo() {
           }
         );
         const userInfo = response.data;
-
-        //const updatedImage = URL.createObjectURL(userInfo.profile);
-        setProfileImage(userInfo.profile);
-        //console.log("profile " + userInfo.profile);
+        //console.log(userInfo);
         setEmail(userInfo.email);
         setNickname(userInfo.username);
         setPhoneNumber(userInfo.phone);
@@ -40,37 +45,12 @@ function EditInfo() {
     fetchUserInfo();
   }, []);
 
-  const handleProfileImageUpload = async () => {
-    try {
-      const token = localStorage.getItem("token");
-      const formData = new FormData();
-      formData.append("profile", newprofile);
-      console.log("프로필 변경 : " + formData.get("profile"));
-
-      const response = await axios.put(
-        "http://127.0.0.1:8000/users/userChangeProfile/",
-        formData,
-        {
-          headers: {
-            Authorization: `Token ${token}`,
-            "Content-Type": "multipart/form-data", // 이미지 업로드를 위한 헤더
-          },
-        }
-      );
-      console.log("프로필 사진 업로드 성공:", response.data);
-      // 업로드 성공 후의 로직 추가
-    } catch (error) {
-      console.error("프로필 사진 업로드 실패:", error);
-      // 에러 처리 로직 추가
-    }
-  };
-
   const handleNicknameChange = async () => {
     console.log(nickname);
     try {
       const token = localStorage.getItem("token");
       const response = await axios.put(
-        "http://127.0.0.1:8000/users/changeuserinfo/",
+        "http://127.0.0.1:8000/users/changemanagerinfo/",
         { username: nickname },
         {
           headers: {
@@ -79,7 +59,7 @@ function EditInfo() {
           },
         }
       );
-      //console.log("!!");
+      console.log("!!");
       console.log("닉네임 변경 성공:", response.data);
       // 수정 성공 후의 로직 추가
     } catch (error) {
@@ -87,11 +67,12 @@ function EditInfo() {
       // 에러 처리 로직 추가
     }
   };
+
   const handlePhoneNumberChange = async () => {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.put(
-        "http://127.0.0.1:8000/users/changeuserinfo/",
+        "http://127.0.0.1:8000/users/changemanagerinfo/",
         { phone: phoneNumber },
         {
           headers: {
@@ -110,32 +91,49 @@ function EditInfo() {
 
   return (
     <>
-      <Banner />
-
-      <div id="ei_editphoto">
+      <div id="TopBar">
         <img
-          src={
-            profileImage
-              ? profileImage
-              : process.env.PUBLIC_URL + "/assets/icons/editphoto.png"
-          }
-          id="ei_photo1"
-          alt="editphoto"
+          src={process.env.PUBLIC_URL + "/assets/icons/exit.png"}
+          alt="exit"
+          id="exitBtn"
+          className="invisibleContent"
         />
-        <input
-          type="file"
-          onChange={(e) => setNewProfile(e.target.files[0])}
-          accept="image/*"
+        <span>내 정보 수정</span>
+        <img
+          src={process.env.PUBLIC_URL + "/assets/icons/exit.png"}
+          alt="exit"
+          id="exitBtn"
+          onClick={handleExitClick}
         />
-        <button onClick={handleProfileImageUpload}>프로필 사진 업로드</button>
+      </div>
+      <div style={DivCenter}>
+        <div id="ei_email">
+          <p id="ei_p1_2">이메일</p>
+          <form>
+            <input
+              type="email"
+              id="ei_form2"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              disabled
+            />
+          </form>
+          <p className="detailDescription">이메일은 변경이 불가능합니다.</p>
+        </div>
+
+        <div id="ei_password">
+          <p id="ei_p1_2">비밀번호</p>
+          <form>
+            <Link to="/HomeShelter/ShelterEditInfo/ShelterEditPW">
+              <button id="ei_btn2">변경하러 가기</button>
+            </Link>
+          </form>
+        </div>
       </div>
 
       <div id="ei_div">
         <div id="ei_nickname">
-          <p id="ei_p1">닉네임</p>
-          <p id="ei_p2">
-            * 닉네임을 설정하면 <span>30일간 변경할 수 없습니다.</span>
-          </p>
+          <p id="ei_p1_2">닉네임</p>
           <form>
             <input
               type="text"
@@ -147,33 +145,15 @@ function EditInfo() {
               변경하기
             </button>
           </form>
-        </div>
-
-        <div id="ei_email">
-          <p id="ei_p1">이메일</p>
-          <p id="ei_p2">* 이메일은 변경이 불가능합니다.</p>
-          <form>
-            <input
-              type="email"
-              id="ei_form2"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              disabled
-            />
-          </form>
-        </div>
-
-        <div id="ei_password">
-          <p id="ei_p1">비밀번호</p>
-          <form>
-            <Link to="/MyPage/EditInfo/EditPW">
-              <button id="ei_btn2">변경하러 가기</button>
-            </Link>
-          </form>
+          <p className="detailDescription">
+            보호소명은 사이트에서 변경이 불가합니다.
+            <br />
+            반짝 고객센터(02-710-1234)로 연결 바랍니다.
+          </p>
         </div>
 
         <div id="ei_phonenum">
-          <p id="ei_p1">연락처</p>
+          <p id="ei_p1_2">연락처</p>
           <form>
             <input
               type="tel"
@@ -189,6 +169,6 @@ function EditInfo() {
       </div>
     </>
   );
-}
+};
 
-export default EditInfo;
+export default ShelterEditInfo;
