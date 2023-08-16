@@ -189,6 +189,11 @@ const Posting = () => {
     sex: useRef(),
     neutered: useRef(),
   };
+
+  const [animalValue, setAnimalValue] = useState(""); //동물 상태
+  const [sexValue, setSexValue] = useState(""); //성별 상태
+  const [neuteredValue, setNeuteredValue] = useState(""); //중성화 상태
+
   const [name, setName] = useState(""); // 동물 이름 상태
   const [species, setSpecies] = useState(""); // 종 상태
   const [weight, setWeight] = useState(""); // 몸무게 상태
@@ -203,7 +208,7 @@ const Posting = () => {
   const sexList = ["수컷", "암컷", "미확인"];
   const neuteredList = ["중성화 O", "중성화 X", "미확인"];
 
-  const [isOpen, setIsOpen] = useDetectClose(dropDownRefs.animal, false);
+  const [isOpen1, setIsOpen1] = useDetectClose(dropDownRefs.animal, false);
   const [isOpen2, setIsOpen2] = useDetectClose(dropDownRefs.sex, false);
   const [isOpen3, setIsOpen3] = useDetectClose(dropDownRefs.neutered, false);
 
@@ -346,20 +351,20 @@ const Posting = () => {
           <div ref={dropDownRefs.animal} id="dropdownDiv">
             <label>동물</label>
             <DropdownInput
-              onClick={() => setIsOpen(!isOpen)}
+              onClick={() => setIsOpen1(!isOpen1)}
               type="input"
-              value={animalValue || (isOpen ? animalValue : "선택")}
+              value={animalValue || (isOpen1? "선택": animalValue)}
               onSelect={(selectedValue) => setAnimalValue(selectedValue)}
             />
-            {isOpen && (
+            {isOpen1 && (
               <ul>
                 {animalList.map((value, index) => (
                   <Dropdown
                     key={index}
-                    value={value}
-                    setIsOpen={setIsOpen}
+                    value={value}  
+                    setIsOpen1={setIsOpen1}
                     setAnimalValue={setAnimalValue}
-                    isOpen={isOpen}
+                    isOpen1={isOpen1}
                   />
                 ))}
               </ul>
@@ -481,3 +486,4 @@ const Posting = () => {
 };
 
 export default Posting;
+
