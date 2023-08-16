@@ -43,6 +43,8 @@ function Protection() {
 
         <GreenBtn>동물</GreenBtn>
         <SpeciesBtn>모든 동물</SpeciesBtn><br/>
+
+        <div style={{overflowX : 'hidden', overflowY: 'auto', height :'620px'}}>
         <p id="count">n마리</p>
         <img src={process.env.PUBLIC_URL + '/assets/icons/floatingwrite.png'} id="floatingwrite" alt="floatingwrite"/>
 
@@ -50,7 +52,7 @@ function Protection() {
         <div id="protectlist">
         <ProtectList/>
         <ProtectList/>
-        </div>
+        </div></div>
         </>
     );
 }

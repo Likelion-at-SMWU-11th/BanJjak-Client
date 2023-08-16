@@ -20,7 +20,7 @@ const Banner = () => {
         <>
         <div id="BannerBar">
             <Link to="/MyPage"><img src={process.env.PUBLIC_URL + '/assets/icons/my.png'} id="my" alt="my"/></Link>
-            <img src={process.env.PUBLIC_URL + '/assets/icons/logo2.png'} id="logo2" alt="logo2"/>
+            <Link to="/Home"><img src={process.env.PUBLIC_URL + '/assets/icons/logo2.png'} id="logo2" alt="logo2"/></Link>
             <img src={process.env.PUBLIC_URL + '/assets/icons/logout2.png'} id="logout2" alt="logout"/>           
         </div>
         <div id="BannerBtn">

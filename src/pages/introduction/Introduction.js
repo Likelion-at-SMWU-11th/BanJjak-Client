@@ -2,11 +2,6 @@ import React from 'react';
 import '../../css/Introduction.css';
 import Banner from '../../components/Banner';
 
-const ScrollDiv={
-    height:"690px",
-    overflow:"auto"
-}
-
 function Introduction(props) {
     return (
         <div>
@@ -15,7 +10,7 @@ function Introduction(props) {
                 <p>반짝 소개</p>
             </div>
 
-            <div style={ScrollDiv}>
+            <div style={{overflowX : 'hidden', overflowY: 'auto', height :'665px'}}>
                 <img src={process.env.PUBLIC_URL + '/assets/icons/intro.png'} id="i_intro" alt="i_intro"/>
                 <p id="i_p1">ABOUT BANJJAK</p>
             

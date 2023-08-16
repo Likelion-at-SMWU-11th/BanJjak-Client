@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Banner from '../../components/Banner';
+//import SwipeScroll from '../../components/SwipeScroll';
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import HomePreview from '../../components/HomePreview';
 import '../../css/Home.css';
 
@@ -17,7 +20,7 @@ function Home() {
     useEffect(() => {
         const bannerInterval = setInterval(() => {
             setCurrentBannerIndex((prevIndex) => (prevIndex + 1) % bannerImages.length);
-        }, 3000); // 3초마다 배너 변경
+        }, 2500); // 2.5초마다 배너 변경
 
         const timeInterval = setInterval(() => {
             setCurrentDateTime(new Date());
@@ -32,28 +35,21 @@ function Home() {
     const formattedDate = `${currentDateTime.getFullYear()}.${String(currentDateTime.getMonth() + 1).padStart(2, '0')}.${String(currentDateTime.getDate()).padStart(2, '0')}`;
     const formattedTime = `${String(currentDateTime.getHours()).padStart(2, '0')}:${String(currentDateTime.getMinutes()).padStart(2, '0')}:${String(currentDateTime.getSeconds()).padStart(2, '0')}`;
 
-    const sliderStyle = {
-        display: 'flex',
-        width: `${bannerImages.length * 100}%`,
-        transform: `translateX(-${currentBannerIndex * (100 / bannerImages.length)}%)`,
-        transition: 'transform 0.5s ease-in-out'
-    };
-
     return (
         <>
-        <div id="page">
         <Banner/>
 
         <div id="homebanner">
-            <div id="slider" style={sliderStyle}>
+            <Carousel showThumbs={false} showStatus={false} emulateTouch={true} selectedItem={currentBannerIndex}>
                 {bannerImages.map((image, index) => (
-                    <img
-                        key={index}
-                        src={process.env.PUBLIC_URL + `/assets/icons/${image}`}
-                        alt={`homebanner${index + 1}`}
-                    />
+                    <div key={index}>
+                        <img
+                            src={process.env.PUBLIC_URL + `/assets/icons/${image}`}
+                            alt={`homebanner${index + 1}`}
+                        />
+                    </div>
                 ))}
-            </div>
+            </Carousel>
         </div>
 
         <div id="homebox">
@@ -78,8 +74,14 @@ function Home() {
             <Link to="/Review" style={{ textDecoration: 'none' }}><p id="viewmore1">더보기</p></Link>
         </div>    
         <div id="preview">
-            <HomePreview/>
-            <HomePreview/>
+            <Carousel showThumbs={false} showStatus={false} infiniteLoop={true} emulateTouch={true} showIndicators={false}>
+                <div>
+                    <HomePreview/>
+                </div>
+                <div>
+                    <HomePreview/>
+                </div>
+            </Carousel>
         </div>
 
         <div id="gotoprotect">
@@ -87,9 +89,14 @@ function Home() {
             <Link to="/Protection" style={{ textDecoration: 'none' }}><p id="viewmore2">더보기</p></Link>
         </div>   
         <div id="preview">
-            <HomePreview/>
-
-        </div>
+        <Carousel showThumbs={false} showStatus={false} infiniteLoop={true} emulateTouch={true} showIndicators={false}>
+                <div>
+                    <HomePreview/>
+                </div>
+                <div>
+                    <HomePreview/>
+                </div>
+        </Carousel>
         </div>
         </div>
         </>       
