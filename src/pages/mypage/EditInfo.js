@@ -76,7 +76,7 @@ function EditInfo() {
   };
 
   const handleNicknameChange = async () => {
-    console.log(nickname);
+    //console.log(nickname);
     try {
       const token = localStorage.getItem("token");
       const response = await axios.put(
