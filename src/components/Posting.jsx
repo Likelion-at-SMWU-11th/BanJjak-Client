@@ -191,7 +191,7 @@ const Posting = () => {
   };
 
   const [name, setName] = useState(""); // 동물 이름 상태
-  const [species, setSpecies] = useState(""); // 종 상태
+  const [kind, setKind] = useState(""); // 종 상태
   const [weight, setWeight] = useState(""); // 몸무게 상태
   const [age, setAge] = useState(""); // 나이 상태
   const [animalValue, setAnimalValue] = useState(""); //동물 상태
@@ -203,7 +203,7 @@ const Posting = () => {
 
   const animalList = ["개", "고양이", "기타"];
   const sexList = ["수컷", "암컷", "미확인"];
-  const neuteredList = ["중성화 O", "중성화 X", "미확인"];
+  const neuteredList = ["중성화O", "중성화X", "미확인"];
 
   const [isOpen1, setIsOpen1] = useDetectClose(dropDownRefs.animal, false);
   const [isOpen2, setIsOpen2] = useDetectClose(dropDownRefs.sex, false);
@@ -218,63 +218,17 @@ const Posting = () => {
 
   //이미지 업로드 관련
   // const [images, setImages] = useState([null, null, null]);
-  const [imageSrc, setImage] = useState(null);
+  const [imageSrc, setImage] = useState(null);  //이미지 태그 소스를 위한 props
   const token = localStorage.getItem("token"); // 저장된 토큰 가져오기
-    const formData = new FormData(); // FormData 객체 생성
+  const formData = new FormData(); // FormData 객체 생성
+
 
   const handleImageUpload = async (event) => {
     const selectedFile = event.target.files[0];
+
     if (selectedFile) {
-      const reader = new FileReader();
-      
-      reader.onload = async (e) => {
-        const binaryData = e.target.result;
-        
-        try {
-          const response = await axios.post(
-            "http://127.0.0.1:8000/posts/",
-            binaryData, // 바이너리 데이터로 전송
-            {
-              headers: {
-                Authorization: `Token ${token}`,
-                "Content-Type": "application/octet-stream", // 바이너리 데이터 타입 설정
-              },
-            }
-          );
-  
-          console.log("POST 요청 성공:", response.data);
-        } catch (error) {
-          console.error("POST 요청 실패:", error);
-        }
-      };
-      
-      reader.readAsArrayBuffer(selectedFile);
-    }
-    
-    // console.log(selectedFile)
-    // console.log(formData)
-
-    // 이미지 데이터를 FormData에 추가
-    // formData.append(`image${index + 1}`, selectedFile);
-    // console.log(`image${index+1}: `, selectedFile);
-
-    // if (selectedFile) {
-    //   const updatedImages = [...images];
-    //   updatedImages[index] = selectedFile;
-    //   setImages(updatedImages);
-
-    //   // 이미지 미리보기를 위한 임시 URL 생성 및 설정
-    //   const imageObjectURL = URL.createObjectURL(selectedFile);
-    //   const updatedImagesWithObjectURLs = [...images];
-    //   updatedImagesWithObjectURLs[index] = imageObjectURL;
-    //   setImages(updatedImagesWithObjectURLs);
-
-    // }
-
-    //이미지 미리보기를 위한 임시 URL 생성 및 설정
-    if (selectedFile) {
-      const updatedImages = selectedFile;
-      setImage(updatedImages);
+      const updatedImage = selectedFile;
+      setImage(updatedImage);
 
       // 이미지 미리보기를 위한 임시 URL 생성 및 설정
       const imageObjectURL = URL.createObjectURL(selectedFile);
@@ -295,23 +249,20 @@ const Posting = () => {
 
     // 다른 데이터를 FormData에 추가
     // formData.append("name", name);
-    // if (name && animalValue && species && weight && age && sexValue 
-    //   && neuteredValue && content && alert) 
-      // if(name){
-      // formData.append("name", name);
-      // formData.append("kind", species);
-      // formData.append("weight", weight);
-      // formData.append("age", age);
-      // formData.append("gender", sexValue);
-      // formData.append("is_neutered", neuteredValue);
-      // formData.append("content", content);
-      // formData.append("alert", alert);
-  // }
-
-  if (species){
-    formData.append("kind", species);
+    if (name && animalValue && kind && weight && age && sexValue 
+      && neuteredValue && content && alert) 
+      if(name){
+      formData.append("name", name);
+      formData.append("kind", kind);
+      formData.append("weight", weight);
+      formData.append("age", age);
+      formData.append("gender", sexValue);
+      formData.append("is_neutered", neuteredValue);
+      formData.append("content", content);
+      formData.append("alert", alert);
   }
-    
+
+  
     // formData.append("hastags", null);
 
     
@@ -450,8 +401,8 @@ const Posting = () => {
             <label>종</label>
             <input
               type="text"
-              value={species}
-              onChange={(e) => setSpecies(e.target.value)}
+              value={kind}
+              onChange={(e) => setKind(e.target.value)}
               placeholder="미확인"
             />
           </div>
