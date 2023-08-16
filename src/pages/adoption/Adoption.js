@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../../css/Adoption.css';
+import FilteringModal from '../modal/FilteringModal'
 import styled from 'styled-components';
-import Banner from '../../components/Banner';
+import Banner, {BtnList} from '../../components/Banner';
 import ShelterAdopt from './ShelterAdopt';
 import PersonalAdopt from './PersonalAdopt';
+
+
 
 const GreenBtn = styled.button`
     color: white;
@@ -18,6 +21,7 @@ const GreenBtn = styled.button`
     text-align : center;
     font-size : 15px;
     font-weight : bold;
+    z-index : 1100;
 `;
 
 const SpeciesBtn = styled.button`
@@ -32,10 +36,28 @@ const SpeciesBtn = styled.button`
     text-align : center;
     font-size : 15px;
     font-weight : bold;
+    z-index: 1000;
 `;
 
 
 function Adoption(props) {
+
+    const [modalOpen, setModalOpen] = useState(false);
+    const [selectedSpecies, setSelectedSpecies] = useState("");
+
+    const openModal = () => {
+        setModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setModalOpen(false);
+    };
+
+    const handleSpeciesChange = (species) => {
+        setSelectedSpecies(species);
+    };
+
+
     const [isShelterAdopt, setIsShelterAdopt] = useState(true);
 
     const ShelterAdoptStyle = {
@@ -56,10 +78,9 @@ function Adoption(props) {
         }
     };
     
-    
     return (
         <>
-        <Banner/>
+        <Banner />
 
         <Link to="/Adoption/ShelterAdopt">
         <div id="shelter"
@@ -75,8 +96,9 @@ function Adoption(props) {
             <p>임시보호</p>
         </div></Link><br/>
         
-        <GreenBtn>동물</GreenBtn>
-        <SpeciesBtn>모든 동물</SpeciesBtn><br/>
+        <GreenBtn onClick={openModal}>동물</GreenBtn>
+        <FilteringModal isOpen={modalOpen} onClose={closeModal} id="filteringmodal"/>
+        <SpeciesBtn>{selectedSpecies || "모든 동물"}</SpeciesBtn><br/>
         <div style={{overflowX : 'hidden', overflowY: 'auto', height :'620px'}}>
         <p id="count">n마리</p><br/>
 

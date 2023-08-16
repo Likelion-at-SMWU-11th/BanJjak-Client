@@ -1,11 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../../css/Introduction.css';
 import Banner from '../../components/Banner';
 
 function Introduction(props) {
+    
     return (
         <div>
-            <Banner/>
+            <Banner />
+             {/* 반짝소개 버튼 */}
+        
             <div id="i_title">
                 <p>반짝 소개</p>
             </div>

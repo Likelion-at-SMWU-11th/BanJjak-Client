@@ -190,10 +190,6 @@ const Posting = () => {
     neutered: useRef(),
   };
 
-  const [animalValue, setAnimalValue] = useState(""); //동물 상태
-  const [sexValue, setSexValue] = useState(""); //성별 상태
-  const [neuteredValue, setNeuteredValue] = useState(""); //중성화 상태
-
   const [name, setName] = useState(""); // 동물 이름 상태
   const [species, setSpecies] = useState(""); // 종 상태
   const [weight, setWeight] = useState(""); // 몸무게 상태
