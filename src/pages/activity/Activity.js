@@ -6,10 +6,12 @@ function Activity(props) {
     return (
         <div>
             <Banner/>
-
+            
             <div id="ac_title">
                 <p>반짝 활동</p>
             </div>
+            
+            <div style={{overflowX : 'hidden', overflowY: 'auto', height :'665px'}}>
 
             <img src={process.env.PUBLIC_URL + '/assets/icons/intro.png'} id="ac_intro" alt="ac_intro"/>
             <p id="ac_p1">BANJJAK ACTIVITIES</p>
@@ -43,7 +45,7 @@ function Activity(props) {
                 <p>© 반짝 제공/데이터 출처 농림축산식품부 ㅣ Website made by banjjak.com</p>
                 <p>©Banjjakteam all right reserved.</p>
             </div>
-        </div>
+        </div></div>
     );
 }
 

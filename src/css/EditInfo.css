@@ -87,14 +87,15 @@
 }
 
 #ei_btn2 {
-  width: 340px;
-  height: 40px;
-  border: none;
-  border-radius: 5px;
-  color: #ffffff;
-  font-weight: bold;
-  background-color: #00ac78;
-  margin-top: 10px;
+    width : 340px;
+    height : 40px;
+    border : none;
+    border-radius : 5px;
+    color : #FFFFFF;
+    font-weight : bold;
+    background-color : #00AC78;
+    margin-top : 10px;
+
 }
 
 #ei_btn3 {

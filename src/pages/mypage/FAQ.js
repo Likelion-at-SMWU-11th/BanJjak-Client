@@ -12,6 +12,7 @@ function FAQ() {
             <p>자주 묻는 질문</p>
             </div>
 
+            <div style={{overflowX : 'hidden', overflowY: 'auto', height :'670px'}}>
             <Question contents="유기동물 입양 방법을 알려주세요!"/>
             <Question contents="내가 잃어버린 동물이 입양되었다면 어떻게 하나요?"/>
             <Question contents="유기동물 입양은 무료인가요?"/>
@@ -45,7 +46,7 @@ function FAQ() {
                     <img src={process.env.PUBLIC_URL + '/assets/icons/more.png'} id="more2" alt="more"/>
                     </Link>
                 </div>
-            </div>
+            </div></div>
         </>
     );
 }

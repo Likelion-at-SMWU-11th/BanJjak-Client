@@ -15,9 +15,9 @@
 
 #temporary { /*임시보호 div태그*/
     display : inline-block;
-    margin : 0px;
+    margin : 1px;
     width : 190px;
-    padding : 16px 0px;
+    padding : 15px 0px;
     text-align : center;
     font-size : 15px;
     font-weight : bold;
@@ -31,6 +31,9 @@
     left : 78%;
 }
 
+#Modal {
+    position : fixed;
+}
 
 
 /*AdoptList.jsx 컴포넌트에서 사용되는 Css*/

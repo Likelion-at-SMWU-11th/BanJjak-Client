@@ -10,7 +10,6 @@ function EditInfo() {
   const [nickname, setNickname] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
 
   useEffect(() => {
     // 페이지가 처음 랜더링될 때 기존 정보를 가져오는 요청
@@ -161,17 +160,12 @@ function EditInfo() {
         </div>
 
         <div id="ei_password">
-          <p id="ei_p1">비밀번호</p>
-          <form>
-            <p
-              id="ei_form3"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            ></p>
-            <Link to="/MyPage/EditInfo/EditPW">
-              <button id="ei_btn2">변경하러 가기</button>
-            </Link>
-          </form>
+            <p id="ei_p1">비밀번호</p>
+            <form>
+                <Link to="/MyPage/EditInfo/EditPW">
+                <button id="ei_btn2">변경하러 가기</button>
+                </Link>
+            </form>
         </div>
 
         <div id="ei_phonenum">
