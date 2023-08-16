@@ -75,7 +75,9 @@ const HomeShelter = () => {
         <HomeShelterBtn2>
           <Link to="/HomeShelter/ShelterPosting">입양 공고글 쓰기</Link>
         </HomeShelterBtn2>
-        <HomeShelterBtn>내 정보 수정</HomeShelterBtn>
+        <HomeShelterBtn>
+          <Link to="/HomeShelter/ShelterEditInfo">내 정보 수정</Link>
+        </HomeShelterBtn>
       </div>
       <div id="telInfo">
         <p>문의</p>
