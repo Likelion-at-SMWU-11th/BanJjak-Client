@@ -97,9 +97,14 @@ function Adoption(props) {
         </div></Link><br/>
         
         <GreenBtn onClick={openModal}>동물</GreenBtn>
-        <FilteringModal isOpen={modalOpen} onClose={closeModal} id="filteringmodal"/>
         <SpeciesBtn>{selectedSpecies || "모든 동물"}</SpeciesBtn><br/>
-        <div style={{overflowX : 'hidden', overflowY: 'auto', height :'620px'}}>
+
+        {/* Correct placement of the FilteringModal */}
+        {modalOpen && (
+            <FilteringModal isOpen={modalOpen} onClose={closeModal} />
+        )}
+
+        <div style={{ overflowX: 'hidden', overflowY: 'auto', height: '620px' }}>
         <p id="count">n마리</p><br/>
 
         
