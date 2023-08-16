@@ -74,7 +74,7 @@ function AdoptDetail(props) {
 
         <div>
         <WhiteBtn>공유하기</WhiteBtn>
-        <GreenBtn>입양 문의하기</GreenBtn>
+        <Link to="/"><GreenBtn>입양 문의하기</GreenBtn></Link>
         </div>
         </>
     );

@@ -45,6 +45,10 @@ import WriteProtection from "./pages/writing/WriteProtection";
 import WriteReview from "./pages/writing/WriteReview";
 import WriteMissing from "./pages/writing/WriteMissing";
 import WriteSeen from "./pages/writing/WriteSeen";
+import InquiryModal from "./pages/modal/InquiryModal";
+import GuidanceModal from "./pages/modal/GuidanceModal";
+import MailModal from "./pages/modal/MailModal";
+import AgreeModal from "./pages/modal/AgreeModal";
 
 function App() {
   return (
@@ -103,6 +107,10 @@ function App() {
         <Route path="/MyPage/MyPost" element={<MyPost/>}></Route>
         <Route path="/MyPage/Liked" element={<Liked/>}></Route>
       
+        <Route path="/Adoption/AdoptDetail/InquiryModal" element={<InquiryModal/>}></Route>
+        <Route path="/Adoption/AdoptDetail/GuidanceModal" element={<GuidanceModal/>}></Route>
+        <Route path="/MyPage/FAQ/MailModal" element={<MailModal/>}></Route>
+        <Route path="/Guidance/Agreement/AgreeModal" element={<AgreeModal/>}></Route>
       </Routes>
     </div>
   );
