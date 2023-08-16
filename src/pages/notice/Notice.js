@@ -2,38 +2,39 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../../css/Notice.css';
 import Banner from '../../components/Banner';
-import Notices from './Notices';
+import NoticeList from './NoticeList';
 import Event from './Event';
+import N1 from './noticepage/N1';
 
 
 function Notice(props) {
-    const [isNotices, setIsNotices] = useState(true);
+    const [isNoticeList, setIsNoticeList] = useState(true);
 
-    const NoticesStyle = {
-        color: isNotices ? '#00AC78' : '#828282', 
-        borderBottom: isNotices ? '1px solid #00AC78' : '1px solid #ECECEC', 
-        cursor: isNotices ? 'default' : 'pointer', 
+    const NoticeListStyle = {
+        color: isNoticeList ? '#00AC78' : '#828282', 
+        borderBottom: isNoticeList ? '1px solid #00AC78' : '1px solid #ECECEC', 
+        cursor: isNoticeList ? 'default' : 'pointer', 
     };
 
     const EventStyle = {
-        color: isNotices ? '#828282' : '#00AC78', 
-        borderBottom: isNotices ? '1px solid #ECECEC' : '1px solid #00AC78',
-        cursor: isNotices ? 'pointer' : 'default', 
+        color: isNoticeList ? '#828282' : '#00AC78', 
+        borderBottom: isNoticeList ? '1px solid #ECECEC' : '1px solid #00AC78',
+        cursor: isNoticeList ? 'pointer' : 'default', 
     };
 
     const handleNoticeTypeChange = () => {
-        if (!isNotices) {
-            setIsNotices(true);
+        if (!isNoticeList) {
+            setIsNoticeList(true);
         }
     };
 
     return (
         <>
         <Banner/>
-
-        <Link to="/Notice/Notices">
+        
+        <Link to="/Notice/NoticeList">
         <div id="n_notice"
-            style={NoticesStyle}
+            style={NoticeListStyle}
             onClick={handleNoticeTypeChange}>
             <p>공지사항</p>
         </div></Link>
@@ -41,14 +42,16 @@ function Notice(props) {
         <Link to="/Notice/Event">
         <div id="n_event"
             style={EventStyle}
-            onClick={() => setIsNotices(false)}>
+            onClick={() => setIsNoticeList(false)}>
             <p>이벤트</p>
         </div></Link><br/>
+        
+        <div style={{overflowX : 'hidden', overflowY: 'auto', height :'665px'}}>
 
         <div>
-            {isNotices && <Notices/>}
-            {!isNotices && <Event/>}
-        </div>
+            {isNoticeList && <NoticeList/>}
+            {!isNoticeList && <Event/>}
+        </div></div>
         </>
     );
 }

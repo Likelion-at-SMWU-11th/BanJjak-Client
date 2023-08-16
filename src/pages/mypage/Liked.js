@@ -9,6 +9,7 @@ function Liked() {
 
         <p id="l_title">나의 관심동물</p>
 
+        <div style={{overflowX : 'hidden', overflowY: 'auto', height :'670px'}}>
         <div id="l_adoption">
                 <p>입양하기</p>
                 <hr id="l_hr"/>
@@ -28,7 +29,7 @@ function Liked() {
                 <p>입양후기</p>
                 <hr id="l_hr"/>
             </div>
-
+        </div>
         </>
     );
 }

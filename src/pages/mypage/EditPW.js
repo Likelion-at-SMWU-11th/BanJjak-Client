@@ -1,16 +1,32 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import '../../css/EditInfo.css';
 
 function EditPW() {
+    const navigate = useNavigate();
+
+    const handleExitClick = () => {
+        // EditInfo 페이지로 이동
+        navigate("/Mypage/EditInfo");
+    };
+
     return (
         <>
-        <div id="ep_bar">
-            <h2>비밀번호 변경</h2>
-            <Link to="/MyPage/EditInfo">
-            <img src={process.env.PUBLIC_URL + '/assets/icons/exit.png'} id="ep_exit" alt="exit"/>
-            </Link>
-        </div>
+        <div id="TopBar">
+            <img
+            src={process.env.PUBLIC_URL + "/assets/icons/exit.png"}
+            alt="exit"
+             id="exitBtn"
+            class="invisibleContent"
+        />
+        <span>비밀번호 변경</span>
+        <img
+          src={process.env.PUBLIC_URL + "/assets/icons/exit.png"}
+          alt="exit"
+          id="exitBtn"
+          onClick={handleExitClick}
+        />
+      </div>
 
         <div id="ep_div">
         <div id="ep_p1">

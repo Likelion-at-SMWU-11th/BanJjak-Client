@@ -7,6 +7,7 @@ function MyPost() {
         <>
             <Banner/>
             <p id="mp_title">내가 쓴 글</p>
+            <div style={{overflowX : 'hidden', overflowY: 'auto', height :'670px'}}>
 
             <div id="mp_adoption">
                 <p>입양하기</p>
@@ -26,7 +27,7 @@ function MyPost() {
             <div id="mp_review">
                 <p>입양후기</p>
                 <hr id="mp_hr"/>
-            </div>
+            </div></div>
         </>
     );
 }

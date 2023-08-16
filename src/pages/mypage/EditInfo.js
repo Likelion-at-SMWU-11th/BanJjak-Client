@@ -33,7 +33,6 @@ function EditInfo() {
         <div id="ei_password">
             <p id="ei_p1">비밀번호</p>
             <form>
-                <p id="ei_form3"></p>
                 <Link to="/MyPage/EditInfo/EditPW">
                 <button id="ei_btn2">변경하러 가기</button>
                 </Link>

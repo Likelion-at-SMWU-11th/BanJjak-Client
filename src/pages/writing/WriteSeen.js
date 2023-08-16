@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import '../../css/Writing.css';
 
 function WriteSeen(props) {
@@ -7,7 +7,7 @@ function WriteSeen(props) {
 
     const handleExitClick = () => {
         // Missing 페이지로 이동
-        navigate("/Missing");
+        navigate("/Missing/Seen");
     };
     return (
         <div>

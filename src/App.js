@@ -5,7 +5,8 @@ import Home from "./pages/home/Home";
 import Introduction from "./pages/introduction/Introduction";
 import Activity from "./pages/activity/Activity";
 import Notice from "./pages/notice/Notice";
-import Notices from "./pages/notice/Notices";
+import NoticeList from "./pages/notice/NoticeList";
+import N1 from "./pages/notice/noticepage/N1";
 import Event from "./pages/notice/Event";
 import Guidance from "./pages/guidance/Guidance";
 import SelfCheck from "./pages/guidance/SelfCheck";
@@ -72,8 +73,8 @@ function App() {
           <Route path="/Missing/Seen" element={<Seen/>}></Route>
         </Route>
         <Route path="/Missing/MissingDetail" element={<MissingDetail />}></Route>
-        <Route path="/Missing/WriteMissing" element={<WriteMissing />}></Route>
-        <Route path="/Missing/WriteSeen" element={<WriteSeen />}></Route>
+        <Route path="/Missing/Missed/WriteMissing" element={<WriteMissing />}></Route>
+        <Route path="/Missing/Seen/WriteSeen" element={<WriteSeen />}></Route>
         <Route path="/Protection" element={<Protection />}></Route>
         <Route path="/Protection/ProtectDetail"element={<ProtectDetail />}></Route>
         <Route path="/Protection/WriteProtection" element={<WriteProtection/>}></Route>
@@ -85,10 +86,14 @@ function App() {
         <Route path="/Review/WriteReview" element={<WriteReview />}></Route>
         <Route path="/Introduction" element={<Introduction/>}></Route>
         <Route path="/Activity" element={<Activity/>}></Route>
+
         <Route path="/Notice" element={<Notice/>}>
-          <Route path="/Notice/Notices" element={<Notices/>}></Route>
-          <Route path="/Notice/Event" element={<Event/>}></Route>
+          <Route path="/Notice/NoticeList" element={<NoticeList/>}></Route>
+          <Route path="/Notice/NoticeList/N1" element={<N1/>}></Route>
+          <Route path="/Notice/Event" element={<Event/>}>
+          </Route>
         </Route>
+
         <Route path="/Guidance" element={<Guidance/>}>
           <Route path="/Guidance/SelfCheck" element={<SelfCheck/>}></Route>
           <Route path="/Guidance/Agreement" element={<Agreement/>}></Route>

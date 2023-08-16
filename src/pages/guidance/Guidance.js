@@ -29,7 +29,7 @@ function Guidance() {
     return (
         <>
         <Banner/>
-
+        
         <Link to="/Guidance/SelfCheck">
         <div id="g_selfcheck"
             style={SelfCheckStyle}
@@ -43,11 +43,11 @@ function Guidance() {
             onClick={() => setIsSelfCheck(false)}>
             <p>입양 절차 동의</p>
         </div></Link><br/>
-
+        <div style={{overflowX : 'hidden', overflowY: 'auto', height :'665px'}}>
         <div>
         {isSelfCheck && <SelfCheck />}
         {!isSelfCheck && <Agreement />}
-        </div>
+        </div></div>
         </>
     );
 }

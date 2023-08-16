@@ -1,3 +1,4 @@
+/*Notice.js*/
 #n_notice {
     display : inline-block;
     margin: 0px;
@@ -28,4 +29,43 @@
     position : fixed;
     top : 700px;
     margin-left : 12px;
+}
+
+
+/*NoticeList.js 하위라우터*/
+#noticelist {
+    border-bottom : 1px solid #BEBEBE;
+    padding : 15px;
+}
+
+#nl_title {
+    color : #3E3E3E;
+    font-size : 15px;
+    line-height : 20px;
+}
+
+#nl_date {
+    color : #BEBEBE;
+    font-size : 11px;
+    margin-top : 10px;
+}
+
+/*NoticeDetail.js*/
+
+/*Event.js*/
+#eventlist {
+    border-bottom : 1px solid #BEBEBE;
+    padding : 15px;
+}
+
+#event_title {
+    color : #3E3E3E;
+    font-size : 15px;
+    line-height : 20px;
+}
+
+#event_date {
+    color : #BEBEBE;
+    font-size : 11px;
+    margin-top : 10px;
 }

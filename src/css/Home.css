@@ -40,8 +40,8 @@
 }
 
 #statistics {
-    margin-top : 20px;
-    margin-bottom : 10px;
+    margin-top : 10px;
+    margin-bottom : 0px;
 }
 
 #percentage {
@@ -125,3 +125,4 @@
 #preview {
     height : 100px;
 }
+

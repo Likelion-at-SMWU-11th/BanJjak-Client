@@ -7,7 +7,7 @@ function MyPage() {
   return (
     <>
       <Banner />
-
+      <div style={{overflowX : 'hidden', overflowY: 'auto', height :'690px'}}>
       {/*프로필 정보 및 수정 */}
       <Link to="/MyPage/EditInfo">
         <div id="editprofile">
@@ -174,7 +174,7 @@ function MyPage() {
           alt="more"
         />
         <br />
-      </div>
+      </div></div>
     </>
   );
 }
