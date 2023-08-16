@@ -64,16 +64,41 @@ const TextDiv = styled(InputDiv)`
 `;
 
 const ImgInputDiv = styled(InputDiv)`
-  div {
+  .ImgDiv {
     margin-top: 1rem;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-  }
 
-  img {
-    width: 5rem;
+    .eachImgDiv {
+      position: relative;
+
+      #editIcon {
+        position: absolute;
+        left: 4rem;
+        top: 4rem;
+        width: 2rem;
+        z-index: 2;
+      }
+    }
+  }
+`;
+
+const ImgContainer = styled.div`
+  border: 1px solid #828282;
+  border-radius: 50%;
+  width: 6rem;
+  height: 6rem;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+
+  #photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 `;
 
@@ -153,20 +178,9 @@ const SubmitDiv = styled.div`
   }
 `;
 
-const ImgContainer=styled.div`
-    background: pink;
-`
-
-const smallFont={
-    fontSize: "30px"
-}
-
-const ImgDiv={
-    display: "flex",
-    alignItems:"center",
-    flexDirection:"row",
-    background:"gray"
-}
+const smallFont = {
+  fontSize: "30px",
+};
 
 const Posting = () => {
   // dropdown 관련
@@ -175,55 +189,94 @@ const Posting = () => {
     sex: useRef(),
     neutered: useRef(),
   };
-  const [name, setName] = useState(""); // 동물 이름 추가
-  const [species, setSpecies] = useState(""); // 종 추가
-  const [weight, setWeight] = useState(""); // 몸무게 추가
-  const [age, setAge] = useState(""); // 나이 추가
-  const [animalValue, setAnimalValue] = useState("");
-  const [sexValue, setSexValue] = useState("");
-  const [neuteredValue, setNeuteredValue] = useState("");
+
+  const [animalValue, setAnimalValue] = useState(""); //동물 상태
+  const [sexValue, setSexValue] = useState(""); //성별 상태
+  const [neuteredValue, setNeuteredValue] = useState(""); //중성화 상태
+
+  const [name, setName] = useState(""); // 동물 이름 상태
+  const [species, setSpecies] = useState(""); // 종 상태
+  const [weight, setWeight] = useState(""); // 몸무게 상태
+  const [age, setAge] = useState(""); // 나이 상태
+  const [animalValue, setAnimalValue] = useState(""); //동물 상태
+  const [sexValue, setSexValue] = useState(""); //성별 상태
+  const [neuteredValue, setNeuteredValue] = useState(""); //중성화 상태
+  const [content, setContent] = useState(""); //관리자 한마디 상태
+  const [alert, setAlert] = useState(""); //특이사항 상태
 
   const animalList = ["개", "고양이", "기타"];
   const sexList = ["수컷", "암컷", "미확인"];
   const neuteredList = ["중성화 O", "중성화 X", "미확인"];
-  const [content, setContent] = useState("");
-  const [alert, setAlert] = useState("");
 
-  const [isOpen, setIsOpen] = useDetectClose(dropDownRefs.animal, false);
+  const [isOpen1, setIsOpen1] = useDetectClose(dropDownRefs.animal, false);
   const [isOpen2, setIsOpen2] = useDetectClose(dropDownRefs.sex, false);
   const [isOpen3, setIsOpen3] = useDetectClose(dropDownRefs.neutered, false);
 
   // Modal 관련
-  const [modalOpen, setModalOpen] = useState(false); // 모달창 노출 여부 state
-  const showModal = () => {
-    //모달창 노출
-    setModalOpen(true);
+  //   const [modalOpen, setModalOpen] = useState(false); // 모달창 노출 여부 state
+  //   const showModal = () => {
+  //     //모달창 노출
+  //     setModalOpen(true);
+  //   };
+
+  //이미지 업로드 관련
+  const [images, setImages] = useState([null, null, null]);
+
+  const handleImageUpload = async (event, index) => {
+    const selectedFile = event.target.files[0];
+    if (selectedFile) {
+      const updatedImages = [...images];
+      updatedImages[index] = selectedFile;
+      setImages(updatedImages);
+
+      // 이미지 미리보기를 위한 임시 URL 생성 및 설정
+      const imageObjectURL = URL.createObjectURL(selectedFile);
+      const updatedImagesWithObjectURLs = [...images];
+      updatedImagesWithObjectURLs[index] = imageObjectURL;
+      setImages(updatedImagesWithObjectURLs);
+    }
   };
 
+  //서버로 데이터 전송
   const handlePostRequest = async () => {
-    showModal();
+    // showModal();
     const token = localStorage.getItem("token"); // 저장된 토큰 가져오기
+    const formData = new FormData(); // FormData 객체 생성
 
-    const requestData = {
-      name: "name",
-      animal_type: "animalValue",
-      kind: "species",
-      weight: "weight",
-      age: "age",
-      gender: "sexValue",
-      is_neutered: "neuteredValue",
-      content: "",
-      alert: "",
-    };
+    const hasAtLeastOneImage = images.some((image) => image !== null);
+    if (!hasAtLeastOneImage) {
+      window.alert("적어도 1개 이상의 이미지가 필요합니다.");
+      return; // 이미지가 없으면 함수 종료
+    }
+    // 이미지 파일들을 FormData에 추가
+    images.forEach((image, index) => {
+      if (image) {
+        formData.append(`image${index + 1}`, image);
+      }
+    });
+
+    // 다른 데이터를 FormData에 추가
+    formData.append("name", name);
+    formData.append("animal_type", animalValue);
+    formData.append("kind", species);
+    formData.append("weight", weight);
+    formData.append("age", age);
+    formData.append("gender", sexValue);
+    formData.append("is_neutered", neuteredValue);
+    formData.append("hastags", null);
+    formData.append("content", content);
+    formData.append("alert", alert);
+
+    console.log(formData); // FormData 내용 콘솔 출력
 
     try {
       const response = await axios.post(
         "http://127.0.0.1:8000/posts/",
-        requestData,
+        formData,
         {
           headers: {
             Authorization: `Token ${token}`, // 헤더에 토큰 추가
-            "Content-Type": "application/json",
+            "Content-Type": "multipart/form-data", // 멀티파트 형식 설정
           },
         }
       );
@@ -255,39 +308,63 @@ const Posting = () => {
           <label>
             공고동물 사진 <span style={smallFont}>(최대 3장)</span>
           </label>
-          <div>
-            <img
-              src={process.env.PUBLIC_URL + "/assets/icons/editphoto.png"}
-              alt="editphoto"
-            />
-            <img
-              src={process.env.PUBLIC_URL + "/assets/icons/editphoto.png"}
-              alt="editphoto"
-            />
-            <img
-              src={process.env.PUBLIC_URL + "/assets/icons/editphoto.png"}
-              alt="editphoto"
-            />
+          <div className="ImgDiv">
+            {images.map((imageSrc, index) => (
+              <div className="eachImgDiv" key={index}>
+                <input
+                  type="file"
+                  id={`imageInput-${index}`}
+                  accept="image/*"
+                  style={{ display: "none" }}
+                  onChange={(event) => handleImageUpload(event, index)}
+                />
+                <label htmlFor={`imageInput-${index}`}>
+                  <ImgContainer>
+                    {imageSrc ? (
+                      <img
+                        id="photo"
+                        src={imageSrc}
+                        alt={`이미지 ${index + 1}`}
+                      />
+                    ) : (
+                      <img
+                        id="photo"
+                        src={
+                          process.env.PUBLIC_URL +
+                          "/assets/icons/img_preview.png"
+                        }
+                        alt={`이미지 미리보기 ${index}`}
+                      />
+                    )}
+                  </ImgContainer>
+                </label>
+                <img
+                  id="editIcon"
+                  src={process.env.PUBLIC_URL + "/assets/icons/edit.png"}
+                  alt={`편집 아이콘 ${index}`}
+                />
+              </div>
+            ))}
           </div>
         </ImgInputDiv>
         <RowDiv>
           <div ref={dropDownRefs.animal} id="dropdownDiv">
             <label>동물</label>
             <DropdownInput
-              onClick={() => setIsOpen(!isOpen)}
+              onClick={() => setIsOpen1(!isOpen1)}
               type="input"
-              value={animalValue || (isOpen ? animalValue : "선택")}
+              value={animalValue || (isOpen1? "선택": animalValue)}
               onSelect={(selectedValue) => setAnimalValue(selectedValue)}
             />
-            {isOpen && (
+            {isOpen1 && (
               <ul>
                 {animalList.map((value, index) => (
                   <Dropdown
                     key={index}
-                    value={value}
-                    setIsOpen={setIsOpen}
+                    value={value}  
+                    setIsOpen1={setIsOpen1}
                     setAnimalValue={setAnimalValue}
-                    isOpen={isOpen}
+                    isOpen1={isOpen1}
                   />
                 ))}
               </ul>
@@ -401,7 +478,7 @@ const Posting = () => {
             <Link>미리 보기</Link>
           </button>
           <input type="button" value="작성 완료" onClick={handlePostRequest} />
-          {modalOpen && <PostingModal setModalOpen={setModalOpen} />}
+          {/* {modalOpen && <PostingModal setModalOpen={setModalOpen} />} */}
         </SubmitDiv>
       </form>
     </>
@@ -409,3 +486,4 @@ const Posting = () => {
 };
 
 export default Posting;
+
