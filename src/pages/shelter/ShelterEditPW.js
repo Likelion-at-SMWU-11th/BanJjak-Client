@@ -1,13 +1,49 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../../css/EditInfo.css";
 
 const ShelterEditPW = () => {
   const navigate = useNavigate();
+  const [oldPassword, setOldPassword] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+
   const handleExitClick = () => {
     // 내 정보 수정 페이지로 이동
     navigate("/HomeShelter/ShelterEditInfo");
+  };
+  const handlePasswordChange = async (e) => {
+    e.preventDefault();
+
+    if (newPassword !== confirmPassword) {
+      console.error("Passwords do not match.");
+      //여기 비밀번호 다르면 처리
+      return;
+    }
+
+    try {
+      const token = localStorage.getItem("token");
+      const response = await axios.put(
+        "http://127.0.0.1:8000/users/changemanagerinfo/pw/",
+        {
+          old_pw: oldPassword,
+          new_pw: newPassword,
+          confirm_pw: confirmPassword,
+        },
+        {
+          headers: {
+            Authorization: `Token ${token}`,
+          },
+        }
+      );
+      console.log("Password changed successfully:", response.data);
+      // Handle success and navigation
+    } catch (error) {
+      console.error("Password change failed:", error);
+      //기존의 비밀번호와 다른 경우
+      // Handle error
+    }
   };
 
   return (
@@ -32,7 +68,12 @@ const ShelterEditPW = () => {
         <div id="ep_p1_2">
           <p>기존 비밀번호</p>
           <form>
-            <input type="text" id="ep_form1" />
+            <input
+              type="password"
+              id="ep_form1"
+              value={oldPassword}
+              onChange={(e) => setOldPassword(e.target.value)}
+            />
           </form>
         </div>
 
@@ -40,20 +81,26 @@ const ShelterEditPW = () => {
           <p>새로운 비밀번호</p>
           <form>
             <input
-              type="text"
+              type="password"
               id="ep_form2"
               placeholder="영문/숫자/특수문자 혼합 8~20자"
+              value={newPassword}
+              onChange={(e) => setNewPassword(e.target.value)}
             />
             <input
-              type="text"
+              type="password"
               id="ep_form3"
               placeholder="비밀번호를 한 번 더 입력해주세요."
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
             />
           </form>
         </div>
 
-        <form>
-          <button id="ep_btn2">비밀번호 변경</button>
+        <form onSubmit={handlePasswordChange}>
+          <button type="submit" id="ep_btn2">
+            비밀번호 변경
+          </button>
         </form>
       </div>
     </>

@@ -3,9 +3,19 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import "../../css/EditInfo.css";
 import Banner from "../../components/Banner";
+import { ImgContainer } from "../../components/Posting";
+import styled from "styled-components";
+
+const ProfileImgContainer = styled(ImgContainer)`
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+`;
 
 function EditInfo() {
-  const [image, setImage] = useState(null);
+  const [newprofile, setNewProfile] = useState(null);
   const [profileImage, setProfileImage] = useState(null);
   const [nickname, setNickname] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -25,8 +35,10 @@ function EditInfo() {
           }
         );
         const userInfo = response.data;
-        setImage(userInfo.profile);
-        //console.log(userInfo);
+
+        //const updatedImage = URL.createObjectURL(userInfo.profile);
+        setProfileImage(userInfo.profile);
+        //console.log("profile " + userInfo.profile);
         setEmail(userInfo.email);
         setNickname(userInfo.username);
         setPhoneNumber(userInfo.phone);
@@ -42,8 +54,9 @@ function EditInfo() {
     try {
       const token = localStorage.getItem("token");
       const formData = new FormData();
-      formData.append("profile", profileImage);
-      console.log("ImageData: ", profileImage);
+      formData.append("profile", newprofile);
+      console.log("프로필 변경 : " + formData.get("profile"));
+
       const response = await axios.put(
         "http://127.0.0.1:8000/users/userChangeProfile/",
         formData,
@@ -61,8 +74,9 @@ function EditInfo() {
       // 에러 처리 로직 추가
     }
   };
+
   const handleNicknameChange = async () => {
-    console.log(nickname);
+    //console.log(nickname);
     try {
       const token = localStorage.getItem("token");
       const response = await axios.put(
@@ -75,7 +89,7 @@ function EditInfo() {
           },
         }
       );
-      console.log("!!");
+      //put요청 성공 후 해야할 task
       console.log("닉네임 변경 성공:", response.data);
       // 수정 성공 후의 로직 추가
     } catch (error) {
@@ -109,21 +123,28 @@ function EditInfo() {
       <Banner />
 
       <div id="ei_editphoto">
-        <img
-          src={
-            image
-              ? image
-              : process.env.PUBLIC_URL + "/assets/icons/editphoto.png"
-          }
-          id="ei_photo1"
-          alt="editphoto"
-        />
-        <input
-          type="file"
-          accept="image/*"
-          onChange={(e) => setProfileImage(e.target.files[0])}
-        />
-        <button onClick={handleProfileImageUpload}>프로필 사진 업로드</button>
+        <label htmlFor="profileImg">
+          <div id="profileImgContainer">
+            <img
+              src={
+                profileImage
+                  ? profileImage
+                  : process.env.PUBLIC_URL + "/assets/icons/editphoto.png"
+              }
+              id="ei_photo1"
+              alt="editphoto"
+            />
+          </div>
+        </label>
+        <div id="profileEditBtnDiv">
+          <input
+            type="file"
+            id="profileImg"
+            onChange={(e) => setNewProfile(e.target.files[0])}
+            accept="image/*"
+          />
+          <button onClick={handleProfileImageUpload}>저장</button>
+        </div>
       </div>
 
       <div id="ei_div">
@@ -160,12 +181,12 @@ function EditInfo() {
         </div>
 
         <div id="ei_password">
-            <p id="ei_p1">비밀번호</p>
-            <form>
-                <Link to="/MyPage/EditInfo/EditPW">
-                <button id="ei_btn2">변경하러 가기</button>
-                </Link>
-            </form>
+          <p id="ei_p1">비밀번호</p>
+          <form>
+            <Link to="/MyPage/EditInfo/EditPW">
+              <button id="ei_btn2">변경하러 가기</button>
+            </Link>
+          </form>
         </div>
 
         <div id="ei_phonenum">
