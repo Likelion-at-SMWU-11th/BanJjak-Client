@@ -5,7 +5,7 @@ import "../../css/EditInfo.css";
 import Banner from "../../components/Banner";
 
 function EditInfo() {
-  const [newprofile, setNewProfile] = useState("");
+  const [newprofile, setNewProfile] = useState(null);
   const [profileImage, setProfileImage] = useState(null);
   const [nickname, setNickname] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -123,7 +123,7 @@ function EditInfo() {
         />
         <input
           type="file"
-          onChange={(e) => setNewProfile(e.target.value)}
+          onChange={(e) => setNewProfile(e.target.files[0])}
           accept="image/*"
         />
         <button onClick={handleProfileImageUpload}>프로필 사진 업로드</button>
