@@ -49,6 +49,7 @@ import InquiryModal from "./pages/modal/InquiryModal";
 import GuidanceModal from "./pages/modal/GuidanceModal";
 import MailModal from "./pages/modal/MailModal";
 import AgreeModal from "./pages/modal/AgreeModal";
+import DeleteModal from "./pages/modal/DeleteModal";
 
 function App() {
   return (
@@ -111,6 +112,7 @@ function App() {
         <Route path="/Adoption/AdoptDetail/GuidanceModal" element={<GuidanceModal/>}></Route>
         <Route path="/MyPage/FAQ/MailModal" element={<MailModal/>}></Route>
         <Route path="/Guidance/Agreement/AgreeModal" element={<AgreeModal/>}></Route>
+        <Route path="/DeleteModal" element={<DeleteModal/>}></Route>
       </Routes>
     </div>
   );
