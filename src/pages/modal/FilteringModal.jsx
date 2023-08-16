@@ -1,6 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import '../../css/Modal.css';
+
+
+const ModalOverlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+`;
+
+const ModalContent = styled.div`
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1100;
+`;
 
 const CustomCheckbox = styled.input`
     /* 체크박스를 숨기고 커스텀 스타일을 적용 */
@@ -35,20 +57,56 @@ const CustomCheckbox = styled.input`
 `;
 
 const FilteringModal = ({ isOpen, onClose }) => {
+  const modalRef = useRef(null);
 
   const [selectedCheckbox, setSelectedCheckbox] = useState('all');
 
   const handleCheckboxChange = (value) => {
     setSelectedCheckbox(value);
   };
+  
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      // ESC 키를 누르면 모달 종료
+      if (event.key === 'Escape') {
+        onClose();
+      }
+    };
+    // 컴포넌트 언마운트 시 이벤트 리스너 제거
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isOpen, onClose]);
 
+  const handleOverlayClick = (event) => {
+    // 모달 외부를 클릭하면 모달 종료
+    if (modalRef.current && !modalRef.current.contains(event.target)) {
+      onClose();
+    }
+  };
   if (!isOpen) return null;
 
   return (
-    <div className="Modal-overlay">
-      <div className="Modal">
-        <button className="Modal-close" onClick={onClose}>닫기</button>
-        <div className="Modal-content">
+    // <div className="Modal-overlay">
+    //   <div className="Modal">
+    //     <button className="Modal-close" onClick={onClose}>닫기</button>
+    //     <div className="Modal-content">
+    //       <p>동물</p>
+    //       <form id="modal_form1" size="1">
+    //             <CustomCheckbox type="radio" id="modal_check1" value="all" name="species" checked={selectedCheckbox === 'all'} onChange={() => handleCheckboxChange('all')}/><label htmlFor="modal_check1">모든 동물</label><br/>
+    //             <CustomCheckbox type="radio" id="modal_check2" value="dog" name="species" onChange={() => handleCheckboxChange('dog')}/><label htmlFor="modal_check2">개</label><br/>
+    //             <CustomCheckbox type="radio" id="modal_check3" value="cat" name="species" onChange={() => handleCheckboxChange('cat')}/><label htmlFor="modal_check3">고양이</label><br/>
+    //             <CustomCheckbox type="radio" id="modal_check4" value="else" name="species" onChange={() => handleCheckboxChange('else')}/><label htmlFor="modal_check4">기타</label><br/>
+    //             <input type="button" id="modal_btn" value="검색하기"/>
+    //         </form>
+    //     </div>
+    //   </div>
+    // </div>
+
+    <ModalOverlay>
+    <ModalContent>
+      <button className="Modal-close" onClick={onClose}>닫기</button>
+      <div className="Modal-content">
           <p>동물</p>
           <form id="modal_form1" size="1">
                 <CustomCheckbox type="radio" id="modal_check1" value="all" name="species" checked={selectedCheckbox === 'all'} onChange={() => handleCheckboxChange('all')}/><label htmlFor="modal_check1">모든 동물</label><br/>
@@ -58,8 +116,9 @@ const FilteringModal = ({ isOpen, onClose }) => {
                 <input type="button" id="modal_btn" value="검색하기"/>
             </form>
         </div>
-      </div>
-    </div>
+    </ModalContent>
+    </ModalOverlay>
+
   );
 };
 
