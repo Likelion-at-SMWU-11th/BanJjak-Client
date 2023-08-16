@@ -194,13 +194,15 @@ const Posting = () => {
     sex: useRef(),
     neutered: useRef(),
   };
+
+  const [animalValue, setAnimalValue] = useState(""); //동물 상태
+  const [sexValue, setSexValue] = useState(""); //성별 상태
+  const [neuteredValue, setNeuteredValue] = useState(""); //중성화 상태
+
   const [name, setName] = useState(""); // 동물 이름 상태
   const [species, setSpecies] = useState(""); // 종 상태
   const [weight, setWeight] = useState(""); // 몸무게 상태
   const [age, setAge] = useState(""); // 나이 상태
-  const [animalValue, setAnimalValue] = useState(""); //동물 상태
-  const [sexValue, setSexValue] = useState(""); //성별 상태
-  const [neuteredValue, setNeuteredValue] = useState(""); //중성화 상태
   const [content, setContent] = useState("");   //관리자 한마디 상태
   const [alert, setAlert] = useState("");   //특이사항 상태
 
@@ -208,7 +210,7 @@ const Posting = () => {
   const sexList = ["수컷", "암컷", "미확인"];
   const neuteredList = ["중성화 O", "중성화 X", "미확인"];
 
-  const [isOpen, setIsOpen] = useDetectClose(dropDownRefs.animal, false);
+  const [isOpen1, setIsOpen1] = useDetectClose(dropDownRefs.animal, false);
   const [isOpen2, setIsOpen2] = useDetectClose(dropDownRefs.sex, false);
   const [isOpen3, setIsOpen3] = useDetectClose(dropDownRefs.neutered, false);
 
@@ -231,10 +233,10 @@ const handleImageUpload = (event, index) => {
     setImages(updatedImages);
 
      // 이미지 미리보기를 위한 임시 URL 생성 및 설정
-     const imageObjectURL = URL.createObjectURL(selectedFile);
-     const updatedImagesWithObjectURLs = [...images];
-     updatedImagesWithObjectURLs[index] = imageObjectURL;
-     setImages(updatedImagesWithObjectURLs);
+    //  const imageObjectURL = URL.createObjectURL(selectedFile);
+    //  const updatedImagesWithObjectURLs = [...images];
+    //  updatedImagesWithObjectURLs[index] = imageObjectURL;
+    //  setImages(updatedImagesWithObjectURLs);
   }
 };
 
@@ -254,6 +256,7 @@ const handleImageUpload = (event, index) => {
     // 이미지 파일들을 FormData에 추가
   images.forEach((image, index) => {
     if (image) {
+      console.log(image)
       formData.append(`image${index + 1}`, image);
     }
   });
@@ -350,20 +353,20 @@ const handleImageUpload = (event, index) => {
           <div ref={dropDownRefs.animal} id="dropdownDiv">
             <label>동물</label>
             <DropdownInput
-              onClick={() => setIsOpen(!isOpen)}
+              onClick={() => setIsOpen1(!isOpen1)}
               type="input"
-              value={animalValue || (isOpen ? animalValue : "선택")}
+              value={animalValue || (isOpen1? "선택": animalValue)}
               onSelect={(selectedValue) => setAnimalValue(selectedValue)}
             />
-            {isOpen && (
+            {isOpen1 && (
               <ul>
                 {animalList.map((value, index) => (
                   <Dropdown
                     key={index}
-                    value={value}
-                    setIsOpen={setIsOpen}
+                    value={value}  
+                    setIsOpen1={setIsOpen1}
                     setAnimalValue={setAnimalValue}
-                    isOpen={isOpen}
+                    isOpen1={isOpen1}
                   />
                 ))}
               </ul>
@@ -485,3 +488,4 @@ const handleImageUpload = (event, index) => {
 };
 
 export default Posting;
+
