@@ -17,9 +17,11 @@ const ModalOverlay = styled.div`
 `;
 
 const ModalContent = styled.div`
+  width: 330px;
+  height: 300px;
   background-color: white;
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 15px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   z-index: 1100;
 `;
@@ -35,8 +37,8 @@ const CustomCheckbox = styled.input`
         cursor: pointer;
         font-size: 14px;
         color: #3E3E3E;
-        margin-top : 1rem;
-        margin-bottom : 1rem;
+        margin-top : 0.rem;
+        margin-bottom : 0.2rem;
     }
 
     + label:before {
@@ -87,31 +89,15 @@ const FilteringModal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    // <div className="Modal-overlay">
-    //   <div className="Modal">
-    //     <button className="Modal-close" onClick={onClose}>닫기</button>
-    //     <div className="Modal-content">
-    //       <p>동물</p>
-    //       <form id="modal_form1" size="1">
-    //             <CustomCheckbox type="radio" id="modal_check1" value="all" name="species" checked={selectedCheckbox === 'all'} onChange={() => handleCheckboxChange('all')}/><label htmlFor="modal_check1">모든 동물</label><br/>
-    //             <CustomCheckbox type="radio" id="modal_check2" value="dog" name="species" onChange={() => handleCheckboxChange('dog')}/><label htmlFor="modal_check2">개</label><br/>
-    //             <CustomCheckbox type="radio" id="modal_check3" value="cat" name="species" onChange={() => handleCheckboxChange('cat')}/><label htmlFor="modal_check3">고양이</label><br/>
-    //             <CustomCheckbox type="radio" id="modal_check4" value="else" name="species" onChange={() => handleCheckboxChange('else')}/><label htmlFor="modal_check4">기타</label><br/>
-    //             <input type="button" id="modal_btn" value="검색하기"/>
-    //         </form>
-    //     </div>
-    //   </div>
-    // </div>
-
     <ModalOverlay>
     <ModalContent>
-      <button className="Modal-close" onClick={onClose}>닫기</button>
+      <button className="Modal-close" onClick={onClose}><img src={process.env.PUBLIC_URL + '/assets/icons/exit.png'} id="gmd_exit" alt="exit"/></button>
       <div className="Modal-content">
           <p>동물</p>
           <form id="modal_form1" size="1">
-                <CustomCheckbox type="radio" id="modal_check1" value="all" name="species" checked={selectedCheckbox === 'all'} onChange={() => handleCheckboxChange('all')}/><label htmlFor="modal_check1">모든 동물</label><br/>
-                <CustomCheckbox type="radio" id="modal_check2" value="dog" name="species" onChange={() => handleCheckboxChange('dog')}/><label htmlFor="modal_check2">개</label><br/>
-                <CustomCheckbox type="radio" id="modal_check3" value="cat" name="species" onChange={() => handleCheckboxChange('cat')}/><label htmlFor="modal_check3">고양이</label><br/>
+                <CustomCheckbox type="radio" id="modal_check1" value="all" name="species" checked={selectedCheckbox === 'all'} onChange={() => handleCheckboxChange('all')}/><label htmlFor="modal_check1">모든 동물</label><hr/>
+                <CustomCheckbox type="radio" id="modal_check2" value="dog" name="species" onChange={() => handleCheckboxChange('dog')}/><label htmlFor="modal_check2">개</label><hr/>
+                <CustomCheckbox type="radio" id="modal_check3" value="cat" name="species" onChange={() => handleCheckboxChange('cat')}/><label htmlFor="modal_check3">고양이</label><hr/>
                 <CustomCheckbox type="radio" id="modal_check4" value="else" name="species" onChange={() => handleCheckboxChange('else')}/><label htmlFor="modal_check4">기타</label><br/>
                 <input type="button" id="modal_btn" value="검색하기"/>
             </form>
