@@ -221,20 +221,20 @@ const Posting = () => {
   const [imageSrc, setImage] = useState(null);  //이미지 태그 소스를 위한 props
   const token = localStorage.getItem("token"); // 저장된 토큰 가져오기
   const formData = new FormData(); // FormData 객체 생성
+  const [selectedFile, setSelectedFile]=useState(null);
+  console.log(selectedFile)
 
 
-  const handleImageUpload = async (event) => {
-    const selectedFile = event.target.files[0];
-
-    if (selectedFile) {
-      const updatedImage = selectedFile;
-      setImage(updatedImage);
+  const handleImageUpload = async (e) => {
+    
+    setSelectedFile(e.target.files[0]);
 
       // 이미지 미리보기를 위한 임시 URL 생성 및 설정
-      const imageObjectURL = URL.createObjectURL(selectedFile);
+      const imageObjectURL = URL.createObjectURL(e.target.files[0]);
       setImage(imageObjectURL);
 
-    }
+    
+      
   };
 
   //서버로 데이터 전송
@@ -249,9 +249,7 @@ const Posting = () => {
 
     // 다른 데이터를 FormData에 추가
     // formData.append("name", name);
-    if (name && animalValue && kind && weight && age && sexValue 
-      && neuteredValue && content && alert) 
-      if(name){
+    if (name && content && alert) {
       formData.append("name", name);
       formData.append("kind", kind);
       formData.append("weight", weight);
@@ -260,6 +258,7 @@ const Posting = () => {
       formData.append("is_neutered", neuteredValue);
       formData.append("content", content);
       formData.append("alert", alert);
+      formData.append('image1',selectedFile)
   }
 
   
@@ -268,7 +267,7 @@ const Posting = () => {
     
 
     try {
-      const response = await axios.post(
+      const response=axios.post(
         "http://127.0.0.1:8000/posts/",
         formData,
         {
@@ -277,7 +276,9 @@ const Posting = () => {
             "Content-Type": "multipart/form-data", // 멀티파트 형식 설정
           },
         }
-      );
+      ).then(response => {
+        console.log(response.data);
+      })
 
       // POST 요청이 성공한 경우의 처리
       console.log("POST 요청 성공:", response.data);
@@ -291,7 +292,7 @@ const Posting = () => {
 
   return (
     <>
-      <form style={formStyle}>
+      <form style={formStyle} >
         <InputDiv>
           <label>공고 동물 이름</label>
           <input
@@ -311,10 +312,11 @@ const Posting = () => {
           <div className="eachImgDiv">
                 <input
                   type="file"
+                  name="image1"
                   id="imageInput1"
                   accept="image/*"
                   style={{ display: "none" }}
-                  onChange={(event) => handleImageUpload(event)}
+                  onChange={(e)=>handleImageUpload(e)}
                 />
                 <label htmlFor="imageInput1">
                 <ImgContainer>
@@ -511,6 +513,7 @@ const Posting = () => {
     </>
   );
 };
+
 
 export default Posting;
 
