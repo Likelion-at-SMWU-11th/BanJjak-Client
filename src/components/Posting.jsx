@@ -308,7 +308,6 @@ const Posting = () => {
             공고동물 사진 <span style={smallFont}>(최대 3장)</span>
           </label>
           <div className="ImgDiv">
-          {/* <div className="eachImgDiv" key={index}> */}
           <div className="eachImgDiv">
                 <input
                   type="file"
@@ -373,7 +372,6 @@ const Posting = () => {
                   alt={`편집 아이콘`}
                 />
               </div>
-            {/* ))} */}
           </div>
         </ImgInputDiv>
         <RowDiv>
@@ -516,4 +514,4 @@ const Posting = () => {
 
 
 export default Posting;
-
+export {ImgContainer}
