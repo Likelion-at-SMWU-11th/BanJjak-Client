@@ -5,7 +5,7 @@ import "../../css/EditInfo.css";
 import Banner from "../../components/Banner";
 
 function EditInfo() {
-  const [image, setImage] = useState(null);
+  const [newprofile, setNewProfile] = useState(null);
   const [profileImage, setProfileImage] = useState(null);
   const [nickname, setNickname] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -25,8 +25,10 @@ function EditInfo() {
           }
         );
         const userInfo = response.data;
-        setImage(userInfo.profile);
-        //console.log(userInfo);
+
+        //const updatedImage = URL.createObjectURL(userInfo.profile);
+        setProfileImage(userInfo.profile);
+        //console.log("profile " + userInfo.profile);
         setEmail(userInfo.email);
         setNickname(userInfo.username);
         setPhoneNumber(userInfo.phone);
@@ -42,8 +44,9 @@ function EditInfo() {
     try {
       const token = localStorage.getItem("token");
       const formData = new FormData();
-      formData.append("profile", profileImage);
-      console.log("ImageData: ", profileImage);
+      formData.append("profile", newprofile);
+      console.log("프로필 변경 : " + formData.get("profile"));
+
       const response = await axios.put(
         "http://127.0.0.1:8000/users/userChangeProfile/",
         formData,
@@ -61,6 +64,7 @@ function EditInfo() {
       // 에러 처리 로직 추가
     }
   };
+
   const handleNicknameChange = async () => {
     console.log(nickname);
     try {
@@ -75,7 +79,7 @@ function EditInfo() {
           },
         }
       );
-      console.log("!!");
+      //console.log("!!");
       console.log("닉네임 변경 성공:", response.data);
       // 수정 성공 후의 로직 추가
     } catch (error) {
@@ -111,8 +115,8 @@ function EditInfo() {
       <div id="ei_editphoto">
         <img
           src={
-            image
-              ? image
+            profileImage
+              ? profileImage
               : process.env.PUBLIC_URL + "/assets/icons/editphoto.png"
           }
           id="ei_photo1"
@@ -120,8 +124,8 @@ function EditInfo() {
         />
         <input
           type="file"
+          onChange={(e) => setNewProfile(e.target.files[0])}
           accept="image/*"
-          onChange={(e) => setProfileImage(e.target.files[0])}
         />
         <button onClick={handleProfileImageUpload}>프로필 사진 업로드</button>
       </div>
@@ -160,12 +164,12 @@ function EditInfo() {
         </div>
 
         <div id="ei_password">
-            <p id="ei_p1">비밀번호</p>
-            <form>
-                <Link to="/MyPage/EditInfo/EditPW">
-                <button id="ei_btn2">변경하러 가기</button>
-                </Link>
-            </form>
+          <p id="ei_p1">비밀번호</p>
+          <form>
+            <Link to="/MyPage/EditInfo/EditPW">
+              <button id="ei_btn2">변경하러 가기</button>
+            </Link>
+          </form>
         </div>
 
         <div id="ei_phonenum">
