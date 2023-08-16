@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../../css/Adoption.css';
-import FilteringModal from '../modal/FilteringModal'
+import FilteringModal from '../modal/FilteringModal';
 import styled from 'styled-components';
 import Banner, {BtnList} from '../../components/Banner';
 import ShelterAdopt from './ShelterAdopt';
@@ -41,7 +41,7 @@ const SpeciesBtn = styled.button`
 
 
 function Adoption(props) {
-
+    // 모달관련
     const [modalOpen, setModalOpen] = useState(false);
     const [selectedSpecies, setSelectedSpecies] = useState("");
 
@@ -57,7 +57,7 @@ function Adoption(props) {
         setSelectedSpecies(species);
     };
 
-
+    //하위라우팅 관련
     const [isShelterAdopt, setIsShelterAdopt] = useState(true);
 
     const ShelterAdoptStyle = {
@@ -104,7 +104,7 @@ function Adoption(props) {
             <FilteringModal isOpen={modalOpen} onClose={closeModal} />
         )}
 
-        <div style={{ overflowX: 'hidden', overflowY: 'auto', height: '620px' }}>
+        <div style={{ overflowX: 'hidden', overflowY: 'auto', height: '620px', marginTop:"1px" }}>
         <p id="count">n마리</p><br/>
 
         

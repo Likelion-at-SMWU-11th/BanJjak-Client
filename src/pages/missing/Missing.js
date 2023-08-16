@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../../css/Missing.css';
+import FilteringModal from '../modal/FilteringModal';
 import styled from 'styled-components';
 import Banner from '../../components/Banner';
 import Missed from './Missed';
@@ -35,6 +36,24 @@ const SpeciesBtn = styled.button`
 `;
 
 function Missing(props) {
+    // 모달관련
+    const [modalOpen, setModalOpen] = useState(false);
+    const [selectedSpecies, setSelectedSpecies] = useState("");
+
+    const openModal = () => {
+        setModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setModalOpen(false);
+    };
+
+    const handleSpeciesChange = (species) => {
+        setSelectedSpecies(species);
+    };
+
+
+    //하위라우팅 관련
     const [isMissed, setIsMissed] = useState(true);
 
     const MissedStyle = {
@@ -73,8 +92,13 @@ function Missing(props) {
             <p>목격</p>
         </div></Link><br/>
 
-        <GreenBtn>동물</GreenBtn>
-        <SpeciesBtn>모든 동물</SpeciesBtn><br/>
+        <GreenBtn onClick={openModal}>동물</GreenBtn>
+        <SpeciesBtn>{selectedSpecies || "모든 동물"}</SpeciesBtn><br/>
+
+        {/* Correct placement of the FilteringModal */}
+        {modalOpen && (
+            <FilteringModal isOpen={modalOpen} onClose={closeModal} />
+        )}
 
         <div style={{overflowX : 'hidden', overflowY: 'auto', height :'620px'}}>
         <p id="count">n마리</p>
