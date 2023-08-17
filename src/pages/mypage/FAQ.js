@@ -1,10 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../../css/FAQ.css';
 import { Link } from 'react-router-dom';
 import Banner from '../../components/Banner';
 import Question from '../../components/Question';
+import MailModal from '../../components/MailModal';
 
 function FAQ() {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openModal = () => {
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
+
+
     return (
         <>
             <Banner/>
@@ -36,17 +48,16 @@ function FAQ() {
 
                 <br/>
 
-                <Link to="/MyPage/FAQ/MailModal">
-                    <div id="solvingbtn">
+                <div id="solvingbtn" onClick={openModal}>
                     <img src={process.env.PUBLIC_URL + '/assets/icons/mail.png'} id="mail" alt="mail"/>
                     <div id="solve">
                         <h4 id="h4">간편메일</h4>
                         <p id="p1">간편하게 메일로 답변을 받을 수 있어요.</p>
                     </div>
                     <img src={process.env.PUBLIC_URL + '/assets/icons/more.png'} id="more2" alt="more"/>
-                    </div>
-                </Link>
+                </div>
             </div></div>
+            {isModalOpen && <MailModal isOpen={isModalOpen} onClose={closeModal} />}
         </>
     );
 }

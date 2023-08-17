@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import '../../css/Guidance.css';
+import AgreeModal from '../../components/AgreeModal';
 
 const CustomCheckbox = styled.input`
     /* 체크박스를 숨기고 커스텀 스타일을 적용 */
@@ -46,6 +47,10 @@ function Agreement(props) {
         ga_check7: false,
     });
 
+
+    const [isModalOpen, setIsModalOpen] = useState(false); // 모달 열림 여부 상태 추가
+
+
     const handleCheckboxChange = (e) => {
         const { id, checked } = e.target;
 
@@ -71,6 +76,15 @@ function Agreement(props) {
                     [id]: checked,
                 }).every((val) => val)
             );
+        }
+    };
+
+    const handleCompleteClick = () => {
+         if (!allChecked) {
+            setIsModalOpen(false); // 모달 닫기
+            alert('모든 입양 절차에 동의해야 입양 서비스 이용이 가능합니다.');
+        } else {
+            setIsModalOpen(true); // 모달 열기
         }
     };
 
@@ -102,7 +116,14 @@ function Agreement(props) {
                     onChange={handleCheckboxChange}
                 />
                 <label htmlFor="ga_allcheck"><span id="ga_span2">위 내용을 모두 확인했으며 동의합니다.</span></label><br/>
-                <input type="button" id="ga_btn" value="완료하기"/>
+                <input type="button" id="ga_btn" value="완료하기" onClick={handleCompleteClick}/>
+                {isModalOpen && (
+                <AgreeModal
+                    isOpen={isModalOpen}
+                    setIsModalOpen={setIsModalOpen}
+                    onClose={() => setIsModalOpen(false)}
+                />
+            )}
             </form>
         </div>
     );
