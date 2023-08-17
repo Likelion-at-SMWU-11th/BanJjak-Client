@@ -21,48 +21,48 @@
   border-radius: 5px;
 }
 
-
 #Modal-close {
   background: none;
-    border: none;
-    cursor: pointer;
-    float : right;
-    margin-left : -30px;
-    border : none;
-    width : 10px;
-    height : 10px;
+  border: none;
+  cursor: pointer;
+  float: right;
+  margin-left: -30px;
+  border: none;
+  width: 10px;
+  height: 10px;
 }
 
 #confirm {
-  width : 320px;
-  margin-left : 5px;
-  padding-bottom : 15px;
-  text-align : center;
-  font-size : 22px;
-  font-weight : bold;
-  border-bottom : 1px solid #ECECEC;
-  margin-bottom : 15px;
-  color : #00AC78
+  width: 320px;
+  margin-left: 5px;
+  padding-bottom: 15px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  border-bottom: 1px solid #ececec;
+  margin-bottom: 15px;
+  color: #00ac78;
 }
-
 
 #modal_btn1 {
-  display : inline-block;
-  margin-top : 0px;
-  border : 1px solid #00AC78;
+  flex: 1;
+  color: #00ac78;
+  font-size: 25px;
+  border: transparent;
+  border-radius: 0%;
   border-bottom-left-radius: 8px;
-  background-color : #ffffff;
-  color : #00AC78;
-  padding : 25px 32px;
 }
 
-
 #modal_btn2 {
-  display : inline-block;
-  margin-top : 0px;
-  border : 1px solid #00AC78;
+  flex: 1;
+  font-size: 25px;
+  background-color: #00ac78;
+  color: #ffffff;
+  border: transparent;
+  border-radius: 0%;
   border-bottom-right-radius: 8px;
-  background-color : #00AC78;
-  color : #FFFFFF;
-  padding : 25px 55px;
+}
+
+#modal_btn2 > a {
+  color: #ffffff;
 }
