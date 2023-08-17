@@ -42,9 +42,11 @@ function ProtectDetail(props) {
                 </button>
         </div>
 
-        <div>
-            <img src={process.env.PUBLIC_URL + '/assets/images/protect1.png'} id="protect1" alt="m2"/>
-            <img src={process.env.PUBLIC_URL + '/assets/images/protect2.png'} id="protect2" alt="m2"/>
+        <div id="pd_container1">
+            <img src={process.env.PUBLIC_URL + '/assets/images/protect1.png'} id="pd_photo1" alt="m2"/>
+        </div>
+        <div id="pd_container2">
+            <img src={process.env.PUBLIC_URL + '/assets/images/protect2.png'} id="pd_photo2" alt="m2"/>
         </div>
 
         <hr id="hr"/>

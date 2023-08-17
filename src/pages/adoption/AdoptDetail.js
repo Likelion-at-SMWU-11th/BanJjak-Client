@@ -45,7 +45,9 @@ function AdoptDetail(props) {
         <>
         <Banner/>
         <div>
-        <img src={process.env.PUBLIC_URL + '/assets/images/ddol2.png'} id="detail_photo" alt="detail_photo"/>
+        <div id="ad_container">
+        <img src={process.env.PUBLIC_URL + '/assets/images/ddol2.png'} id="ad_photo" alt="detail_photo"/>
+        </div>
         <button
                     style={{
                         position: 'absolute',

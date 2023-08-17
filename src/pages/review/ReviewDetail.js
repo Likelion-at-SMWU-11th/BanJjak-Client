@@ -40,8 +40,10 @@ function ReviewDetail() {
                 </button>
         </div>
 
-        <div>
+        <div id="rd_container1">
             <img src={process.env.PUBLIC_URL + '/assets/images/rd_photo1.png'} id="rd_photo1" alt="m2"/>
+        </div>
+        <div id="rd_container2">
             <img src={process.env.PUBLIC_URL + '/assets/images/rd_photo2.png'} id="rd_photo2" alt="m2"/>
         </div>
 

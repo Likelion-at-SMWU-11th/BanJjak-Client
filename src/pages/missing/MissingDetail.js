@@ -15,7 +15,7 @@ function MissingDetail(props) {
         <>
         <Banner/>
         
-        <div style={{ overflowX: 'hidden', overflowY: 'auto', height: '725px' }}>
+        <div style={{ overflowX: 'hidden', overflowY: 'auto', height: '725px'}}>
         <div id="written">
             <img src={process.env.PUBLIC_URL + '/assets/icons/profile.png'} id="profile" alt="profile"/>
             <div id="information">
@@ -43,9 +43,11 @@ function MissingDetail(props) {
                 </button>
         </div>
 
-            <div>
-                <img src={process.env.PUBLIC_URL + '/assets/images/missingdog1.png'} id="m1" alt="m2"/>
-                <img src={process.env.PUBLIC_URL + '/assets/images/missing2.png'} id="m2" alt="m2"/>
+            <div id="md_container1">
+                <img src={process.env.PUBLIC_URL + '/assets/images/missingdog1.png'} id="md_photo1" alt="m2"/>
+            </div>
+            <div id="md_container2">
+                <img src={process.env.PUBLIC_URL + '/assets/images/missing2.png'} id="md_photo2" alt="m2"/>
             </div>
 
             <hr id="hr"/>

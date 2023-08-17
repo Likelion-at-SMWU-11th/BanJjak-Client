@@ -7,9 +7,7 @@ const GlobalStyle = createGlobalStyle`
     body{
         width : 390px;
         height : 844px;
-        margin: 0 auto;
-        width : 390px;
-        height : 844px;
+        margin-left : 45%;
         border : 1px solid #dbdbdb;
         overflow: auto;
     
