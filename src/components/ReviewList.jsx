@@ -12,11 +12,12 @@ const ReviewList = () => {
                 <p id="r_writer">아이디</p>
                 <p id="r_time">2023-08-10 23:24  조회 100</p>
             </div>
-            {/* <LikeBtn id="like"/> */}
 
-            <div>
-            <img src={process.env.PUBLIC_URL + '/assets/images/r_photo1.png'} id="r_photo1" alt="m2"/>
-            <img src={process.env.PUBLIC_URL + '/assets/images/r_photo2.png'} id="r_photo2" alt="m2"/>
+            <div id="rl_container1">
+            <img src={process.env.PUBLIC_URL + '/assets/images/r_photo1.png'} id="rl_photo1" alt="m2"/>
+            </div>
+            <div id="rl_container2">
+            <img src={process.env.PUBLIC_URL + '/assets/images/r_photo2.png'} id="rl_photo2" alt="m2"/>
             </div>
 
             <div>

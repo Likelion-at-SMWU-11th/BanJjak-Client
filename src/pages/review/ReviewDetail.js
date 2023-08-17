@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../../css/Review.css';
 import Banner from '../../components/Banner';
-/* import LikeBtn from '../../components/LikeBtn'; */
 
 function ReviewDetail() {
+    const [liked, setLiked] = useState(false);
+
+    const handleLikeClick = () => {
+        setLiked(!liked);
+    };
     return (
         <>
         <Banner/>
@@ -15,11 +19,31 @@ function ReviewDetail() {
                 <p id="writer">아이디</p>
                 <p id="time">2023-08-10 23:24  조회 104</p>
             </div>
-            {/* <LikeBtn id="like"/> */}
+            <button
+                    style={{
+                        position: 'absolute',
+                        marginLeft: '70px',
+                        marginTop: '30px',
+                        border: 'none',
+                        backgroundColor: 'white',
+                    }}
+                    onClick={handleLikeClick}
+                >
+                    <img
+                        src={
+                            process.env.PUBLIC_URL +
+                            (liked ? '/assets/icons/like2.png' : '/assets/icons/like3.png')
+                        }
+                        id="likeButton"
+                        alt="likeButton"
+                    />
+                </button>
         </div>
 
-        <div>
+        <div id="rd_container1">
             <img src={process.env.PUBLIC_URL + '/assets/images/rd_photo1.png'} id="rd_photo1" alt="m2"/>
+        </div>
+        <div id="rd_container2">
             <img src={process.env.PUBLIC_URL + '/assets/images/rd_photo2.png'} id="rd_photo2" alt="m2"/>
         </div>
 
