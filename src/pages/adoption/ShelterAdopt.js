@@ -37,10 +37,10 @@ function ShelterAdopt(props) {
           />
         </Link>
         <AdoptList />
+        {/*<AdoptList />
         <AdoptList />
         <AdoptList />
-        <AdoptList />
-        <AdoptList />
+        <AdoptList />*/}
         <div>
           {posts.results ? (
             posts.results.map((post) => (
