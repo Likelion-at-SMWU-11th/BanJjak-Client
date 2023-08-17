@@ -24,6 +24,8 @@ const ModalContent = styled.div`
   border-radius: 15px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   z-index: 1100;
+
+  position: relative;
 `;
 
 const CustomCheckbox = styled.input`
@@ -34,11 +36,12 @@ const CustomCheckbox = styled.input`
         position: relative;
         padding-left: 30px;
         padding-right: 15px;
+        padding-top: 5px;
         cursor: pointer;
         font-size: 14px;
         color: #3E3E3E;
         margin-top : 0.rem;
-        margin-bottom : 0.2rem;
+        margin-bottom : 0.rem;
     }
 
     + label:before {
