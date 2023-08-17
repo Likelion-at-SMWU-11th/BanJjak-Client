@@ -54,6 +54,7 @@ import AgreeModal from "./pages/modal/AgreeModal";
 import DeleteModal from "./pages/modal/DeleteModal";
 import ShelterPostsList from "./pages/shelter/ShelterPostsList";
 import { findByLabelText } from "@testing-library/react";
+import AdoptDetail2 from "./pages/adoption/AdoptDetail2";
 
 function App() {
   return (
@@ -97,7 +98,14 @@ function App() {
             element={<PersonalAdopt />}
           ></Route>
         </Route>
-        <Route path="/Adoption/AdoptDetail" element={<AdoptDetail />}></Route>
+        <Route
+          path="/Adoption/AdoptDetail/:postId"
+          element={<AdoptDetail />}
+        ></Route>
+        <Route
+          path="/Adoption/AdoptDetail2/:postId"
+          element={<AdoptDetail2 />}
+        ></Route>
         <Route
           path="/Adoption/WriteAdoption"
           element={<WriteAdoption />}
