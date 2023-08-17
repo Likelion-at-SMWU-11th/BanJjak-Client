@@ -1,7 +1,9 @@
+
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import AdoptList from "../../components/AdoptList";
+
 
 function ShelterAdopt(props) {
   const [posts, setPosts] = useState([]);
@@ -37,10 +39,6 @@ function ShelterAdopt(props) {
           />
         </Link>
         <AdoptList />
-        <AdoptList />
-        <AdoptList />
-        <AdoptList />
-        <AdoptList />
         <div>
           {posts.results ? (
             posts.results.map((post) => (
@@ -53,6 +51,7 @@ function ShelterAdopt(props) {
       </div>
     );
   };
+
 }
 
 export default ShelterAdopt;
