@@ -28,55 +28,31 @@ function ShelterAdopt(props) {
 
   const PostComponent = ({ post }) => {
     return (
-
-      <div className="post">
-        <img src={post.image1} alt={post.name} />
-        <h3>{post.name}</h3>
-        <p>{post.content}</p>
-        {/* 다른 내용들 여기서 불러오시면 돼유*/}
-      </div>
-
+      <div>
+        <Link to="/Guidance/Agreement">
+          <img
+            src={process.env.PUBLIC_URL + "/assets/icons/floatingread.png"}
+            id="floatingread"
+            alt="floatingread"
+          />
+        </Link>
+        <AdoptList />
+        <AdoptList />
+        <AdoptList />
+        <AdoptList />
+        <AdoptList />
         <div>
-            <Link to="/Guidance/Agreement">
-            <img src={process.env.PUBLIC_URL + '/assets/icons/floatingread.png'}  alt="floatingread"
-            style={{position : 'fixed', marginLeft:'300px', marginTop :'400px'}}/>
-            </Link>
-            <AdoptList/>
-            <AdoptList/>
-            <AdoptList/>
-            <AdoptList/>
-            <AdoptList/>
-            
+          {posts.results ? (
+            posts.results.map((post) => (
+              <PostComponent key={post.id} post={post} />
+            ))
+          ) : (
+            <p>No posts available.</p>
+          )}
         </div>
-
+      </div>
     );
   };
-
-  return (
-    <div>
-      <Link to="/Guidance/Agreement">
-        <img
-          src={process.env.PUBLIC_URL + "/assets/icons/floatingread.png"}
-          id="floatingread"
-          alt="floatingread"
-        />
-      </Link>
-      <AdoptList />
-      <AdoptList />
-      <AdoptList />
-      <AdoptList />
-      <AdoptList />
-      <div>
-        {posts.results ? (
-          posts.results.map((post) => (
-            <PostComponent key={post.id} post={post} />
-          ))
-        ) : (
-          <p>No posts available.</p>
-        )}
-      </div>
-    </div>
-  );
 }
 
 export default ShelterAdopt;

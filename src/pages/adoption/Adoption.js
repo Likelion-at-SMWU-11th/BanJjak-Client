@@ -1,5 +1,4 @@
-
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../../css/Adoption.css";
 import FilteringModal from "../modal/FilteringModal";
@@ -7,7 +6,6 @@ import styled from "styled-components";
 import Banner, { BtnList } from "../../components/Banner";
 import ShelterAdopt from "./ShelterAdopt";
 import PersonalAdopt from "./PersonalAdopt";
-
 
 const GreenBtn = styled.button`
   color: white;
@@ -40,80 +38,89 @@ const SpeciesBtn = styled.button`
 `;
 
 function Adoption(props) {
+  // 모달관련
   const [modalOpen, setModalOpen] = useState(false);
-  const [selectedSpecies, setSelectedSpecies] = useState([]);
-  //const [selectedSpecies, setSelectedSpecies] = useState("");
-  const [isShelterAdopt, setIsShelterAdopt] = useState(true);
-    // 모달관련
+  const [selectedSpecies, setSelectedSpecies] = useState("");
+
   const openModal = () => {
-        setModalOpen(true);
-    };
+    setModalOpen(true);
+  };
 
-    const closeModal = () => {
-        setModalOpen(false);
-    };
+  const closeModal = () => {
+    setModalOpen(false);
+  };
 
-    const handleSpeciesChange = (species) => {
-        setSelectedSpecies(species);
-    };
+  const handleSpeciesChange = (species) => {
+    setSelectedSpecies(species);
+  };
 
-    //하위라우팅 관련
-    const [isShelterAdopt, setIsShelterAdopt] = useState(true);
+  //하위라우팅 관련
+  const [isShelterAdopt, setIsShelterAdopt] = useState(true);
 
-    const ShelterAdoptStyle = {
-        color: isShelterAdopt ? '#00AC78' : '#828282', 
-        borderBottom: isShelterAdopt ? '1px solid #00AC78' : '1px solid #ECECEC', 
-        cursor: isShelterAdopt ? 'default' : 'pointer', 
-    };
+  const ShelterAdoptStyle = {
+    color: isShelterAdopt ? "#00AC78" : "#828282",
+    borderBottom: isShelterAdopt ? "1px solid #00AC78" : "1px solid #ECECEC",
+    cursor: isShelterAdopt ? "default" : "pointer",
+  };
 
-    const PersonalAdoptStyle = {
-        color: isShelterAdopt ? '#828282' : '#00AC78', 
-        borderBottom: isShelterAdopt ? '1px solid #ECECEC' : '1px solid #00AC78', 
-        cursor: isShelterAdopt ? 'pointer' : 'default', 
-    };
+  const PersonalAdoptStyle = {
+    color: isShelterAdopt ? "#828282" : "#00AC78",
+    borderBottom: isShelterAdopt ? "1px solid #ECECEC" : "1px solid #00AC78",
+    cursor: isShelterAdopt ? "pointer" : "default",
+  };
 
-    const handleAdoptTypeChange = () => {
-        if (!isShelterAdopt) {
-            setIsShelterAdopt(true);
-        }
-    };
-    
-    return (
-        <>
-        <Banner />
+  const handleAdoptTypeChange = () => {
+    if (!isShelterAdopt) {
+      setIsShelterAdopt(true);
+    }
+  };
 
-        <Link to="/Adoption/ShelterAdopt">
-        <div id="shelter"
-            style={ShelterAdoptStyle}
-            onClick={handleAdoptTypeChange}>
-            <p>보호소</p>
-        </div></Link>
+  return (
+    <>
+      <Banner />
 
-        <Link to="/Adoption/PersonalAdopt">
-        <div id="temporary"
-            style={PersonalAdoptStyle}
-            onClick={() => setIsShelterAdopt(false)}>
-            <p>임시보호</p>
-        </div></Link><br/>
-        
-        <GreenBtn onClick={openModal}>동물</GreenBtn>
-        <SpeciesBtn>{selectedSpecies || "모든 동물"}</SpeciesBtn><br/>
+      <Link to="/Adoption/ShelterAdopt">
+        <div
+          id="shelter"
+          style={ShelterAdoptStyle}
+          onClick={handleAdoptTypeChange}
+        >
+          <p>보호소</p>
+        </div>
+      </Link>
 
-        {/* Correct placement of the FilteringModal */}
-        {modalOpen && (
-            <FilteringModal isOpen={modalOpen} onClose={closeModal} />
-        )}
+      <Link to="/Adoption/PersonalAdopt">
+        <div
+          id="temporary"
+          style={PersonalAdoptStyle}
+          onClick={() => setIsShelterAdopt(false)}
+        >
+          <p>임시보호</p>
+        </div>
+      </Link>
+      <br />
 
-        <div style={{ overflowX: 'hidden', overflowY: 'auto', height: '620px', marginTop:"1px" }}>
-        <p id="count">n마리</p><br/>
+      <GreenBtn onClick={openModal}>동물</GreenBtn>
+      <SpeciesBtn>{selectedSpecies || "모든 동물"}</SpeciesBtn>
+      <br />
 
-        
+      {/* Correct placement of the FilteringModal */}
+      {modalOpen && <FilteringModal isOpen={modalOpen} onClose={closeModal} />}
+
+      <div
+        style={{
+          overflowX: "hidden",
+          overflowY: "auto",
+          height: "620px",
+          marginTop: "1px",
+        }}
+      >
+        <p id="count">n마리</p>
+        <br />
 
         <div id="adoptlist">
-          {isShelterAdopt && <ShelterAdopt selectedSpecies={selectedSpecies} />}
-          {!isShelterAdopt && (
-            <PersonalAdopt selectedSpecies={selectedSpecies} />
-          )}
+          {isShelterAdopt && <ShelterAdopt />}
+          {!isShelterAdopt && <PersonalAdopt />}
         </div>
       </div>
     </>
