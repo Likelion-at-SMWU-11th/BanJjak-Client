@@ -90,8 +90,8 @@ const PostingModal = ({ isOpen, onClose }) => {
             입양희망자에게<br/>해당 연락처가 안내됩니다.</p>
         </div>
 
-        <Link to="/HomeShelter/ShelterPostList"><btn id="modal_btn1">연락처 변경</btn></Link>
-        <Link to="/HomeShelter/ShelterEditInfo"><btn type="button" id="modal_btn2">맞습니다</btn></Link> 
+        <Link to="/HomeShelter/ShelterEditInfo"><btn id="modal_btn1">연락처 변경</btn></Link>
+        <Link to="/HomeShelter/ShelterPostsList"><btn type="button" id="modal_btn2">맞습니다</btn></Link> 
       
       
     </ModalContent>

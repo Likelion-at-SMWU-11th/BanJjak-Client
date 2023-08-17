@@ -40,6 +40,7 @@ import ReunionReview from "./pages/review/ReunionReview";
 import ReviewDetail from "./pages/review/ReviewDetail";
 import HomeShelter from "./pages/shelter/HomeShelter";
 import ShelterPosting from "./pages/shelter/ShelterPosting";
+import ShelterPostsList from "./pages/shelter/ShelterPostsList";
 import WriteAdoption from "./pages/writing/WriteAdoption";
 import WriteProtection from "./pages/writing/WriteProtection";
 import WriteReview from "./pages/writing/WriteReview";
@@ -71,7 +72,7 @@ function App() {
         ></Route>
         <Route
           path="/HomeShelter/ShelterPostsList"
-          element={<ShelterEditInfo />}
+          element={<ShelterPostsList />}
         ></Route>
         <Route
           path="/HomeShelter/ShelterEditInfo"
