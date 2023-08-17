@@ -81,6 +81,7 @@ const PostingModal = ({ isOpen, onClose }) => {
           <img src={process.env.PUBLIC_URL + '/assets/icons/logo2D.png'} id="ModalImage" alt="logo3D"
           style={{width : '120px', height :'112px', marginTop : '10px'}}/>
 
+          
           <p style={{color : '#3E3E3E', fontSize:'25px', marginTop: '10px'}}> 보호소 <span style={{fontWeight :'bold'}}>{username}</span></p>
           <p style={{color : '#3E3E3E', fontSize:'25px', marginTop: '5px'}}>연락처</p>
           <a href={"tel:" + usernumber} style={{color : '#3E3E3E', fontSize:'25px', fontWeight:'bold' }}>{usernumber}</a>
@@ -89,8 +90,8 @@ const PostingModal = ({ isOpen, onClose }) => {
             입양희망자에게<br/>해당 연락처가 안내됩니다.</p>
         </div>
 
-        <btn id="modal_btn1">연락처 변경</btn>
-        <btn type="button" id="modal_btn2">맞습니다</btn> 
+        <Link to="/HomeShelter/ShelterPostList"><btn id="modal_btn1">연락처 변경</btn></Link>
+        <Link to="/HomeShelter/ShelterEditInfo"><btn type="button" id="modal_btn2">맞습니다</btn></Link> 
       
       
     </ModalContent>
