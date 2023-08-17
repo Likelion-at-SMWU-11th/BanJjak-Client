@@ -1,5 +1,5 @@
-import React, { useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useRef, useEffect, useState } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import useDetectClose from "../hooks/useDetectClose";
 import Dropdown from "./Dropdown";
@@ -183,6 +183,11 @@ const smallFont = {
 };
 
 const Posting = () => {
+  const location = useLocation();
+  const managerToken = location.state?.managerToken;
+  console.log("managerToken:", managerToken);
+
+  const [username, setUsername] = useState("");
   // dropdown 관련
   const dropDownRefs = {
     animal: useRef(),
@@ -191,82 +196,83 @@ const Posting = () => {
   };
 
   const [name, setName] = useState(""); // 동물 이름 상태
-  const [species, setSpecies] = useState(""); // 종 상태
+  const [kind, setKind] = useState(""); // 종 상태
   const [weight, setWeight] = useState(""); // 몸무게 상태
   const [age, setAge] = useState(""); // 나이 상태
   const [animalValue, setAnimalValue] = useState(""); //동물 상태
   const [sexValue, setSexValue] = useState(""); //성별 상태
   const [neuteredValue, setNeuteredValue] = useState(""); //중성화 상태
   const [content, setContent] = useState(""); //관리자 한마디 상태
+
   const [alert, setAlert] = useState(""); //특이사항 상태
 
   const animalList = ["개", "고양이", "기타"];
   const sexList = ["수컷", "암컷", "미확인"];
-  const neuteredList = ["중성화 O", "중성화 X", "미확인"];
+  const neuteredList = ["중성화O", "중성화X", "미확인"];
 
   const [isOpen1, setIsOpen1] = useDetectClose(dropDownRefs.animal, false);
   const [isOpen2, setIsOpen2] = useDetectClose(dropDownRefs.sex, false);
   const [isOpen3, setIsOpen3] = useDetectClose(dropDownRefs.neutered, false);
 
-  // Modal 관련
-  //   const [modalOpen, setModalOpen] = useState(false); // 모달창 노출 여부 state
-  //   const showModal = () => {
-  //     //모달창 노출
-  //     setModalOpen(true);
-  //   };
+  const [modalOpen, setModalOpen] = useState(false); // 모달창 노출 여부 state
 
   //이미지 업로드 관련
-  const [images, setImages] = useState([null, null, null]);
+  // const [images, setImages] = useState([null, null, null]);
+  const [imageSrc, setImage] = useState(null);  //이미지 태그 소스를 위한 props
+  const token = localStorage.getItem("token"); // 저장된 토큰 가져오기
+  const formData = new FormData(); // FormData 객체 생성
+  const [selectedFile, setSelectedFile]=useState(null);
+  console.log(selectedFile)
 
-  const handleImageUpload = async (event, index) => {
-    const selectedFile = event.target.files[0];
-    if (selectedFile) {
-      const updatedImages = [...images];
-      updatedImages[index] = selectedFile;
-      setImages(updatedImages);
 
+  const handleImageUpload = async (e) => {
+    setSelectedFile(e.target.files[0]);
       // 이미지 미리보기를 위한 임시 URL 생성 및 설정
-      const imageObjectURL = URL.createObjectURL(selectedFile);
-      const updatedImagesWithObjectURLs = [...images];
-      updatedImagesWithObjectURLs[index] = imageObjectURL;
-      setImages(updatedImagesWithObjectURLs);
-    }
+      const imageObjectURL = URL.createObjectURL(e.target.files[0]);
+      setImage(imageObjectURL);
   };
+  // const floatModal = async() =>{
+  //   try{
+  //     const token = localStorage.getItem("token");
+  //     const response = await axios.get("http://127.0.0.1:8000/users/get_username/",{
+  //       headers:{
+  //         Authorization: `Token ${token}`,
+  //      },
+  //     })
+  //   }
+  //   .then((response)=>
+  //     const user=response.data;
 
+  //     )
+  //   handlePostRequest();
+  // }
   //서버로 데이터 전송
   const handlePostRequest = async () => {
     // showModal();
-    const token = localStorage.getItem("token"); // 저장된 토큰 가져오기
-    const formData = new FormData(); // FormData 객체 생성
 
-    const hasAtLeastOneImage = images.some((image) => image !== null);
-    if (!hasAtLeastOneImage) {
-      window.alert("적어도 1개 이상의 이미지가 필요합니다.");
-      return; // 이미지가 없으면 함수 종료
-    }
-    // 이미지 파일들을 FormData에 추가
-    images.forEach((image, index) => {
-      if (image) {
-        formData.append(`image${index + 1}`, image);
-      }
-    });
+    // const hasAtLeastOneImage = images.some((image) => image !== null);
+    // if (!hasAtLeastOneImage) {
+    //   window.alert("적어도 1개 이상의 이미지가 필요합니다.");
+    //   return; // 이미지가 없으면 함수 종료
+    // }
 
     // 다른 데이터를 FormData에 추가
-    formData.append("name", name);
-    formData.append("animal_type", animalValue);
-    formData.append("kind", species);
-    formData.append("weight", weight);
-    formData.append("age", age);
-    formData.append("gender", sexValue);
-    formData.append("is_neutered", neuteredValue);
-    formData.append("hastags", null);
-    formData.append("content", content);
-    formData.append("alert", alert);
-
-    console.log(formData); // FormData 내용 콘솔 출력
-
+    // formData.append("name", name);
+    if (name && content && alert) {
+      formData.append("name", name);
+      formData.append("kind", kind);
+      formData.append("weight", weight);
+      formData.append("age", age);
+      formData.append("gender", sexValue);
+      formData.append("is_neutered", neuteredValue);
+      formData.append("content", content);
+      formData.append("alert", alert);
+      formData.append('image1',selectedFile)
+  }
+  
+    // formData.append("hastags", null);
     try {
-      const response = await axios.post(
+      const response=axios.post(
         "http://127.0.0.1:8000/posts/",
         formData,
         {
@@ -275,10 +281,14 @@ const Posting = () => {
             "Content-Type": "multipart/form-data", // 멀티파트 형식 설정
           },
         }
-      );
+      ).then(response => {
+        console.log(response.data);
+      })
 
       // POST 요청이 성공한 경우의 처리
       console.log("POST 요청 성공:", response.data);
+      //handlePostSuccess(response.data);
+      setModalOpen(true); 
       // 추가적인 로직 또는 상태 업데이트 등을 처리할 수 있습니다.
     } catch (error) {
       // POST 요청이 실패한 경우의 처리
@@ -289,7 +299,7 @@ const Posting = () => {
 
   return (
     <>
-      <form style={formStyle}>
+      <form style={formStyle} >
         <InputDiv>
           <label>공고 동물 이름</label>
           <input
@@ -305,7 +315,36 @@ const Posting = () => {
             공고동물 사진 <span style={smallFont}>(최대 3장)</span>
           </label>
           <div className="ImgDiv">
-            {images.map((imageSrc, index) => (
+          <div className="eachImgDiv">
+                <input
+                  type="file"
+                  name="image1"
+                  id="imageInput1"
+                  accept="image/*"
+                  style={{ display: "none" }}
+                  onChange={(e)=>handleImageUpload(e)}
+                />
+                <label htmlFor="imageInput1">
+                <ImgContainer>
+                    {imageSrc ? (
+                      <img
+                        id="photo"
+                        src={imageSrc}
+                        alt={`이미지1`}
+                      />
+                    ) : (
+                      <img
+                        id="photo"
+                        src={
+                          process.env.PUBLIC_URL +
+                          "/assets/icons/img_preview.png"
+                        }
+                        alt={`이미지 미리보기1`}
+                      />
+                    )}
+                  </ImgContainer>
+                </label>
+            {/* {images.map((imageSrc, index) => (
               <div className="eachImgDiv" key={index}>
                 <input
                   type="file"
@@ -333,14 +372,13 @@ const Posting = () => {
                       />
                     )}
                   </ImgContainer>
-                </label>
+                </label> */}
                 <img
                   id="editIcon"
                   src={process.env.PUBLIC_URL + "/assets/icons/edit.png"}
-                  alt={`편집 아이콘 ${index}`}
+                  alt={`편집 아이콘`}
                 />
               </div>
-            ))}
           </div>
         </ImgInputDiv>
         <RowDiv>
@@ -370,8 +408,8 @@ const Posting = () => {
             <label>종</label>
             <input
               type="text"
-              value={species}
-              onChange={(e) => setSpecies(e.target.value)}
+              value={kind}
+              onChange={(e) => setKind(e.target.value)}
               placeholder="미확인"
             />
           </div>
@@ -474,12 +512,18 @@ const Posting = () => {
             <Link>미리 보기</Link>
           </button>
           <input type="button" value="작성 완료" onClick={handlePostRequest} />
-          {/* {modalOpen && <PostingModal setModalOpen={setModalOpen} />} */}
+          {modalOpen && (
+            <PostingModal 
+              isOpen={modalOpen}
+              onClose={() => setModalOpen(false)}
+            />
+          )}
         </SubmitDiv>
       </form>
     </>
   );
 };
 
-export default Posting;
 
+export default Posting;
+export {ImgContainer}

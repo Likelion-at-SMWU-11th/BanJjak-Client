@@ -1,19 +1,18 @@
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 import "../../css/EditInfo.css";
 
-function EditPW() {
+const ShelterEditPW = () => {
   const navigate = useNavigate();
   const [oldPassword, setOldPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
   const handleExitClick = () => {
-    // EditInfo 페이지로 이동
-    navigate("/Mypage/EditInfo");
+    // 내 정보 수정 페이지로 이동
+    navigate("/HomeShelter/ShelterEditInfo");
   };
-
   const handlePasswordChange = async (e) => {
     e.preventDefault();
 
@@ -26,7 +25,7 @@ function EditPW() {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.put(
-        "http://127.0.0.1:8000/users/changeuserinfo/pw/",
+        "http://127.0.0.1:8000/users/changemanagerinfo/pw/",
         {
           old_pw: oldPassword,
           new_pw: newPassword,
@@ -54,7 +53,7 @@ function EditPW() {
           src={process.env.PUBLIC_URL + "/assets/icons/exit.png"}
           alt="exit"
           id="exitBtn"
-          class="invisibleContent"
+          className="invisibleContent"
         />
         <span>비밀번호 변경</span>
         <img
@@ -66,7 +65,7 @@ function EditPW() {
       </div>
 
       <div id="ep_div">
-        <div id="ep_p1">
+        <div id="ep_p1_2">
           <p>기존 비밀번호</p>
           <form>
             <input
@@ -78,7 +77,7 @@ function EditPW() {
           </form>
         </div>
 
-        <div id="ep_p1">
+        <div id="ep_p1_2">
           <p>새로운 비밀번호</p>
           <form>
             <input
@@ -99,13 +98,13 @@ function EditPW() {
         </div>
 
         <form onSubmit={handlePasswordChange}>
-          <button type="submit" id="ep_btn">
+          <button type="submit" id="ep_btn2">
             비밀번호 변경
           </button>
         </form>
       </div>
     </>
   );
-}
+};
 
-export default EditPW;
+export default ShelterEditPW;

@@ -45,6 +45,8 @@ import WriteProtection from "./pages/writing/WriteProtection";
 import WriteReview from "./pages/writing/WriteReview";
 import WriteMissing from "./pages/writing/WriteMissing";
 import WriteSeen from "./pages/writing/WriteSeen";
+import ShelterEditInfo from "./pages/shelter/ShelterEditInfo";
+import ShelterEditPW from "./pages/shelter/ShelterEditPW";
 import InquiryModal from "./pages/modal/InquiryModal";
 import GuidanceModal from "./pages/modal/GuidanceModal";
 import MailModal from "./pages/modal/MailModal";
@@ -63,32 +65,64 @@ function App() {
         <Route path="/Login/ForCommon" element={<LoginForCommon />}></Route>
         <Route path="Login/ForShelter" element={<LoginForShelter />}></Route>
         <Route path="/HomeShelter" element={<HomeShelter />}></Route>
-        <Route path="/HomeShelter/ShelterPosting" element={<ShelterPosting />}></Route>
+        <Route
+          path="/HomeShelter/ShelterPosting"
+          element={<ShelterPosting />}
+        ></Route>
+        <Route
+          path="/HomeShelter/ShelterEditInfo"
+          element={<ShelterEditInfo />}
+        ></Route>
+        <Route
+          path="/HomeShelter/ShelterEditInfo/ShelterEditPW"
+          element={<ShelterEditPW />}
+        ></Route>
         <Route path="/Home" element={<Home />}></Route>
         <Route path="/MyPage" element={<MyPage />}></Route>
         <Route path="/MyPage/FAQ" element={<FAQ />}></Route>
         <Route path="/Adoption" element={<Adoption />}>
-          <Route path="/Adoption/ShelterAdopt" element={<ShelterAdopt/>}></Route>
-          <Route path="/Adoption/PersonalAdopt" element={<PersonalAdopt/>}></Route>
+          <Route
+            path="/Adoption/ShelterAdopt"
+            element={<ShelterAdopt />}
+          ></Route>
+          <Route
+            path="/Adoption/PersonalAdopt"
+            element={<PersonalAdopt />}
+          ></Route>
         </Route>
         <Route path="/Adoption/AdoptDetail" element={<AdoptDetail />}></Route>
-        <Route path="/Adoption/WriteAdoption" element={<WriteAdoption/>}></Route>
+        <Route
+          path="/Adoption/WriteAdoption"
+          element={<WriteAdoption />}
+        ></Route>
         <Route path="/Missing" element={<Missing />}>
-          <Route path="/Missing/Missed" element={<Missed/>}></Route>
-          <Route path="/Missing/Seen" element={<Seen/>}></Route>
+          <Route path="/Missing/Missed" element={<Missed />}></Route>
+          <Route path="/Missing/Seen" element={<Seen />}></Route>
         </Route>
+
         <Route path="/Missing/MissingDetail" element={<MissingDetail />}></Route>
         <Route path="/Missing/Missed/WriteMissing" element={<WriteMissing />}></Route>
         <Route path="/Missing/Seen/WriteSeen" element={<WriteSeen />}></Route>
+
         <Route path="/Protection" element={<Protection />}></Route>
-        <Route path="/Protection/ProtectDetail"element={<ProtectDetail />}></Route>
-        <Route path="/Protection/WriteProtection" element={<WriteProtection/>}></Route>
+        <Route
+          path="/Protection/ProtectDetail"
+          element={<ProtectDetail />}
+        ></Route>
+        <Route
+          path="/Protection/WriteProtection"
+          element={<WriteProtection />}
+        ></Route>
         <Route path="/Review" element={<Review />}>
-          <Route path="/Review/AdoptReview" element={<AdoptReview/>}></Route>
-          <Route path="/Review/ReunionReview" element={<ReunionReview/>}></Route>
+          <Route path="/Review/AdoptReview" element={<AdoptReview />}></Route>
+          <Route
+            path="/Review/ReunionReview"
+            element={<ReunionReview />}
+          ></Route>
         </Route>
         <Route path="/Review/ReviewDetail" element={<ReviewDetail />}></Route>
         <Route path="/Review/WriteReview" element={<WriteReview />}></Route>
+
         <Route path="/Introduction" element={<Introduction/>}></Route>
         <Route path="/Activity" element={<Activity/>}></Route>
 
@@ -102,11 +136,12 @@ function App() {
         <Route path="/Guidance" element={<Guidance/>}>
           <Route path="/Guidance/SelfCheck" element={<SelfCheck/>}></Route>
           <Route path="/Guidance/Agreement" element={<Agreement/>}></Route>
+
         </Route>
-        <Route path="/MyPage/EditInfo" element={<EditInfo/>}></Route>
-        <Route path="/MyPage/EditInfo/EditPW" element={<EditPW/>}></Route>  
-        <Route path="/MyPage/MyPost" element={<MyPost/>}></Route>
-        <Route path="/MyPage/Liked" element={<Liked/>}></Route>
+        <Route path="/MyPage/EditInfo" element={<EditInfo />}></Route>
+        <Route path="/MyPage/EditInfo/EditPW" element={<EditPW />}></Route>
+        <Route path="/MyPage/MyPost" element={<MyPost />}></Route>
+        <Route path="/MyPage/Liked" element={<Liked />}></Route>
       
         <Route path="/Adoption/AdoptDetail/InquiryModal" element={<InquiryModal/>}></Route>
         <Route path="/Adoption/AdoptDetail/GuidanceModal" element={<GuidanceModal/>}></Route>
