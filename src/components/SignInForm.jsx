@@ -67,7 +67,7 @@ const SignInForm = ({ formData, onFormDataChange }) => {
               </InputDiv>
               <InputDiv>
                 <p>연락처</p>
-                <input type="tel" name="phone" value={formData.phone} onChange={handleInputChange} placeholder="'-' 를 제외한 숫자만 입력해 주세요." />
+                <input type="tel" name="phone" value={formData.phone} onChange={handleInputChange} placeholder="'-' 를 포함하여 입력해 주세요." />
               </InputDiv>
           </form>
           

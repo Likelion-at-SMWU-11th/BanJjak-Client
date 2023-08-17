@@ -78,7 +78,7 @@ const SignInForm2 = ({ formData, onFormDataChange }) => {
               </InputDiv>
               <InputDiv>
                 <p>보호소 연락처 <span>입양 희망자에게 해당 연락처가 안내됩니다.</span></p>
-                <input type="tel" name="phone" value={formData.phone} onChange={handleInputChange} placeholder="'-' 를 제외한 숫자만 입력해 주세요."/>
+                <input type="tel" name="phone" value={formData.phone} onChange={handleInputChange} placeholder="'-' 를 포함하여 입력해 주세요."/>
               </InputDiv>
           </form>
           
