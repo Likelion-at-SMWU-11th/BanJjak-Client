@@ -53,6 +53,7 @@ import MailModal from "./pages/modal/MailModal";
 import AgreeModal from "./pages/modal/AgreeModal";
 import DeleteModal from "./pages/modal/DeleteModal";
 import ShelterPostsList from "./pages/shelter/ShelterPostsList";
+import { findByLabelText } from "@testing-library/react";
 
 function App() {
   return (
@@ -82,6 +83,7 @@ function App() {
           path="/HomeShelter/ShelterEditInfo/ShelterEditPW"
           element={<ShelterEditPW />}
         ></Route>
+        <Route path="/" element={<Home />}></Route>
         <Route path="/Home" element={<Home />}></Route>
         <Route path="/MyPage" element={<MyPage />}></Route>
         <Route path="/MyPage/FAQ" element={<FAQ />}></Route>
