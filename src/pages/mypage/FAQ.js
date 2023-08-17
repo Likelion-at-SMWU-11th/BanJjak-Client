@@ -36,16 +36,16 @@ function FAQ() {
 
                 <br/>
 
-                <div id="solvingbtn">
-                    <Link to="">
+                <Link to="/MyPage/FAQ/MailModal">
+                    <div id="solvingbtn">
                     <img src={process.env.PUBLIC_URL + '/assets/icons/mail.png'} id="mail" alt="mail"/>
                     <div id="solve">
                         <h4 id="h4">간편메일</h4>
                         <p id="p1">간편하게 메일로 답변을 받을 수 있어요.</p>
                     </div>
                     <img src={process.env.PUBLIC_URL + '/assets/icons/more.png'} id="more2" alt="more"/>
-                    </Link>
-                </div>
+                    </div>
+                </Link>
             </div></div>
         </>
     );

@@ -110,23 +110,27 @@
     width : 330px;
     height : 100px;
     margin : 0px 25px;
+    z-index : 1;
 }
 
 #ballooncontents {
     display : inline-block;
-    position : absolute;
     color : #828282;
-    margin : 20px -340px;
+    position : relative;
     text-align : center;
+    top : -85px;
+    left : 40px;
     line-height : 20px;
     font-size : 13px;
+    z-index : 2;
 }
 
 #from {
-    position : absolute;
+    position : relative;
     font-size : 10px;
     color : #828282;
-    margin : -15px 70px;
+    margin-top : -50px;
+    margin-left : 70px;
     font-weight : 100;
 }
 
@@ -134,7 +138,7 @@
     margin : 10px 20px;
     color : #8e8e8e;
     font-size : 13px;
-    line-height : 25px;
+    line-height : 30px;
 }
 
 #place {
@@ -143,9 +147,11 @@
 }
 
 #gotoread {
+    position : fixed;
+    margin-left  : 220px;
+    margin-top : 60px;
+    margin-bottom : -10px;
     float : right;
-    margin-right : 20px;
-    margin-top : -10px;
 }
 
 #mark {
@@ -159,14 +165,6 @@
     font-size : 11px;
     margin : 5px;
 }
-
-#floatingchat {
-    position : fixed;
-    bottom : 15%;
-    left : 78%;
-}
-
-
 
 /* LikeBtn.jsx 컴포넌트에 사용되는 css*/
 

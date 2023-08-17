@@ -47,6 +47,11 @@ import WriteMissing from "./pages/writing/WriteMissing";
 import WriteSeen from "./pages/writing/WriteSeen";
 import ShelterEditInfo from "./pages/shelter/ShelterEditInfo";
 import ShelterEditPW from "./pages/shelter/ShelterEditPW";
+import InquiryModal from "./pages/modal/InquiryModal";
+import GuidanceModal from "./pages/modal/GuidanceModal";
+import MailModal from "./pages/modal/MailModal";
+import AgreeModal from "./pages/modal/AgreeModal";
+import DeleteModal from "./pages/modal/DeleteModal";
 
 function App() {
   return (
@@ -137,6 +142,12 @@ function App() {
         <Route path="/MyPage/EditInfo/EditPW" element={<EditPW />}></Route>
         <Route path="/MyPage/MyPost" element={<MyPost />}></Route>
         <Route path="/MyPage/Liked" element={<Liked />}></Route>
+      
+        <Route path="/Adoption/AdoptDetail/InquiryModal" element={<InquiryModal/>}></Route>
+        <Route path="/Adoption/AdoptDetail/GuidanceModal" element={<GuidanceModal/>}></Route>
+        <Route path="/MyPage/FAQ/MailModal" element={<MailModal/>}></Route>
+        <Route path="/Guidance/Agreement/AgreeModal" element={<AgreeModal/>}></Route>
+        <Route path="/DeleteModal" element={<DeleteModal/>}></Route>
       </Routes>
     </div>
   );
