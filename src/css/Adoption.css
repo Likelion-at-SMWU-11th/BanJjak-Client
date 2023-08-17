@@ -1,29 +1,30 @@
 /*Adoption.js 페이지에 사용되는 css*/
 
-#shelter { /*보호소 div태그*/
-    display : inline-block;
-    margin: 0px;
-    width : 192px;
-    height : 47px;
-    padding : 15px 10px 0px;
-    text-align : center;
-    font-size : 15px;
-    font-weight : bold;
-    color : #00AC78;
-    border-bottom : 1px solid #00AC78;
+#shelter {
+  /*보호소 div태그*/
+  display: inline-block;
+  margin: 0px;
+  width: 192px;
+  height: 47px;
+  padding: 15px 10px 0px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  color: #00ac78;
+  border-bottom: 1px solid #00ac78;
 }
 
-#temporary { /*임시보호 div태그*/
-    display : inline-block;
-    margin : 1px;
-    width : 190px;
-    padding : 15px 0px;
-    text-align : center;
-    font-size : 15px;
-    font-weight : bold;
-    color : #828282;
-    border-bottom : 1px solid #ECECEC;
-
+#temporary {
+  /*임시보호 div태그*/
+  display: inline-block;
+  margin: 1px;
+  width: 190px;
+  padding: 15px 0px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  color: #828282;
+  border-bottom: 1px solid #ececec;
 }
 
 #floatingread {
@@ -38,22 +39,23 @@
 
 /*AdoptList.jsx 컴포넌트에서 사용되는 Css*/
 
-
-#al_list { /* ProtectList.jsx 컴포넌트 전체를 묶는 div태그*/
-    width : 340px;
-    height : 195px;
-    border : 1px solid #BCBCBC;
-    border-radius : 10px;
-    margin : 25px;
-    line-height : 12px;
+#al_list {
+  /* ProtectList.jsx 컴포넌트 전체를 묶는 div태그*/
+  width: 340px;
+  height: 195px;
+  border: 1px solid #bcbcbc;
+  border-radius: 10px;
+  margin: 25px;
+  line-height: 12px;
 }
 
-#al_container { /* 동물 사진 img태그*/
-    width: 340px;
-    height : 140px;
-    border-top-left-radius : 10px;
-    border-top-right-radius : 10px;
-    margin-bottom : 0px;
+#al_container {
+  /* 동물 사진 img태그*/
+  width: 340px;
+  height: 140px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin-bottom: 0px;
 }
 
 #al_photo {
@@ -82,21 +84,21 @@
 
 /*AdoptDetail.js에서 사용되는 CSS*/
 
-
-#ad_container{ /* AdoptDetail.js에서 사용되는 이미지 파일*/
-    width : 340px;
-    height : 220px;
-    margin : 25px;
-    margin-bottom : 0px;
-    border-radius : 20px;
-
+#ad_container {
+  /* AdoptDetail.js에서 사용되는 이미지 파일*/
+  width: 340px;
+  height: 220px;
+  margin: 25px;
+  margin-bottom: 0px;
+  border-radius: 20px;
 }
 
-#ad_photo { /* AdoptDetail.js에서 사용되는 이미지 파일*/
-    width : 100%;
-    height : 100%;
-    object-fit : cover;
-    border-radius : 20px;
+#ad_photo {
+  /* AdoptDetail.js에서 사용되는 이미지 파일*/
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
 }
 
 #detail_main {

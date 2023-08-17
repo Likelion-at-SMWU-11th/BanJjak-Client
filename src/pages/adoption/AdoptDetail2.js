@@ -37,6 +37,12 @@ const WhiteBtn = styled.button`
 `;
 
 function AdoptDetail2() {
+  const [liked, setLiked] = useState(false);
+
+  const handleLikeClick = () => {
+    setLiked(!liked);
+  };
+
   const { postId } = useParams();
   const [data, setData] = useState(null); // 포스트 데이터를 저장할 상태
   console.log(postId);
@@ -65,17 +71,28 @@ function AdoptDetail2() {
     <>
       <Banner />
       <div key={data.id}>
-        <img src={data.image1} id="detail_photo" alt="detail_photo" />
-        <img
-          src={process.env.PUBLIC_URL + "/assets/icons/like3.png"}
-          id="nonlike"
-          alt="nonlike"
+        <div id="ad_container">
+          <img src={data.image1} id="ad_photo" alt="detail_photo" />
+        </div>
+        <button
           style={{
             position: "absolute",
             marginLeft: "320px",
-            marginTop: "-200px",
+            marginTop: "-205px",
+            border: "none",
+            backgroundColor: "transparent",
           }}
-        />
+          onClick={handleLikeClick}
+        >
+          <img
+            src={
+              process.env.PUBLIC_URL +
+              (liked ? "/assets/icons/like2.png" : "/assets/icons/like3.png")
+            }
+            id="likeButton"
+            alt="likeButton"
+          />
+        </button>
       </div>
 
       <div id="detail_main">
