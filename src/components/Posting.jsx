@@ -206,6 +206,9 @@ const Posting = () => {
 
   const [alert, setAlert] = useState(""); //특이사항 상태
 
+  const [authorLocation, setAuthorLocation]=useState('');
+  const [authorName, setAuthorName]=useState('');
+
   const animalList = ["개", "고양이", "기타"];
   const sexList = ["수컷", "암컷", "미확인"];
   const neuteredList = ["중성화O", "중성화X", "미확인"];

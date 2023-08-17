@@ -1,194 +1,209 @@
 /*Adoption.js 페이지에 사용되는 css*/
 
-#shelter { /*보호소 div태그*/
-    display : inline-block;
-    margin: 0px;
-    width : 195px;
-    height : 47px;
-    padding : 15px 10px 0px;
-    text-align : center;
-    font-size : 15px;
-    font-weight : bold;
-    color : #00AC78;
-    border-bottom : 1px solid #00AC78;
+#shelter {
+  /*보호소 div태그*/
+  display: inline-block;
+  margin: 0px;
+  width: 195px;
+  height: 47px;
+  padding: 15px 10px 0px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  color: #00ac78;
+  border-bottom: 1px solid #00ac78;
 }
 
-#temporary { /*임시보호 div태그*/
-    display : inline-block;
-    margin : 1px;
-    width : 190px;
-    padding : 15px 0px;
-    text-align : center;
-    font-size : 15px;
-    font-weight : bold;
-    color : #828282;
-    border-bottom : 1px solid #ECECEC;
+#temporary {
+  /*임시보호 div태그*/
+  display: inline-block;
+  margin: 1px;
+  width: 190px;
+  padding: 15px 0px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  color: #828282;
+  border-bottom: 1px solid #ececec;
 }
 
 #floatingread {
-    position : fixed;
-    bottom : 15%;
-    left : 78%;
+  position: fixed;
+  bottom: 15%;
+  left: 78%;
 }
 
 #Modal {
-    position : fixed;
+  position: fixed;
 }
-
 
 /*AdoptList.jsx 컴포넌트에서 사용되는 Css*/
 
-#list { /* AdoptList.jsx 컴포넌트 전체를 묶는 div태그*/
-    width : 340px;
-    height : 195px;
-    border : 1px solid #BCBCBC;
-    border-radius : 10px;
-    margin : 25px;
-    line-height : 15px;
+#al_list {
+  /* ProtectList.jsx 컴포넌트 전체를 묶는 div태그*/
+  width: 340px;
+  height: 195px;
+  border: 1px solid #bcbcbc;
+  border-radius: 10px;
+  margin: 25px;
+  line-height: 12px;
 }
 
-#animalphoto { /* 동물 사진 img태그*/
-    width: 340px;
-    height : 140px;
-    border-top-left-radius : 10px;
-    border-top-right-radius : 10px;
-    margin-bottom : -5px;
+#al_container {
+  /* 동물 사진 img태그*/
+  width: 340px;
+  height: 140px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin-bottom: 0px;
 }
 
-#main { /*주요정보 P태그*/
-    margin : 10px 10px;
-    color : #3E3E3E;
-    font-size : 15px;
-    font-weight : bold;
+#al_photo {
+  /* 동물 사진 img태그*/
+  width: 99%;
+  height: 100%;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
-#sub { /*상세정보 p태그*/
-    margin : 8px 10px;
-    color : #3E3E3E;
-    font-size : 11px
+#main {
+  /*주요정보 P태그*/
+  margin: 10px 10px;
+  color: #3e3e3e;
+  font-size: 15px;
+  font-weight: bold;
 }
 
-
+#sub {
+  /*상세정보 p태그*/
+  margin: 8px 10px;
+  color: #3e3e3e;
+  font-size: 11px;
+}
 
 /*AdoptDetail.js에서 사용되는 CSS*/
 
-#detail_photo { /* AdoptDetail.js에서 사용되는 이미지 파일*/
-    width : 340px;
-    height : 220px;
-    margin : 25px;
-    margin-bottom : 0px;
-    border-radius : 20px;
+#detail_photo {
+  /* AdoptDetail.js에서 사용되는 이미지 파일*/
+  width: 340px;
+  height: 220px;
+  margin: 25px;
+  margin-bottom: 0px;
+  border-radius: 20px;
 }
 
 #detail_main {
-    margin : 15px 0px 25px 25px;
+  margin: 15px 0px 25px 25px;
 }
 
-#detail_name { /* 해당 동물의 이름*/
-    display : inline-block;
-    font-size : 25px;
-    font-weight : bold;
-    color : #3E3E3E;
+#detail_name {
+  /* 해당 동물의 이름*/
+  display: inline-block;
+  font-size: 25px;
+  font-weight: bold;
+  color: #3e3e3e;
 }
 
-#detail_info { /* 해당 동물의 상세정보*/
-    display : inline-block;
-    font-size : 13px;
-    color :#3E3E3E;
-    margin-left : 10px;
+#detail_info {
+  /* 해당 동물의 상세정보*/
+  display: inline-block;
+  font-size: 13px;
+  color: #3e3e3e;
+  margin-left: 10px;
 }
 
 #hashtag {
-    width : 340px;
-    height : 100px;
-    margin : 20px;
-    border : 1px solid #BCBCBC
+  width: 340px;
+  height: 100px;
+  margin: 20px;
+  border: 1px solid #bcbcbc;
 }
 
 #balloon {
-    display: inline-block;
-    width : 330px;
-    height : 100px;
-    margin : 0px 25px;
-    z-index : 1;
+  display: inline-block;
+  width: 330px;
+  height: 100px;
+  margin: 0px 25px;
+  z-index: 1;
 }
 
 #ballooncontents {
-    display : inline-block;
-    color : #828282;
-    position : relative;
-    text-align : center;
-    top : -85px;
-    left : 40px;
-    line-height : 20px;
-    font-size : 13px;
-    z-index : 2;
+  display: inline-block;
+  color: #828282;
+  position: relative;
+  text-align: center;
+  top: -85px;
+  left: 40px;
+  line-height: 20px;
+  font-size: 13px;
+  z-index: 2;
 }
 
 #from {
-    position : relative;
-    font-size : 10px;
-    color : #828282;
-    margin-top : -50px;
-    margin-left : 70px;
-    font-weight : 100;
+  position: relative;
+  font-size: 10px;
+  color: #828282;
+  margin-top: -50px;
+  margin-left: 70px;
+  font-weight: 100;
 }
 
 #progress {
-    margin : 10px 20px;
-    color : #8e8e8e;
-    font-size : 13px;
-    line-height : 30px;
+  margin: 10px 20px;
+  color: #8e8e8e;
+  font-size: 13px;
+  line-height: 30px;
 }
 
 #place {
-    color :#00AC78;
-    font-weight : bold;
+  color: #00ac78;
+  font-weight: bold;
 }
 
 #gotoread {
-    position : fixed;
-    margin-left  : 220px;
-    margin-top : 60px;
-    margin-bottom : -10px;
-    float : right;
+  position: fixed;
+  margin-left: 220px;
+  margin-top: 60px;
+  margin-bottom: -10px;
+  float: right;
 }
 
 #mark {
-    width : 10px;
-    height : 10px;
+  width: 10px;
+  height: 10px;
 }
 
 #mark_p {
-    display : inline-block;
-    color : #F98C96;
-    font-size : 11px;
-    margin : 5px;
+  display: inline-block;
+  color: #f98c96;
+  font-size: 11px;
+  margin: 5px;
 }
 
 /* LikeBtn.jsx 컴포넌트에 사용되는 css*/
 
 #liked {
-    position : absolute;
-    display : inline;
-    float : right;
-    margin : 40px -65px;
+  position: absolute;
+  display: inline;
+  float: right;
+  margin: 40px -65px;
 }
 
 #likebtn {
-    border : none;
-    background : none;
-    padding : 0;
+  border: none;
+  background: none;
+  padding: 0;
 }
 
 #likeicon {
-    width : 24px;
-    height :22px;
-    margin-bottom : -7px;
+  width: 24px;
+  height: 22px;
+  margin-bottom: -7px;
 }
 
 #likednum {
-    padding-left : 0px;
-    font-size : 15px;
-    color : #00AC78
+  padding-left: 0px;
+  font-size: 15px;
+  color: #00ac78;
 }
