@@ -4,9 +4,9 @@ import '../css/Banner.css';
 import { Link } from "react-router-dom";
 
 const BtnList = styled.button`
-color: grey;
+    color: grey;
     background : white;
-    border: 0.5px solid #BCBCBC;
+    border: 1px solid #BCBCBC;
     display : inline-block;
     width : 25%;
     height : 30px;

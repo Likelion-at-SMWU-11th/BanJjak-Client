@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Banner from '../../components/Banner';
@@ -14,18 +13,6 @@ const bannerImages = [
     'homebanner2.png',
     'homebanner3.png'
 ];
-=======
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import Banner from "../../components/Banner";
-//import SwipeScroll from '../../components/SwipeScroll';
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import HomePreview from "../../components/HomePreview";
-import "../../css/Home.css";
-
-const bannerImages = ["homebanner1.png", "homebanner2.png", "homebanner3.png"];
->>>>>>> Stashed changes
 
 const PreviewContainer = styled.div`
     display: flex;
@@ -126,7 +113,6 @@ function Home() {
           </Link>
         </div>
         <div id="preview">
-<<<<<<< Updated upstream
             <PreviewContainer>
                 <HomePreview/>
                 <HomePreview/>
@@ -159,45 +145,6 @@ function Home() {
                 <HomePreview/>
                 <HomePreview/>
             </PreviewContainer>
-=======
-          <Carousel
-            showThumbs={false}
-            showStatus={false}
-            infiniteLoop={true}
-            emulateTouch={true}
-            showIndicators={false}
-          >
-            <div>
-              <HomePreview />
-            </div>
-            <div>
-              <HomePreview />
-            </div>
-          </Carousel>
-        </div>
-
-        <div id="gotoprotect">
-          <p id="title_p1">임시보호 구해요</p>
-          <Link to="/Protection" style={{ textDecoration: "none" }}>
-            <p id="viewmore2">더보기</p>
-          </Link>
->>>>>>> Stashed changes
-        </div>
-        <div id="preview">
-          <Carousel
-            showThumbs={false}
-            showStatus={false}
-            infiniteLoop={true}
-            emulateTouch={true}
-            showIndicators={false}
-          >
-            <div>
-              <HomePreview />
-            </div>
-            <div>
-              <HomePreview />
-            </div>
-          </Carousel>
         </div>
       </div>
     </>

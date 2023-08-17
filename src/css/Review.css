@@ -3,7 +3,7 @@
 #adopt_review { /* 입양후기 div태그*/
     display : inline-block;
     margin: 0px;
-    width : 195px;
+    width : 194px;
     height : 47px;
     padding : 15px 10px 0px;
     text-align : center;
@@ -69,7 +69,7 @@
 }
 
 
-#r_photo1 {
+#rl_container1 {
     display : inline-block;
     width : 154px;
     height : 102px;
@@ -77,10 +77,17 @@
     margin : 5px 10px 0px 10px;
 }
 
-#r_photo2 {
+#rl_container2 {
     display : inline-block;
     width : 154px;
     height : 102px;
+    border-radius : 10px;
+}
+
+#rl_photo1, #rl_photo2 {
+    width: 100%;
+    height : 100%;
+    object-fit : cover;
     border-radius : 10px;
 }
 
@@ -101,7 +108,7 @@
 
 
 
-/* ProtectionDetail.js 페이지에 사용되는 css */
+/* ReviewDetail.js 페이지에 사용되는 css */
 
 #profile {
     width : 57px;
@@ -129,18 +136,25 @@
 }
 
 
-#rd_photo1 {
+#rd_container1 {
     display : inline-block;
     width : 154px;
     height : 154px;
     border-radius : 10px;
-    margin : 25px 15px 0px 35px;
+    margin : 25px 15px 0px 30px;
 }
 
-#rd_photo2 {
+#rd_container2 {
     display : inline-block;
     width : 154px;
     height : 154px;
+    border-radius : 10px;
+}
+
+#rd_photo1, #rd_photo2 {
+    width: 100%;
+    height : 100%;
+    object-fit : cover;
     border-radius : 10px;
 }
 

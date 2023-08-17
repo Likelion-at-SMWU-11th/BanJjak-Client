@@ -3,7 +3,7 @@
 #miss { /*실종 div태그*/
     display : inline-block;
     margin: 0px;
-    width : 195px;
+    width : 194px;
     height : 47px;
     padding : 15px 10px 0px;
     text-align : center;
@@ -41,15 +41,25 @@
     border-radius : 10px;
     margin : 25px;
     padding : 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
-#missingphoto { /* 동물 사진 img태그*/
+#ml_container { /* 동물 사진 img태그*/
     width: 120px;
     height : 110px;
     border-top-left-radius : 8px;
     border-bottom-left-radius : 8px;
     display : inline-block;
-    margin-bottom : -10px;
+}
+
+#ml_photo { 
+    width : 100%;
+    height : 100%;
+    object-fit : cover;
+    border-top-left-radius : 8px;
+    border-bottom-left-radius : 8px;
 }
 
 #listinform { /* 정보 p태그를 묶는 div태그*/
@@ -114,7 +124,7 @@
 }
 
 
-#m1 {
+#md_container1 {
     display : inline-block;
     width : 167px;
     height : 167px;
@@ -122,10 +132,17 @@
     margin : 25px 10px 0px 15px;
 }
 
-#m2 {
+#md_container2 {
     display : inline-block;
     width : 167px;
     height : 167px;
+    border-radius : 10px;
+}
+
+#md_photo1, #md_photo2 {
+    width: 100%;
+    height : 100%;
+    object-fit : cover;
     border-radius : 10px;
 }
 
@@ -166,3 +183,24 @@
     display : inline;
     margin-left : 20px;
 }
+
+  /* 웹킷 브라우저의 스크롤바 스타일 조절 */
+  /* ::-webkit-scrollbar는 웹킷 브라우저에서만 동작 */
+  /* width 값을 조절하여 스크롤바의 너비를 변경 */
+  /* height 값을 조절하여 스크롤바의 높이를 변경 */
+  /* background-color, border-radius 등 스타일을 적용 가능 */
+  ::-webkit-scrollbar {
+    width: 5px; /* 스크롤바 너비 */
+    height: 5px; /* 스크롤바 높이 */
+  }
+
+  /* 스크롤바의 thumb(스크롤바 핸들) 스타일 */
+  ::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 5px;
+  }
+
+  /* 스크롤바의 track(스크롤바 트랙) 스타일 */
+  ::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+  }

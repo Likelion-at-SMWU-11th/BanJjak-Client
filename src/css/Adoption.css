@@ -3,7 +3,7 @@
 #shelter { /*보호소 div태그*/
     display : inline-block;
     margin: 0px;
-    width : 195px;
+    width : 192px;
     height : 47px;
     padding : 15px 10px 0px;
     text-align : center;
@@ -38,21 +38,29 @@
 
 /*AdoptList.jsx 컴포넌트에서 사용되는 Css*/
 
-#list { /* AdoptList.jsx 컴포넌트 전체를 묶는 div태그*/
+#al_list { /* ProtectList.jsx 컴포넌트 전체를 묶는 div태그*/
     width : 340px;
     height : 195px;
     border : 1px solid #BCBCBC;
     border-radius : 10px;
     margin : 25px;
-    line-height : 15px;
+    line-height : 12px;
 }
 
-#animalphoto { /* 동물 사진 img태그*/
+#al_container { /* 동물 사진 img태그*/
     width: 340px;
     height : 140px;
     border-top-left-radius : 10px;
     border-top-right-radius : 10px;
-    margin-bottom : -5px;
+    margin-bottom : 0px;
+}
+
+#al_photo { /* 동물 사진 img태그*/
+    width: 99%;
+    height : 100%;
+    object-fit : cover;
+    border-top-left-radius : 10px;
+    border-top-right-radius : 10px;
 }
 
 #main { /*주요정보 P태그*/
@@ -72,11 +80,18 @@
 
 /*AdoptDetail.js에서 사용되는 CSS*/
 
-#detail_photo { /* AdoptDetail.js에서 사용되는 이미지 파일*/
+#ad_container{ /* AdoptDetail.js에서 사용되는 이미지 파일*/
     width : 340px;
     height : 220px;
     margin : 25px;
     margin-bottom : 0px;
+    border-radius : 20px;
+}
+
+#ad_photo { /* AdoptDetail.js에서 사용되는 이미지 파일*/
+    width : 100%;
+    height : 100%;
+    object-fit : cover;
     border-radius : 20px;
 }
 
