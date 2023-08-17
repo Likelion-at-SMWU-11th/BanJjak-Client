@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import '../../css/Adoption.css';
 import Banner from '../../components/Banner';
-//import LikeBtn from '../../components/LikeBtn';
 
 
 const GreenBtn = styled.button`
@@ -36,13 +35,36 @@ const WhiteBtn = styled.button`
 `;
 
 function AdoptDetail(props) {
+    const [liked, setLiked] = useState(false);
+
+    const handleLikeClick = () => {
+        setLiked(!liked);
+    };
+
     return (
         <>
         <Banner/>
         <div>
         <img src={process.env.PUBLIC_URL + '/assets/images/ddol2.png'} id="detail_photo" alt="detail_photo"/>
-        <img src={process.env.PUBLIC_URL + '/assets/icons/like3.png'} id="nonlike" alt="nonlike"
-        style={{position:'absolute', marginLeft:'320px', marginTop : '-200px' }}/>
+        <button
+                    style={{
+                        position: 'absolute',
+                        marginLeft: '320px',
+                        marginTop: '-205px',
+                        border: 'none',
+                        backgroundColor: 'transparent',
+                    }}
+                    onClick={handleLikeClick}
+                >
+                    <img
+                        src={
+                            process.env.PUBLIC_URL +
+                            (liked ? '/assets/icons/like2.png' : '/assets/icons/like3.png')
+                        }
+                        id="likeButton"
+                        alt="likeButton"
+                    />
+                </button>
         </div>
 
         <div id="detail_main">

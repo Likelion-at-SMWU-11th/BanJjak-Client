@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../../css/Missing.css';
 import { Link } from 'react-router-dom';
 import Banner from '../../components/Banner';
 import MissingTag from '../../components/MissingTag';
 
 function MissingDetail(props) {
+    const [liked, setLiked] = useState(false);
+
+    const handleLikeClick = () => {
+        setLiked(!liked);
+    };
+
     return (
         <>
         <Banner/>
@@ -16,8 +22,25 @@ function MissingDetail(props) {
                 <p id="writer">아이디</p>
                 <p id="time">2023-08-10 23:24  조회 104</p>
             </div>
-            <img src={process.env.PUBLIC_URL + '/assets/icons/like3.png'} id="nonlike" alt="nonlike"
-                style={{position:'absolute', marginLeft:'70px', marginTop : '30px' }}/>
+            <button
+                    style={{
+                        position: 'absolute',
+                        marginLeft: '70px',
+                        marginTop: '30px',
+                        border: 'none',
+                        backgroundColor: 'white',
+                    }}
+                    onClick={handleLikeClick}
+                >
+                    <img
+                        src={
+                            process.env.PUBLIC_URL +
+                            (liked ? '/assets/icons/like2.png' : '/assets/icons/like3.png')
+                        }
+                        id="likeButton"
+                        alt="likeButton"
+                    />
+                </button>
         </div>
 
             <div>
