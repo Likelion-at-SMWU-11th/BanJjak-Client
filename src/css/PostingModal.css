@@ -1,7 +1,7 @@
 /* 모달창을 화면 중앙. 최상단에 노출 */
 .container {
   /* 모달창 크기 */
-  width: 50vw;
+  width: 70vw;
   height: 50%;
 
   /* 최상단 위치 */
@@ -21,8 +21,48 @@
   border-radius: 5px;
 }
 
-.close {
-  position: absolute;
-  right: 10px;
-  top: 10px;
+#Modal-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  float: right;
+  margin-left: -30px;
+  border: none;
+  width: 10px;
+  height: 10px;
+}
+
+#confirm {
+  width: 320px;
+  margin-left: 5px;
+  padding-bottom: 15px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  border-bottom: 1px solid #ececec;
+  margin-bottom: 15px;
+  color: #00ac78;
+}
+
+#modal_btn1 {
+  flex: 1;
+  color: #00ac78;
+  font-size: 25px;
+  border: transparent;
+  border-radius: 0%;
+  border-bottom-left-radius: 8px;
+}
+
+#modal_btn2 {
+  flex: 1;
+  font-size: 25px;
+  background-color: #00ac78;
+  color: #ffffff;
+  border: transparent;
+  border-radius: 0%;
+  border-bottom-right-radius: 8px;
+}
+
+#modal_btn2 > a {
+  color: #ffffff;
 }

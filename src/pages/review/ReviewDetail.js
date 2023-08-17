@@ -8,6 +8,7 @@ function ReviewDetail() {
         <>
         <Banner/>
 
+        <div style={{ overflowX: 'hidden', overflowY: 'auto', height: '725px' }}>
         <div id="written">
             <img src={process.env.PUBLIC_URL + '/assets/icons/profile.png'} id="profile" alt="profile"/>
             <div id="information">
@@ -38,6 +39,7 @@ function ReviewDetail() {
                 학대견 입양 고민하시는 분들이 계시길래 적어봅니다!<br/><br/>
                 예삐야 우리 더 더 행복하자~~💗💗
                 </p>
+        </div>
         </div>
 
 

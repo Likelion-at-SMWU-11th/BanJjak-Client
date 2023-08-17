@@ -7,7 +7,7 @@ function Missed(props) {
         <div>
             <Link to="/Missing/Missed/WriteMissing">
                 <img src={process.env.PUBLIC_URL + '/assets/icons/floatingwrite.png'} 
-                id="floatingwrite" alt="floatingwrite" style={{position : 'fixed', bottom : '15%'}}/>
+                alt="floatingwrite" style={{position : 'fixed', marginLeft:'310px', marginTop :'400px'}}/>
             </Link>
             <MissingList/>
             <MissingList/>

@@ -48,7 +48,6 @@ function Review() {
                     <p>재회후기</p>
                 </div>
             </Link><br />
-            <img src={process.env.PUBLIC_URL + '/assets/icons/floatingwrite.png'} id="floatingwrite" alt="floatingwrite" />
 
             <div style={{overflowX : 'hidden', overflowY: 'auto', height :'665px'}}>
             <div id="reviewlist">

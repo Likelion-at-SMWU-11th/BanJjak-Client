@@ -1,21 +1,23 @@
 import React from 'react';
 import '../../css/Missing.css';
+import { Link } from 'react-router-dom';
 import Banner from '../../components/Banner';
-/* import LikeBtn from '../../components/LikeBtn'; */
 import MissingTag from '../../components/MissingTag';
 
 function MissingDetail(props) {
     return (
         <>
         <Banner/>
-
+        
+        <div style={{ overflowX: 'hidden', overflowY: 'auto', height: '725px' }}>
         <div id="written">
             <img src={process.env.PUBLIC_URL + '/assets/icons/profile.png'} id="profile" alt="profile"/>
             <div id="information">
                 <p id="writer">아이디</p>
                 <p id="time">2023-08-10 23:24  조회 104</p>
             </div>
-            {/* <LikeBtn id="like"/> */}
+            <img src={process.env.PUBLIC_URL + '/assets/icons/like3.png'} id="nonlike" alt="nonlike"
+                style={{position:'absolute', marginLeft:'70px', marginTop : '30px' }}/>
         </div>
 
             <div>
@@ -32,9 +34,12 @@ function MissingDetail(props) {
                 요키 치고는 색이 밝고 꿀벌하네스를 하고 있었어요 <br/>
                 인근에서 닮은 강아지 발견하신다면 시간대 상관없이 꼭 연락 부탁드립니다</p>
             </div>
-            <img src={process.env.PUBLIC_URL + '/assets/icons/floatingchat.png'} id="floatingchat" alt="floatingchat"/>
+            <Link to="/Missing/WrtieMissing">
+                <img src={process.env.PUBLIC_URL + '/assets/icons/floatingchat.png'} alt="floatingchat" 
+                style={{marginLeft : '300px', marginTop:'80px',float: 'right', position:'fixed'}}/>
+            </Link>
 
-        <MissingTag/>
+        <MissingTag/></div>
         </>
     );
 }

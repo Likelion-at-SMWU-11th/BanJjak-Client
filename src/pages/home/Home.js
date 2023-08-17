@@ -1,17 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Banner from '../../components/Banner';
-//import SwipeScroll from '../../components/SwipeScroll';
+import styled from 'styled-components';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import HomePreview from '../../components/HomePreview';
 import '../../css/Home.css';
+
 
 const bannerImages = [
     'homebanner1.png',
     'homebanner2.png',
     'homebanner3.png'
 ];
+
+const PreviewContainer = styled.div`
+    display: flex;
+    overflow-x: auto;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+`;
 
 function Home() {
     const [currentBannerIndex, setCurrentBannerIndex] = useState(0);
@@ -74,29 +86,38 @@ function Home() {
             <Link to="/Review" style={{ textDecoration: 'none' }}><p id="viewmore1">더보기</p></Link>
         </div>    
         <div id="preview">
-            <Carousel showThumbs={false} showStatus={false} infiniteLoop={true} emulateTouch={true} showIndicators={false}>
-                <div>
-                    <HomePreview/>
-                </div>
-                <div>
-                    <HomePreview/>
-                </div>
-            </Carousel>
+            <PreviewContainer>
+                <HomePreview/>
+                <HomePreview/>
+                <HomePreview/>
+                <HomePreview/>
+                <HomePreview/>
+                <HomePreview/>
+            </PreviewContainer>
         </div>
 
         <div id="gotoprotect">
             <p id="title_p1">임시보호 구해요</p>
             <Link to="/Protection" style={{ textDecoration: 'none' }}><p id="viewmore2">더보기</p></Link>
-        </div>   
+        </div> 
+      <style>
+        {`
+
+          #preview::-webkit-scrollbar {
+            display: none;
+          }
+        `}
+      </style>
+  
         <div id="preview">
-        <Carousel showThumbs={false} showStatus={false} infiniteLoop={true} emulateTouch={true} showIndicators={false}>
-                <div>
-                    <HomePreview/>
-                </div>
-                <div>
-                    <HomePreview/>
-                </div>
-        </Carousel>
+            <PreviewContainer>
+                <HomePreview/>
+                <HomePreview/>
+                <HomePreview/>
+                <HomePreview/>
+                <HomePreview/>
+                <HomePreview/>
+            </PreviewContainer>
         </div>
         </div>
         </>       

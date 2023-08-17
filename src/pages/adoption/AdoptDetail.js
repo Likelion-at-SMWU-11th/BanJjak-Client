@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import '../../css/Adoption.css';
 import Banner from '../../components/Banner';
-import LikeBtn from '../../components/LikeBtn';
+//import LikeBtn from '../../components/LikeBtn';
 
 
 const GreenBtn = styled.button`
@@ -14,7 +15,7 @@ const GreenBtn = styled.button`
     position : absolute;
     width : 237px;
     height : 45px;
-    margin :  20px -10px;
+    margin : 100px -10px;
     text-align : center;
     font-size : 15px;
     font-weight : bold;
@@ -28,7 +29,7 @@ const WhiteBtn = styled.button`
     display : inline-block;
     width : 115px;
     height : 45px;
-    margin : 20px 20px 0px 15px;
+    margin : 100px 20px 0px 15px;
     text-align : center;
     font-size : 15px;
     font-weight : bold;
@@ -40,15 +41,14 @@ function AdoptDetail(props) {
         <Banner/>
         <div>
         <img src={process.env.PUBLIC_URL + '/assets/images/ddol2.png'} id="detail_photo" alt="detail_photo"/>
-        <LikeBtn/>
+        <img src={process.env.PUBLIC_URL + '/assets/icons/like3.png'} id="nonlike" alt="nonlike"
+        style={{position:'absolute', marginLeft:'320px', marginTop : '-200px' }}/>
         </div>
 
         <div id="detail_main">
         <p id="detail_name">이름</p>
         <p id="detail_info">견종 | 성별(중성화여부) | n년생 | 몸무게 </p>
         </div>
-
-        <div id="hashtag">해시태그 들어갈곳</div>
 
         <div id="summary">
         <img src={process.env.PUBLIC_URL + '/assets/icons/balloon.png'} id="balloon" alt="balloon"/>
@@ -62,19 +62,20 @@ function AdoptDetail(props) {
             <p id="place"> * 정확한 위치는 입양 확정 후 안내됩니다.</p>
             <p>특이사항</p>
         </div>
-
-        <img src={process.env.PUBLIC_URL + '/assets/icons/floatingchat.png'} id="floatingchat" alt="floatingchat"/>
-
-
+        
+        
+        <img src={process.env.PUBLIC_URL + '/assets/icons/floatingchat.png'} alt="floatingchat" 
+        style={{marginLeft : '310px', marginTop:'-20px',float: 'right', position:'fixed'}}/>
+        
         <div id="gotoread">
-            <Link to="/">
+            <Link to="/Guidance/Agreement">
             <p id="mark_p">입양 전 필독사항 바로가기</p>
             </Link>
         </div>
 
         <div>
         <WhiteBtn>공유하기</WhiteBtn>
-        <GreenBtn>입양 문의하기</GreenBtn>
+        <Link to="/"><GreenBtn>입양 문의하기</GreenBtn></Link>
         </div>
         </>
     );
