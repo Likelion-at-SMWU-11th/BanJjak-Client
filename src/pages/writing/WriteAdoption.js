@@ -82,6 +82,7 @@ function WriteAdoption() {
 
   return (
     <>
+    <div style={{overflowX : 'hidden', overflowY: 'auto', height :'840px'}}>
       <div id="TopBar">
         <img
           src={process.env.PUBLIC_URL + "/assets/icons/exit.png"}
@@ -371,6 +372,7 @@ function WriteAdoption() {
             </button>
           </form>
         </div>
+      </div>
       </div>
     </>
   );

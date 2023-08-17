@@ -10,7 +10,7 @@ function WriteMissing(props) {
         navigate("/Missing/Missed");
     };
     return (
-        <div>
+        <div style={{overflowX : 'hidden', overflowY: 'auto', height :'840px'}}>
             <div id="TopBar">
             <img
             src={process.env.PUBLIC_URL + "/assets/icons/exit.png"}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import styled from 'styled-components';
 import '../../css/Guidance.css';
 
@@ -47,7 +48,7 @@ function SelfCheck(props) {
                 <CustomCheckbox type="checkbox" id="gs_check5"/><label htmlFor="gs_check5">입양 이후 꾸준히 발생할 양육비용을<br/>감당하실 의사와 능력이 있으신가요?</label><br/>
                 <CustomCheckbox type="checkbox" id="gs_check6"/><label htmlFor="gs_check6">반려동물이 아플 때 병원에 데려가고<br/>보살필 의사와 능력이 있으신가요?</label><br/>
                 <CustomCheckbox type="checkbox" id="gs_check7"/><label htmlFor="gs_check7">현재 키우고 있는 반려동물과 새로 맞이할 동물이<br/>잘 어울릴 수 있을지 생각해 보셨나요?</label><br/>
-                <input type="button" id="gs_btn" value="완료하기"/>
+                <Link to="/Home"><input type="button" id="gs_btn" value="완료하기"/></Link>
             </form>
         </div>
     );
