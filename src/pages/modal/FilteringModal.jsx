@@ -1,5 +1,6 @@
 import React, { useState , useEffect, useRef } from 'react';
 import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 import '../../css/Modal.css';
 
 
@@ -60,9 +61,9 @@ const CustomCheckbox = styled.input`
         background-image: url('${process.env.PUBLIC_URL}/assets/icons/check.png'); /* public 폴더 내 이미지 경로 설정 */
     }
 `;
-
-const FilteringModal = ({ isOpen, onClose }) => {
+  const FilteringModal = ({ isOpen, onClose }) => {
   const modalRef = useRef(null);
+  const navigate=useNavigate(); 
 
   const [selectedCheckbox, setSelectedCheckbox] = useState('all');
 
@@ -70,6 +71,24 @@ const FilteringModal = ({ isOpen, onClose }) => {
     setSelectedCheckbox(value);
   };
   
+  const handleSearchButtonClick = () => {
+    // 선택한 동물 종류에 따라 다른 URL로 이동
+    let targetUrl='/Adoption/'
+    if (selectedCheckbox === 'dog') {
+      targetUrl+=selectedCheckbox;
+      navigate(targetUrl);
+    } else if (selectedCheckbox === 'cat') {
+      targetUrl+=selectedCheckbox;
+      navigate(targetUrl);
+    } else if (selectedCheckbox === 'else') {
+      targetUrl+=selectedCheckbox;
+      navigate(targetUrl);
+    } else if (selectedCheckbox == 'all') {
+      // 'all'을 선택했을 때에 대한 처리
+      onClose();
+    }
+  };
+
   useEffect(() => {
     const handleKeyDown = (event) => {
       // ESC 키를 누르면 모달 종료
@@ -91,6 +110,7 @@ const FilteringModal = ({ isOpen, onClose }) => {
   };
   if (!isOpen) return null;
 
+
   return (
     <ModalOverlay>
     <ModalContent>
@@ -102,7 +122,7 @@ const FilteringModal = ({ isOpen, onClose }) => {
                 <CustomCheckbox type="radio" id="modal_check2" value="dog" name="species" onChange={() => handleCheckboxChange('dog')}/><label htmlFor="modal_check2">개</label><hr/>
                 <CustomCheckbox type="radio" id="modal_check3" value="cat" name="species" onChange={() => handleCheckboxChange('cat')}/><label htmlFor="modal_check3">고양이</label><hr/>
                 <CustomCheckbox type="radio" id="modal_check4" value="else" name="species" onChange={() => handleCheckboxChange('else')}/><label htmlFor="modal_check4">기타</label><br/>
-                <input type="button" id="modal_btn" value="검색하기"/>
+                <input type="button" id="modal_btn" value="검색하기" onClick={handleSearchButtonClick}/>
             </form>
         </div>
     </ModalContent>
