@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../../css/Protection.css';
 import Banner from '../../components/Banner';
 import { Link } from 'react-router-dom';
 
 function ProtectDetail(props) {
+    const [liked, setLiked] = useState(false);
+
+    const handleLikeClick = () => {
+        setLiked(!liked);
+    };
+
     return (
         <>
         <Banner/>
@@ -14,13 +20,33 @@ function ProtectDetail(props) {
             <div id="information">
                 <p id="writer">아이디</p>
                 <p id="time">2023-08-10 23:24  조회 104</p>              
-            </div><img src={process.env.PUBLIC_URL + '/assets/icons/like3.png'} id="nonlike" alt="nonlike"
-                style={{position:'absolute', marginLeft:'70px', marginTop : '30px' }}/>
+            </div>
+            <button
+                    style={{
+                        position: 'absolute',
+                        marginLeft: '70px',
+                        marginTop: '30px',
+                        border: 'none',
+                        backgroundColor: 'white',
+                    }}
+                    onClick={handleLikeClick}
+                >
+                    <img
+                        src={
+                            process.env.PUBLIC_URL +
+                            (liked ? '/assets/icons/like2.png' : '/assets/icons/like3.png')
+                        }
+                        id="likeButton"
+                        alt="likeButton"
+                    />
+                </button>
         </div>
 
-        <div>
-            <img src={process.env.PUBLIC_URL + '/assets/images/protect1.png'} id="protect1" alt="m2"/>
-            <img src={process.env.PUBLIC_URL + '/assets/images/protect2.png'} id="protect2" alt="m2"/>
+        <div id="pd_container1">
+            <img src={process.env.PUBLIC_URL + '/assets/images/protect1.png'} id="pd_photo1" alt="m2"/>
+        </div>
+        <div id="pd_container2">
+            <img src={process.env.PUBLIC_URL + '/assets/images/protect2.png'} id="pd_photo2" alt="m2"/>
         </div>
 
         <hr id="hr"/>

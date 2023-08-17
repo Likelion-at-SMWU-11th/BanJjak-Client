@@ -22,7 +22,7 @@
 
 /*ProtectList.jsx 컴포넌트에서 사용되는 Css*/
 
-#list { /* ProtectList.jsx 컴포넌트 전체를 묶는 div태그*/
+#pl_list { /* ProtectList.jsx 컴포넌트 전체를 묶는 div태그*/
     width : 340px;
     height : 195px;
     border : 1px solid #BCBCBC;
@@ -31,12 +31,20 @@
     line-height : 12px;
 }
 
-#animalphoto { /* 동물 사진 img태그*/
+#pl_container { /* 동물 사진 img태그*/
     width: 340px;
     height : 140px;
     border-top-left-radius : 10px;
     border-top-right-radius : 10px;
     margin-bottom : 0px;
+}
+
+#pl_photo { /* 동물 사진 img태그*/
+    width: 99%;
+    height : 100%;
+    object-fit : cover;
+    border-top-left-radius : 10px;
+    border-top-right-radius : 10px;
 }
 
 #main { /*주요정보 P태그*/
@@ -83,7 +91,7 @@
 }
 
 
-#protect1 {
+#pd_container1 {
     display : inline-block;
     width : 167px;
     height : 167px;
@@ -91,10 +99,17 @@
     margin : 25px 10px 0px 18px;
 }
 
-#protect2 {
+#pd_container2 {
     display : inline-block;
     width : 167px;
     height : 167px;
+    border-radius : 10px;
+}
+
+#pd_photo1, #pd_photo2 {
+    width: 100%;
+    height : 100%;
+    object-fit : cover;
     border-radius : 10px;
 }
 

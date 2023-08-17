@@ -22,6 +22,7 @@ const AdoptList = () => {
     
     return (
         <>
+
          {dataArray.map((post) => (
                 <div key={post.id}  id="al_list">
                     {/* 포스트 아이템을 렌더링하는 코드 작성 */}
@@ -44,6 +45,7 @@ const AdoptList = () => {
                     </Link>
                 </div>
             ))}
+
         </>
     );
 };
