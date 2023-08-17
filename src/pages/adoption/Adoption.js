@@ -1,51 +1,51 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import '../../css/Adoption.css';
-import FilteringModal from '../modal/FilteringModal';
-import styled from 'styled-components';
-import Banner, {BtnList} from '../../components/Banner';
-import ShelterAdopt from './ShelterAdopt';
-import PersonalAdopt from './PersonalAdopt';
 
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import "../../css/Adoption.css";
+import FilteringModal from "../modal/FilteringModal";
+import styled from "styled-components";
+import Banner, { BtnList } from "../../components/Banner";
+import ShelterAdopt from "./ShelterAdopt";
+import PersonalAdopt from "./PersonalAdopt";
 
 
 const GreenBtn = styled.button`
-    color: white;
-    background : #00AC78;
-    border: 0.5px solid #00AC78;
-    border-radius : 20px;
-    display : inline-block;
-    width : 190px;
-    height : 35px;
-    margin : 20px 0px 0px 20px;
-    text-align : center;
-    font-size : 15px;
-    font-weight : bold;
-    z-index : 1100;
+  color: white;
+  background: #00ac78;
+  border: 0.5px solid #00ac78;
+  border-radius: 20px;
+  display: inline-block;
+  width: 190px;
+  height: 35px;
+  margin: 20px 0px 0px 20px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  z-index: 1100;
 `;
 
 const SpeciesBtn = styled.button`
-    color: #00AC78;
-    background : white;
-    border: 0.5px solid #00AC78;
-    border-radius : 20px;
-    display : inline;
-    width : 190px;
-    height : 35px;
-    margin-left : -30px;
-    text-align : center;
-    font-size : 15px;
-    font-weight : bold;
-    z-index: 1000;
+  color: #00ac78;
+  background: white;
+  border: 0.5px solid #00ac78;
+  border-radius: 20px;
+  display: inline;
+  width: 190px;
+  height: 35px;
+  margin-left: -30px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  z-index: 1000;
 `;
 
-
 function Adoption(props) {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedSpecies, setSelectedSpecies] = useState([]);
+  //const [selectedSpecies, setSelectedSpecies] = useState("");
+  const [isShelterAdopt, setIsShelterAdopt] = useState(true);
     // 모달관련
-    const [modalOpen, setModalOpen] = useState(false);
-    const [selectedSpecies, setSelectedSpecies] = useState("");
-
-    const openModal = () => {
+  const openModal = () => {
         setModalOpen(true);
     };
 
@@ -108,12 +108,16 @@ function Adoption(props) {
         <p id="count">n마리</p><br/>
 
         
+
         <div id="adoptlist">
-        {isShelterAdopt && <ShelterAdopt />}
-        {!isShelterAdopt && <PersonalAdopt />}
-        </div></div>
-        </>
-    );
+          {isShelterAdopt && <ShelterAdopt selectedSpecies={selectedSpecies} />}
+          {!isShelterAdopt && (
+            <PersonalAdopt selectedSpecies={selectedSpecies} />
+          )}
+        </div>
+      </div>
+    </>
+  );
 }
 
 export default Adoption;
