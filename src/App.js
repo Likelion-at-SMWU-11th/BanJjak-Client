@@ -70,6 +70,10 @@ function App() {
           element={<ShelterPosting />}
         ></Route>
         <Route
+          path="/HomeShelter/ShelterPostsList"
+          element={<ShelterEditInfo />}
+        ></Route>
+        <Route
           path="/HomeShelter/ShelterEditInfo"
           element={<ShelterEditInfo />}
         ></Route>
@@ -100,8 +104,14 @@ function App() {
           <Route path="/Missing/Seen" element={<Seen />}></Route>
         </Route>
 
-        <Route path="/Missing/MissingDetail" element={<MissingDetail />}></Route>
-        <Route path="/Missing/Missed/WriteMissing" element={<WriteMissing />}></Route>
+        <Route
+          path="/Missing/MissingDetail"
+          element={<MissingDetail />}
+        ></Route>
+        <Route
+          path="/Missing/Missed/WriteMissing"
+          element={<WriteMissing />}
+        ></Route>
         <Route path="/Missing/Seen/WriteSeen" element={<WriteSeen />}></Route>
 
         <Route path="/Protection" element={<Protection />}></Route>
@@ -123,31 +133,38 @@ function App() {
         <Route path="/Review/ReviewDetail" element={<ReviewDetail />}></Route>
         <Route path="/Review/WriteReview" element={<WriteReview />}></Route>
 
-        <Route path="/Introduction" element={<Introduction/>}></Route>
-        <Route path="/Activity" element={<Activity/>}></Route>
+        <Route path="/Introduction" element={<Introduction />}></Route>
+        <Route path="/Activity" element={<Activity />}></Route>
 
-        <Route path="/Notice" element={<Notice/>}>
-          <Route path="/Notice/NoticeList" element={<NoticeList/>}></Route>
-          <Route path="/Notice/NoticeList/N1" element={<N1/>}></Route>
-          <Route path="/Notice/Event" element={<Event/>}>
-          </Route>
+        <Route path="/Notice" element={<Notice />}>
+          <Route path="/Notice/NoticeList" element={<NoticeList />}></Route>
+          <Route path="/Notice/NoticeList/N1" element={<N1 />}></Route>
+          <Route path="/Notice/Event" element={<Event />}></Route>
         </Route>
 
-        <Route path="/Guidance" element={<Guidance/>}>
-          <Route path="/Guidance/SelfCheck" element={<SelfCheck/>}></Route>
-          <Route path="/Guidance/Agreement" element={<Agreement/>}></Route>
-
+        <Route path="/Guidance" element={<Guidance />}>
+          <Route path="/Guidance/SelfCheck" element={<SelfCheck />}></Route>
+          <Route path="/Guidance/Agreement" element={<Agreement />}></Route>
         </Route>
         <Route path="/MyPage/EditInfo" element={<EditInfo />}></Route>
         <Route path="/MyPage/EditInfo/EditPW" element={<EditPW />}></Route>
         <Route path="/MyPage/MyPost" element={<MyPost />}></Route>
         <Route path="/MyPage/Liked" element={<Liked />}></Route>
-      
-        <Route path="/Adoption/AdoptDetail/InquiryModal" element={<InquiryModal/>}></Route>
-        <Route path="/Adoption/AdoptDetail/GuidanceModal" element={<GuidanceModal/>}></Route>
-        <Route path="/MyPage/FAQ/MailModal" element={<MailModal/>}></Route>
-        <Route path="/Guidance/Agreement/AgreeModal" element={<AgreeModal/>}></Route>
-        <Route path="/DeleteModal" element={<DeleteModal/>}></Route>
+
+        <Route
+          path="/Adoption/AdoptDetail/InquiryModal"
+          element={<InquiryModal />}
+        ></Route>
+        <Route
+          path="/Adoption/AdoptDetail/GuidanceModal"
+          element={<GuidanceModal />}
+        ></Route>
+        <Route path="/MyPage/FAQ/MailModal" element={<MailModal />}></Route>
+        <Route
+          path="/Guidance/Agreement/AgreeModal"
+          element={<AgreeModal />}
+        ></Route>
+        <Route path="/DeleteModal" element={<DeleteModal />}></Route>
       </Routes>
     </div>
   );
