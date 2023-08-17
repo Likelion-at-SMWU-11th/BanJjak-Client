@@ -1,7 +1,7 @@
 import React, { useState , useEffect, useRef } from 'react';
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import styled from 'styled-components';
-import '../css/Modal.css';
+import '../css/PostingModal.css';
 import axios from 'axios';
 
 const ModalOverlay = styled.div`
@@ -18,43 +18,15 @@ const ModalOverlay = styled.div`
 `;
 
 const ModalContent = styled.div`
+  width : 329px;
+  height : 400px;
   background-color: white;
-  padding: 20px;
+  padding-top: 20px;
+  padding-bottom : 0px;
   border-radius: 8px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   z-index: 1100;
-`;
-
-const CustomCheckbox = styled.input`
-    /* 체크박스를 숨기고 커스텀 스타일을 적용 */
-    display: none;
-
-    + label {
-        position: relative;
-        padding-left: 30px;
-        padding-right: 15px;
-        cursor: pointer;
-        font-size: 14px;
-        color: #3E3E3E;
-        margin-top : 1rem;
-        margin-bottom : 1rem;
-    }
-
-    + label:before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 0px;
-        width: 20px;
-        height: 20px;
-        background-image: url('${process.env.PUBLIC_URL}/assets/icons/noncheck.png'); /* public 폴더 내 이미지 경로 설정 */
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-
-    &:checked + label:before {
-        background-image: url('${process.env.PUBLIC_URL}/assets/icons/check.png'); /* public 폴더 내 이미지 경로 설정 */
-    }
+  text-align : center;
 `;
 
 const PostingModal = ({ isOpen, onClose }) => {
@@ -96,31 +68,31 @@ const PostingModal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    // <div className="Modal-overlay">
-    //   <div className="Modal">
-    //     <button className="Modal-close" onClick={onClose}>닫기</button>
-    //     <div className="Modal-content">
-    //       <p>동물</p>
-    //       <form id="modal_form1" size="1">
-    //             <CustomCheckbox type="radio" id="modal_check1" value="all" name="species" checked={selectedCheckbox === 'all'} onChange={() => handleCheckboxChange('all')}/><label htmlFor="modal_check1">모든 동물</label><br/>
-    //             <CustomCheckbox type="radio" id="modal_check2" value="dog" name="species" onChange={() => handleCheckboxChange('dog')}/><label htmlFor="modal_check2">개</label><br/>
-    //             <CustomCheckbox type="radio" id="modal_check3" value="cat" name="species" onChange={() => handleCheckboxChange('cat')}/><label htmlFor="modal_check3">고양이</label><br/>
-    //             <CustomCheckbox type="radio" id="modal_check4" value="else" name="species" onChange={() => handleCheckboxChange('else')}/><label htmlFor="modal_check4">기타</label><br/>
-    //             <input type="button" id="modal_btn" value="검색하기"/>
-    //         </form>
-    //     </div>
-    //   </div>
-    // </div>
-
+    
     <ModalOverlay>
     <ModalContent>
-      <button className="Modal-close" onClick={onClose}>닫기</button>
-      <div className="Modal-content">
-          <p>{username}</p>
-          <img src={process.env.PUBLIC_URL + '/assets/icons/logo3D.png'} id="ModalImage" alt="logo3D"/>
-      </div>
-      <a href={"tel:" + usernumber}>{usernumber}</a>
-      {/* 누르면 전화 걸림 ㅋㅋ !!!! */}
+      <button id="Modal-close" onClick={onClose} style={{border : 'none', width:'10px', heightL:'10px'}}>
+        <img src={process.env.PUBLIC_URL + '/assets/icons/exit.png'} id="gmd_exit" alt="exit"
+        style={{width : '10px', height :'10px', marginLeft : '-20px', marginTop:'-5px'}}/>
+        </button>
+      <div id="Modal-content">
+          <p id="confirm">확인 절차</p>
+
+          <img src={process.env.PUBLIC_URL + '/assets/icons/logo2D.png'} id="ModalImage" alt="logo3D"
+          style={{width : '120px', height :'112px', marginTop : '10px'}}/>
+
+          <p style={{color : '#3E3E3E', fontSize:'25px', marginTop: '10px'}}> 보호소 <span style={{fontWeight :'bold'}}>{username}</span></p>
+          <p style={{color : '#3E3E3E', fontSize:'25px', marginTop: '5px'}}>연락처</p>
+          <a href={"tel:" + usernumber} style={{color : '#3E3E3E', fontSize:'25px', fontWeight:'bold' }}>{usernumber}</a>
+          {/* 누르면 전화 걸림 ㅋㅋ !!!! */}
+          <p style={{color : '#828282', fontSize:'20px', marginTop : '15px', marginBottom : '15px' , lineHeight:'25px'}}>
+            입양희망자에게<br/>해당 연락처가 안내됩니다.</p>
+        </div>
+
+        <btn id="modal_btn1">연락처 변경</btn>
+        <btn type="button" id="modal_btn2">맞습니다</btn> 
+      
+      
     </ModalContent>
     </ModalOverlay>
 
