@@ -52,6 +52,7 @@ import GuidanceModal from "./pages/modal/GuidanceModal";
 import MailModal from "./pages/modal/MailModal";
 import AgreeModal from "./pages/modal/AgreeModal";
 import DeleteModal from "./pages/modal/DeleteModal";
+import ShelterPostsList from "./pages/shelter/ShelterPostsList";
 
 function App() {
   return (
@@ -71,7 +72,7 @@ function App() {
         ></Route>
         <Route
           path="/HomeShelter/ShelterPostsList"
-          element={<ShelterEditInfo />}
+          element={<ShelterPostsList />}
         ></Route>
         <Route
           path="/HomeShelter/ShelterEditInfo"
