@@ -36,15 +36,16 @@ const WhiteBtn = styled.button`
   font-weight: bold;
 `;
 
-function AdoptDetail() {
+function AdoptDetail2() {
   const { postId } = useParams();
   const [data, setData] = useState(null); // 포스트 데이터를 저장할 상태
+  console.log(postId);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://127.0.0.1:8000/posts/${postId}/`
+          `http://127.0.0.1:8000/userposts/${postId}/`
         );
         const postData = response.data; // 서버에서 받아온 포스트 데이터
         setData(postData);
@@ -137,4 +138,4 @@ function AdoptDetail() {
   );
 }
 
-export default AdoptDetail;
+export default AdoptDetail2;

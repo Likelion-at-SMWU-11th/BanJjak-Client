@@ -187,7 +187,6 @@ const Posting = () => {
   const managerToken = location.state?.managerToken;
   console.log("managerToken:", managerToken);
 
-  const [username, setUsername] = useState("");
   // dropdown 관련
   const dropDownRefs = {
     animal: useRef(),
@@ -205,9 +204,6 @@ const Posting = () => {
   const [content, setContent] = useState(""); //관리자 한마디 상태
 
   const [alert, setAlert] = useState(""); //특이사항 상태
-
-  const [authorLocation, setAuthorLocation]=useState('');
-  const [authorName, setAuthorName]=useState('');
 
   const animalList = ["개", "고양이", "기타"];
   const sexList = ["수컷", "암컷", "미확인"];
@@ -264,6 +260,7 @@ const Posting = () => {
     if (name && content && alert) {
       formData.append("name", name);
       formData.append("kind", kind);
+      formData.append("animal_type", animalValue);
       formData.append("weight", weight);
       formData.append("age", age);
       formData.append("gender", sexValue);
@@ -391,7 +388,6 @@ const Posting = () => {
               onClick={() => setIsOpen1(!isOpen1)}
               type="input"
               value={animalValue || (isOpen1? "선택": animalValue)}
-              onSelect={(selectedValue) => setAnimalValue(selectedValue)}
             />
             {isOpen1 && (
               <ul>
@@ -530,3 +526,4 @@ const Posting = () => {
 
 export default Posting;
 export {ImgContainer}
+export {ImgInputDiv}

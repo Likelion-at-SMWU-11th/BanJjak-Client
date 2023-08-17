@@ -1,642 +1,642 @@
 /* WritingAdoption.js */
 #wa_bar {
-    width : 390px;
-    height : 40px;
-    border-bottom : 1px solid #BCBCBC;
-    text-align : center;
-    color : #3E3E3E;
-    font-size : 20px;
-    font-weight :bold;
-    padding-top : 20px;
+  width: 390px;
+  height: 40px;
+  border-bottom: 1px solid #bcbcbc;
+  text-align: center;
+  color: #3e3e3e;
+  font-size: 20px;
+  font-weight: bold;
+  padding-top: 20px;
 }
 
 #wa_div {
-    margin : 20px;
+  margin: 20px;
 }
 
 #wa_label {
-    margin-top : 15px;
-    margin-right : 10px;
-    display : inline-block;
-    font-size : 15px;
-    font-weight : bold;
-    color : #828282;
+  margin-top: 15px;
+  margin-right: 10px;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: bold;
+  color: #828282;
 }
 
 #wa_p1 p {
-    color : #3E3E3E;
-    font-size : 17px;
-    font-weight : bolder;
+  color: #3e3e3e;
+  font-size: 17px;
+  font-weight: bolder;
 }
 
 #wa_p1 {
-    margin-top : 5px;
-    display : inline-block;
-    font-size : 15px;
-    font-weight : bold;
-    color : #828282;
+  margin-top: 5px;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: bold;
+  color: #828282;
 }
 
 #wa_label {
-    margin-bottom : 8px;
+  margin-bottom: 8px;
 }
 
 #wa_form_center {
-    width : 270px;
-    margin-left : 0px;
-    padding: 0.3rem 0.5rem;
-    border: 1px solid #DBDBDB;
-    border-radius: 5px;
-    font-size: 15px;
+  width: 270px;
+  margin-left: 0px;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
+  font-size: 15px;
 }
 
 #wa_form_chat {
-    width : 270px;
-    margin-left : 15px;
-    padding: 0.3rem 0.5rem;
-    border: 1px solid #DBDBDB;
-    border-radius: 5px;
-    font-size: 15px;
+  width: 270px;
+  margin-left: 15px;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
+  font-size: 15px;
 }
 
 #wa_form_name {
-    width : 200px;
-    margin-left : 20px;
-    padding: 0.3rem 0.5rem;
-    border: 1px solid #DBDBDB;
-    border-radius: 5px;
-    font-size: 15px;
+  width: 200px;
+  margin-left: 20px;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
+  font-size: 15px;
 }
 
-#wa_form_animal {
-    margin-left : 20px;
+.wa_form_animal {
+  margin-left: 20px;
 }
 
 #wa_form_sort {
-    width : 200px;
-    margin-left : 20px;
-    padding: 0.3rem 0.5rem;
-    border: 1px solid #DBDBDB;
-    border-radius: 5px;
-    font-size: 15px;
+  width: 200px;
+  margin-left: 20px;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
+  font-size: 15px;
 }
 
-#wa_form_sex {
-    margin-left : 20px;
+.wa_form_sex {
+  margin-left: 20px;
 }
 
-#wa_form_neutered {
-    margin-left : 5px;
+.wa_form_neutered {
+  margin-left: 5px;
 }
 
 #wa_form_age {
-    width : 200px;
-    margin-left : 20px;
-    border: 1px solid #DBDBDB;
-    padding: 0.3rem 0.5rem;
-    border-radius: 5px;
-    font-size: 15px;
+  width: 200px;
+  margin-left: 20px;
+  border: 1px solid #dbdbdb;
+  padding: 0.3rem 0.5rem;
+  border-radius: 5px;
+  font-size: 15px;
 }
 
 #wa_form_weight {
-    width : 200px;
-    margin-left : 5px;
-    border: 1px solid #DBDBDB;
-    padding: 0.3rem 0.5rem;
-    border-radius: 5px;
-    font-size: 15px;
+  width: 200px;
+  margin-left: 5px;
+  border: 1px solid #dbdbdb;
+  padding: 0.3rem 0.5rem;
+  border-radius: 5px;
+  font-size: 15px;
 }
 
 #wa_form_message {
-    width : 340px;
-    height : 60px;
-    border: 1px solid #DBDBDB;
-    padding: 0.3rem 0.5rem;
-    border-radius: 5px;
-    font-size: 15px;
+  width: 340px;
+  height: 60px;
+  border: 1px solid #dbdbdb;
+  padding: 0.3rem 0.5rem;
+  border-radius: 5px;
+  font-size: 15px;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 #wa_form_special {
-    width : 340px;
-    height : 60px;
-    border: 1px solid #DBDBDB;
-    padding: 0.3rem 0.5rem;
-    border-radius: 5px;
-    font-size: 15px;
+  width: 340px;
+  height: 60px;
+  border: 1px solid #dbdbdb;
+  padding: 0.3rem 0.5rem;
+  border-radius: 5px;
+  font-size: 15px;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 #wa_btn {
-    width : 340px;
-    height : 50px;
-    border : none;
-    border-radius : 20px;
-    color : #FFFFFF;
-    font-size : 18px;
-    font-weight : bold;
-    background-color : #00AC78;
-    margin-top : 20px;
-    margin-left : 5px;
+  width: 340px;
+  height: 50px;
+  border: none;
+  border-radius: 20px;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #00ac78;
+  margin-top: 20px;
+  margin-left: 5px;
 }
 
 hr {
-    border : 1px solid #828282;
-    margin-top : 10px;
+  border: 1px solid #828282;
+  margin-top: 10px;
 }
-
-
-
 
 /* WriteProtection.js */
 #wp_bar {
-    width : 390px;
-    height : 40px;
-    border-bottom : 1px solid #BCBCBC;
-    text-align : center;
-    color : #3E3E3E;
-    font-size : 20px;
-    font-weight :bold;
-    padding-top : 20px;
+  width: 390px;
+  height: 40px;
+  border-bottom: 1px solid #bcbcbc;
+  text-align: center;
+  color: #3e3e3e;
+  font-size: 20px;
+  font-weight: bold;
+  padding-top: 20px;
 }
 
 #wp_div {
-    margin : 20px;
+  margin: 20px;
 }
 
 #wp_label {
-    margin-top : 15px;
-    margin-right : 10px;
-    display : inline-block;
-    font-size : 15px;
-    font-weight : bold;
-    color : #828282;
-    margin-bottom : 8px;
+  margin-top: 15px;
+  margin-right: 10px;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: bold;
+  color: #828282;
+  margin-bottom: 8px;
 }
 
 #wp_p1 p {
-    color : #3E3E3E;
-    font-size : 17px;
-    font-weight : bolder;
-    margin-bottom : 5px;
+  color: #3e3e3e;
+  font-size: 17px;
+  font-weight: bolder;
+  margin-bottom: 5px;
 }
 
 #wp_p1 {
-    margin-top : 5px;
-    display : inline-block;
-    font-size : 15px;
-    font-weight : bold;
-    color : #828282;
+  margin-top: 5px;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: bold;
+  color: #828282;
 }
 
 #wp_form_chat {
-    width : 270px;
-    margin-left : 15px;
-    padding: 0.3rem 0.5rem;
-    border: 1px solid #DBDBDB;
-    border-radius: 5px;
-    font-size: 15px;
+  width: 270px;
+  margin-left: 15px;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
+  font-size: 15px;
 }
 
 #wp_form_name {
-    width : 200px;
-    margin-left : 20px;
-    padding: 0.3rem 0.5rem;
-    border: 1px solid #DBDBDB;
-    border-radius: 5px;
-    font-size: 15px;
+  width: 200px;
+  margin-left: 20px;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
+  font-size: 15px;
 }
 
 #wp_form_animal {
-    margin-left : 20px;
+  margin-left: 20px;
 }
 
 #wp_form_sort {
-    width : 200px;
-    margin-left : 20px;
-    padding: 0.3rem 0.5rem;
-    border: 1px solid #DBDBDB;
-    border-radius: 5px;
-    font-size: 15px;
+  width: 200px;
+  margin-left: 20px;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
+  font-size: 15px;
 }
 
 #wp_form_sex {
-    margin-left : 20px;
+  margin-left: 20px;
 }
 
 #wp_form_neutered {
-    margin-left : 5px;
+  margin-left: 5px;
 }
 
 #wp_form_age {
-    width : 200px;
-    margin-left : 20px;
-    border: 1px solid #DBDBDB;
-    padding: 0.3rem 0.5rem;
-    border-radius: 5px;
-    font-size: 15px;
+  width: 200px;
+  margin-left: 20px;
+  border: 1px solid #dbdbdb;
+  padding: 0.3rem 0.5rem;
+  border-radius: 5px;
+  font-size: 15px;
 }
 
 #wp_form_weight {
-    width : 200px;
-    margin-left : 5px;
-    border: 1px solid #DBDBDB;
-    padding: 0.3rem 0.5rem;
-    border-radius: 5px;
-    font-size: 15px;
+  width: 200px;
+  margin-left: 5px;
+  border: 1px solid #dbdbdb;
+  padding: 0.3rem 0.5rem;
+  border-radius: 5px;
+  font-size: 15px;
 }
 
 #wp_form_reason {
-    width : 200px;
-    margin-left : 20px;
-    border: 1px solid #DBDBDB;
-    padding: 0.3rem 0.5rem;
-    border-radius: 5px;
-    font-size: 15px;
+  width: 200px;
+  margin-left: 20px;
+  border: 1px solid #dbdbdb;
+  padding: 0.3rem 0.5rem;
+  border-radius: 5px;
+  font-size: 15px;
 }
 
 #wp_form_title {
-    width : 340px;
-    height : 30px;
-    border: 1px solid #DBDBDB;
-    padding: 0.3rem 0.5rem;
-    border-radius: 5px;
-    font-size: 15px;
-    margin-bottom : 10px;
+  width: 340px;
+  height: 30px;
+  border: 1px solid #dbdbdb;
+  padding: 0.3rem 0.5rem;
+  border-radius: 5px;
+  font-size: 15px;
+  margin-bottom: 10px;
 }
 
 #wp_form_contents {
-    width : 340px;
-    height : 60px;
-    border: 1px solid #DBDBDB;
-    padding: 0.3rem 0.5rem;
-    border-radius: 5px;
-    font-size: 15px;
-    margin-bottom : 10px;
+  width: 340px;
+  height: 60px;
+  border: 1px solid #dbdbdb;
+  padding: 0.3rem 0.5rem;
+  border-radius: 5px;
+  font-size: 15px;
+  margin-bottom: 10px;
 }
 
 #wp_form_special {
-    width : 340px;
-    height : 60px;
-    border: 1px solid #DBDBDB;
-    padding: 0.3rem 0.5rem;
-    border-radius: 5px;
-    font-size: 15px;
-    margin-bottom : 10px;
+  width: 340px;
+  height: 60px;
+  border: 1px solid #dbdbdb;
+  padding: 0.3rem 0.5rem;
+  border-radius: 5px;
+  font-size: 15px;
+  margin-bottom: 10px;
 }
 
 #wp_form_wish {
-    width : 340px;
-    height : 60px;
-    border: 1px solid #DBDBDB;
-    padding: 0.3rem 0.5rem;
-    border-radius: 5px;
-    font-size: 15px;
-    margin-bottom : 10px;
+  width: 340px;
+  height: 60px;
+  border: 1px solid #dbdbdb;
+  padding: 0.3rem 0.5rem;
+  border-radius: 5px;
+  font-size: 15px;
+  margin-bottom: 10px;
 }
 
 #wp_btn {
-    width : 340px;
-    height : 50px;
-    border : none;
-    border-radius : 20px;
-    color : #FFFFFF;
-    font-size : 18px;
-    font-weight : bold;
-    background-color : #00AC78;
-    margin-top : 20px;
-    margin-left : 5px;
+  width: 340px;
+  height: 50px;
+  border: none;
+  border-radius: 20px;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #00ac78;
+  margin-top: 20px;
+  margin-left: 5px;
 }
-
-
 
 /* WriteReview.js */
 
 #wr_div {
-    margin : 20px;
+  margin: 20px;
 }
 
 #wr_label {
-    margin-top : 15px;
-    margin-right : 10px;
-    display : inline-block;
-    font-size : 15px;
-    font-weight : bold;
-    color : #828282;
-    margin-bottom : 8px;
+  margin-top: 15px;
+  margin-right: 10px;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: bold;
+  color: #828282;
+  margin-bottom: 8px;
 }
 
 #wr_p1 p {
-    color : #3E3E3E;
-    font-size : 17px;
-    font-weight : bolder;
-    margin-bottom : 15px;
-    margin-top : 30px;
+  color: #3e3e3e;
+  font-size: 17px;
+  font-weight: bolder;
+  margin-bottom: 15px;
+  margin-top: 30px;
 }
 
 #wr_p1 {
-    margin-top : 5px;
-    display : inline-block;
-    font-size : 15px;
-    font-weight : bold;
-    color : #828282;
+  margin-top: 5px;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: bold;
+  color: #828282;
 }
 #wr_form_category {
-    margin-left : 5px;
+  margin-left: 5px;
 }
 
 #wr_form_title {
-    width : 340px;
-    height : 60px;
-    border: 1px solid #DBDBDB;
-    padding: 0.3rem 0.5rem;
-    border-radius: 5px;
-    font-size: 15px;
-    margin-bottom : 10px;
+  width: 340px;
+  height: 60px;
+  border: 1px solid #dbdbdb;
+  padding: 0.3rem 0.5rem;
+  border-radius: 5px;
+  font-size: 15px;
+  margin-bottom: 10px;
 }
 
 #wr_form_contents {
-    width : 340px;
-    height : 180px;
-    border: 1px solid #DBDBDB;
-    padding: 0.3rem 0.5rem;
-    border-radius: 5px;
-    font-size: 15px;
-    margin-bottom : 10px;
+  width: 340px;
+  height: 180px;
+  border: 1px solid #dbdbdb;
+  padding: 0.3rem 0.5rem;
+  border-radius: 5px;
+  font-size: 15px;
+  margin-bottom: 10px;
 }
 
 #wr_btn {
-    width : 340px;
-    height : 50px;
-    border : none;
-    border-radius : 20px;
-    color : #FFFFFF;
-    font-size : 18px;
-    font-weight : bold;
-    background-color : #00AC78;
-    margin-top : 150px;
-    margin-left : 5px;
+  width: 340px;
+  height: 50px;
+  border: none;
+  border-radius: 20px;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #00ac78;
+  margin-top: 150px;
+  margin-left: 5px;
 }
-
-
-
 
 /* WriteMissing.js */
 #wm_div {
-    margin : 20px;
+  margin: 20px;
 }
 
 #wm_form_date {
-    width : 250px;
-    margin-left : 5px;
-    padding: 0.3rem 0.5rem;
-    border: 1px solid #DBDBDB;
-    border-radius: 5px;
-    font-size: 15px;
+  width: 250px;
+  margin-left: 5px;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
+  font-size: 15px;
 }
 
 #wm_form_place {
-    width : 250px;
-    margin-left : 5px;
-    padding: 0.3rem 0.5rem;
-    border: 1px solid #DBDBDB;
-    border-radius: 5px;
-    font-size: 15px;
+  width: 250px;
+  margin-left: 5px;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
+  font-size: 15px;
 }
 
 #wm_form_chat {
-    width : 250px;
-    margin-left : 20px;
-    padding: 0.3rem 0.5rem;
-    border: 1px solid #DBDBDB;
-    border-radius: 5px;
-    font-size: 15px;
+  width: 250px;
+  margin-left: 20px;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
+  font-size: 15px;
 }
 
 #wm_label {
-    margin-top : 15px;
-    margin-right : 10px;
-    display : inline-block;
-    font-size : 15px;
-    font-weight : bold;
-    color : #828282;
-    margin-bottom : 8px;
+  margin-top: 15px;
+  margin-right: 10px;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: bold;
+  color: #828282;
+  margin-bottom: 8px;
 }
 
 #wm_p1 p {
-    color : #3E3E3E;
-    font-size : 17px;
-    font-weight : bolder;
-    margin-top : 0px;
-    margin-bottom : 10px;
+  color: #3e3e3e;
+  font-size: 17px;
+  font-weight: bolder;
+  margin-top: 0px;
+  margin-bottom: 10px;
 }
 
 #wm_p1 {
-    margin-top : 5px;
-    display : inline-block;
-    font-size : 15px;
-    font-weight : bold;
-    color : #828282;
+  margin-top: 5px;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: bold;
+  color: #828282;
 }
 
 #wm_form_animal {
-    margin-left : 20px;
+  margin-left: 20px;
 }
 
 #wm_form_sort {
-    width : 200px;
-    margin-left : 20px;
-    padding: 0.3rem 0.5rem;
-    border: 1px solid #DBDBDB;
-    border-radius: 5px;
-    font-size: 15px;
+  width: 200px;
+  margin-left: 20px;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
+  font-size: 15px;
 }
 
 #wm_form_sex {
-    margin-left : 20px;
+  margin-left: 20px;
 }
 
 #wm_form_neutered {
-    margin-left : 5px;
+  margin-left: 5px;
 }
 
 #wm_form_age {
-    width : 200px;
-    margin-left : 20px;
-    border: 1px solid #DBDBDB;
-    padding: 0.3rem 0.5rem;
-    border-radius: 5px;
-    font-size: 15px;
+  width: 200px;
+  margin-left: 20px;
+  border: 1px solid #dbdbdb;
+  padding: 0.3rem 0.5rem;
+  border-radius: 5px;
+  font-size: 15px;
 }
 
 #wm_form_fur {
-    width : 200px;
-    margin-left : 20px;
-    border: 1px solid #DBDBDB;
-    padding: 0.3rem 0.5rem;
-    border-radius: 5px;
-    font-size: 15px;
-    margin-bottom : 10px;
+  width: 200px;
+  margin-left: 20px;
+  border: 1px solid #dbdbdb;
+  padding: 0.3rem 0.5rem;
+  border-radius: 5px;
+  font-size: 15px;
+  margin-bottom: 10px;
 }
 
 #wm_form_title {
-    width : 340px;
-    height : 60px;
-    border: 1px solid #DBDBDB;
-    padding: 0.3rem 0.5rem;
-    border-radius: 5px;
-    font-size: 15px;
-    margin-bottom : 10px;
+  width: 340px;
+  height: 60px;
+  border: 1px solid #dbdbdb;
+  padding: 0.3rem 0.5rem;
+  border-radius: 5px;
+  font-size: 15px;
+  margin-bottom: 10px;
 }
 
 #wm_form_contents {
-    width : 340px;
-    height : 180px;
-    border: 1px solid #DBDBDB;
-    padding: 0.3rem 0.5rem;
-    border-radius: 5px;
-    font-size: 15px;
-    margin-bottom : 10px;
+  width: 340px;
+  height: 180px;
+  border: 1px solid #dbdbdb;
+  padding: 0.3rem 0.5rem;
+  border-radius: 5px;
+  font-size: 15px;
+  margin-bottom: 10px;
 }
 
 #wm_btn {
-    width : 340px;
-    height : 50px;
-    border : none;
-    border-radius : 20px;
-    color : #FFFFFF;
-    font-size : 18px;
-    font-weight : bold;
-    background-color : #00AC78;
-    margin-top : 0px;
-    margin-left : 5px;
+  width: 340px;
+  height: 50px;
+  border: none;
+  border-radius: 20px;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #00ac78;
+  margin-top: 0px;
+  margin-left: 5px;
 }
 
 /* WriteSeen.js */
 #ws_div {
-    margin : 20px;
+  margin: 20px;
 }
 
 #ws_form_date {
-    width : 250px;
-    margin-left : 5px;
-    padding: 0.3rem 0.5rem;
-    border: 1px solid #DBDBDB;
-    border-radius: 5px;
-    font-size: 15px;
+  width: 250px;
+  margin-left: 5px;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
+  font-size: 15px;
 }
 
 #ws_form_place {
-    width : 250px;
-    margin-left : 5px;
-    padding: 0.3rem 0.5rem;
-    border: 1px solid #DBDBDB;
-    border-radius: 5px;
-    font-size: 15px;
+  width: 250px;
+  margin-left: 5px;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
+  font-size: 15px;
 }
 
 #ws_form_chat {
-    width : 250px;
-    margin-left : 20px;
-    padding: 0.3rem 0.5rem;
-    border: 1px solid #DBDBDB;
-    border-radius: 5px;
-    font-size: 15px;
+  width: 250px;
+  margin-left: 20px;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
+  font-size: 15px;
 }
 
 #ws_label {
-    margin-top : 15px;
-    margin-right : 10px;
-    display : inline-block;
-    font-size : 15px;
-    font-weight : bold;
-    color : #828282;
-    margin-bottom : 8px;
+  margin-top: 15px;
+  margin-right: 10px;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: bold;
+  color: #828282;
+  margin-bottom: 8px;
 }
 
 #ws_p1 p {
-    color : #3E3E3E;
-    font-size : 17px;
-    font-weight : bolder;
-    margin-top : 0px;
-    margin-bottom : 10px;
+  color: #3e3e3e;
+  font-size: 17px;
+  font-weight: bolder;
+  margin-top: 0px;
+  margin-bottom: 10px;
 }
 
 #ws_p1 {
-    margin-top : 5px;
-    display : inline-block;
-    font-size : 15px;
-    font-weight : bold;
-    color : #828282;
+  margin-top: 5px;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: bold;
+  color: #828282;
 }
 
 #ws_form_animal {
-    margin-left : 20px;
+  margin-left: 20px;
 }
 
 #ws_form_sort {
-    width : 200px;
-    margin-left : 20px;
-    padding: 0.3rem 0.5rem;
-    border: 1px solid #DBDBDB;
-    border-radius: 5px;
-    font-size: 15px;
+  width: 200px;
+  margin-left: 20px;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
+  font-size: 15px;
 }
 
 #ws_form_sex {
-    margin-left : 20px;
+  margin-left: 20px;
 }
 
 #ws_form_neutered {
-    margin-left : 5px;
+  margin-left: 5px;
 }
 
 #ws_form_age {
-    width : 200px;
-    margin-left : 20px;
-    border: 1px solid #DBDBDB;
-    padding: 0.3rem 0.5rem;
-    border-radius: 5px;
-    font-size: 15px;
+  width: 200px;
+  margin-left: 20px;
+  border: 1px solid #dbdbdb;
+  padding: 0.3rem 0.5rem;
+  border-radius: 5px;
+  font-size: 15px;
 }
 
 #ws_form_fur {
-    width : 200px;
-    margin-left : 20px;
-    border: 1px solid #DBDBDB;
-    padding: 0.3rem 0.5rem;
-    border-radius: 5px;
-    font-size: 15px;
-    margin-bottom : 10px;
+  width: 200px;
+  margin-left: 20px;
+  border: 1px solid #dbdbdb;
+  padding: 0.3rem 0.5rem;
+  border-radius: 5px;
+  font-size: 15px;
+  margin-bottom: 10px;
 }
 
 #ws_form_title {
-    width : 340px;
-    height : 60px;
-    border: 1px solid #DBDBDB;
-    padding: 0.3rem 0.5rem;
-    border-radius: 5px;
-    font-size: 15px;
-    margin-bottom : 10px;
+  width: 340px;
+  height: 60px;
+  border: 1px solid #dbdbdb;
+  padding: 0.3rem 0.5rem;
+  border-radius: 5px;
+  font-size: 15px;
+  margin-bottom: 10px;
 }
 
 #ws_form_contents {
-    width : 340px;
-    height : 180px;
-    border: 1px solid #DBDBDB;
-    padding: 0.3rem 0.5rem;
-    border-radius: 5px;
-    font-size: 15px;
-    margin-bottom : 10px;
+  width: 340px;
+  height: 180px;
+  border: 1px solid #dbdbdb;
+  padding: 0.3rem 0.5rem;
+  border-radius: 5px;
+  font-size: 15px;
+  margin-bottom: 10px;
 }
 
 #ws_btn {
-    width : 340px;
-    height : 50px;
-    border : none;
-    border-radius : 20px;
-    color : #FFFFFF;
-    font-size : 18px;
-    font-weight : bold;
-    background-color : #00AC78;
-    margin-top : 10px;
-    margin-left : 5px;
+  width: 340px;
+  height: 50px;
+  border: none;
+  border-radius: 20px;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #00ac78;
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
+.radioLabel {
+  margin-left: 7px;
 }
