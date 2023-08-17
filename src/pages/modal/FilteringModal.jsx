@@ -73,9 +73,10 @@ const CustomCheckbox = styled.input`
   
   const handleSearchButtonClick = () => {
     // 선택한 동물 종류에 따라 다른 URL로 이동
-    let targetUrl='/Adoption/'
+    const currentPath=window.location.pathname;
+    let targetUrl=currentPath;
     if (selectedCheckbox === 'dog') {
-      targetUrl+=selectedCheckbox;
+      targetUrl+='/'+selectedCheckbox;
       navigate(targetUrl);
     } else if (selectedCheckbox === 'cat') {
       targetUrl+=selectedCheckbox;
@@ -85,6 +86,7 @@ const CustomCheckbox = styled.input`
       navigate(targetUrl);
     } else if (selectedCheckbox == 'all') {
       // 'all'을 선택했을 때에 대한 처리
+      navigate(targetUrl);
       onClose();
     }
   };
