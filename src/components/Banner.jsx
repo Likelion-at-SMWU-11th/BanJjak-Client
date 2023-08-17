@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const BtnList = styled.button`
     color: grey;
     background : white;
-    border: 1px solid #CDCDCD;
+    border: 1px solid #BCBCBC;
     display : inline-block;
     width : 25%;
     height : 30px;
