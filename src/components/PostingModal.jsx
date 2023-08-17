@@ -19,7 +19,7 @@ const ModalOverlay = styled.div`
 
 const ModalContent = styled.div`
   width : 329px;
-  height : 400px;
+  // height : 400px;
   background-color: white;
   padding-top: 20px;
   padding-bottom : 0px;
@@ -28,6 +28,13 @@ const ModalContent = styled.div`
   z-index: 1100;
   text-align : center;
 `;
+
+const btnDivStyle={
+  display: "flex",
+  flexDirection: "row",
+  borderTop: "2px solid #00ac78",
+  borderBottom: "transparent",
+}
 
 const PostingModal = ({ isOpen, onClose }) => {
   const modalRef = useRef(null);
@@ -76,23 +83,23 @@ const PostingModal = ({ isOpen, onClose }) => {
         style={{width : '10px', height :'10px', marginLeft : '-20px', marginTop:'-5px'}}/>
         </button>
       <div id="Modal-content">
-          <p id="confirm">확인 절차</p>
+          <p id="confirm">보호소 정보 확인</p>
 
-          <img src={process.env.PUBLIC_URL + '/assets/icons/logo2D.png'} id="ModalImage" alt="logo3D"
+          <img src={process.env.PUBLIC_URL + '/assets/icons/logo2D_resize2.png'} id="ModalImage" alt="logo3D"
           style={{width : '120px', height :'112px', marginTop : '10px'}}/>
 
+          <p style={{color : '#3E3E3E', fontSize:'25px', marginTop: '1rem'}}> 보호소&nbsp;<span style={{fontWeight :'bold'}}>{username}</span></p>
+          <p style={{color : '#3E3E3E', fontSize:'25px', marginTop: '0.5rem'}}>연락처 &nbsp;
+          <a href={"tel:" + usernumber} style={{color : '#3E3E3E', fontSize:'25px', fontWeight:'bold', textDecoration:'none'}}>{usernumber}</a>
+          {/* 누르면 전화 걸림 ㅋㅋ !!!! */}</p>
           
-          <p style={{color : '#3E3E3E', fontSize:'25px', marginTop: '10px'}}> 보호소 <span style={{fontWeight :'bold'}}>{username}</span></p>
-          <p style={{color : '#3E3E3E', fontSize:'25px', marginTop: '5px'}}>연락처</p>
-          <a href={"tel:" + usernumber} style={{color : '#3E3E3E', fontSize:'25px', fontWeight:'bold' }}>{usernumber}</a>
-          {/* 누르면 전화 걸림 ㅋㅋ !!!! */}
           <p style={{color : '#828282', fontSize:'20px', marginTop : '15px', marginBottom : '15px' , lineHeight:'25px'}}>
             입양희망자에게<br/>해당 연락처가 안내됩니다.</p>
         </div>
-
-        <Link to="/HomeShelter/ShelterEditInfo"><btn id="modal_btn1">연락처 변경</btn></Link>
-        <Link to="/HomeShelter/ShelterPostsList"><btn type="button" id="modal_btn2">맞습니다</btn></Link> 
-      
+        <div style={btnDivStyle}>
+          <button id="modal_btn1"><Link to="/HomeShelter/ShelterEditInfo">연락처 변경</Link></button>
+          <button id="modal_btn2"><Link to="/HomeShelter/ShelterPostsList">맞습니다</Link></button> 
+        </div>
       
     </ModalContent>
     </ModalOverlay>
