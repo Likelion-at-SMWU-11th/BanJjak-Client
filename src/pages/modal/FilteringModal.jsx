@@ -86,6 +86,7 @@ const CustomCheckbox = styled.input`
       navigate(targetUrl);
     } else if (selectedCheckbox == 'all') {
       // 'all'을 선택했을 때에 대한 처리
+      navigate(targetUrl);
       onClose();
     }
   };
