@@ -34,8 +34,7 @@ const btnContainer = {
 };
 
 const HomeShelter = () => {
-  const location = useLocation();
-  const managerToken = location.state?.managerToken;
+  const managerToken = localStorage.getItem("token");
   console.log("managerToken:", managerToken);
 
   const [username, setUsername] = useState("");
