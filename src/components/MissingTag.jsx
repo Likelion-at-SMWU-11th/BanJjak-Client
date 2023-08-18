@@ -13,9 +13,9 @@ const MissingTag = ({ postData }) => {
             <img src={process.env.PUBLIC_URL + '/assets/icons/color.png'} id="tagicon" alt="tagicon"/>
             <p id="tagname">{postData.color}</p><br/>
             <img src={process.env.PUBLIC_URL + '/assets/icons/when.png'} id="tagicon" alt="tagicon"/>
-            <p id="tagname"> {postData.lost_date}</p><br/>
+            <p id="tagname"> 실종일자 {postData.lost_date}</p><br/>
             <img src={process.env.PUBLIC_URL + '/assets/icons/where.png'} id="tagicon" alt="tagicon"/>
-            <p id="tagname"> {postData.lost_place}</p>
+            <p id="tagname"> 실종날짜 {postData.lost_place}</p>
         </div>
     );
 };
