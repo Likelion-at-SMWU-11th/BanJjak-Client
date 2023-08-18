@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useParams } from "react-router-dom";
 import Banner from '../../components/Banner';
 import styled from 'styled-components';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import HomePreview from '../../components/HomePreview';
+import HomePreview2 from '../../components/HomePreview2';
 import '../../css/Home.css';
 
 
@@ -25,7 +27,7 @@ const PreviewContainer = styled.div`
     }
 `;
 
-function Home() {
+function Home(props) {
   const [currentBannerIndex, setCurrentBannerIndex] = useState(0);
   const [currentDateTime, setCurrentDateTime] = useState(new Date());
 
@@ -107,18 +109,13 @@ function Home() {
         </div>
 
         <div id="gotoreview">
-          <p id="title_p1">입양후기</p>
+          <p id="title_p1">입양하기</p>
           <Link to="/Review" style={{ textDecoration: "none" }}>
             <p id="viewmore1">더보기</p>
           </Link>
         </div>
         <div id="preview">
             <PreviewContainer>
-                <HomePreview/>
-                <HomePreview/>
-                <HomePreview/>
-                <HomePreview/>
-                <HomePreview/>
                 <HomePreview/>
             </PreviewContainer>
         </div>
@@ -138,12 +135,7 @@ function Home() {
   
         <div id="preview">
             <PreviewContainer>
-                <HomePreview/>
-                <HomePreview/>
-                <HomePreview/>
-                <HomePreview/>
-                <HomePreview/>
-                <HomePreview/>
+                <HomePreview2/>
             </PreviewContainer>
         </div>
       </div>

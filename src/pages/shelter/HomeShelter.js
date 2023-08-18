@@ -43,7 +43,7 @@ const HomeShelter = () => {
     if (managerToken) {
       // 서버로 사용자 정보 요청 보내기
       axios
-        .get("http://127.0.0.1:8000/users/get_username/", {
+        .get("http://52.78.109.86:8080/users/get_username/", {
           headers: {
             Authorization: `Token ${managerToken}`,
           },
