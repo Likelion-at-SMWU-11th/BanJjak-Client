@@ -33,23 +33,27 @@ const MissingList2 = ({selectedSpecies}) => {
     return (
         <>
          {dataArray.map((post) => (
-                <div key={post.id}  id="al_list">
+                <div key={post.id}  id="ml_list">
                     {/* 포스트 아이템을 렌더링하는 코드 작성 */}
                     {/* 예시: */}
-                    <Link to={`/Adoption/AdoptDetail2/${post.id}`} style={{ textDecoration: 'none' }}>
-                        <div id="al_container">
-                            <img src={post.image1} id="al_photo" alt="animalphoto" />
+                    <Link to={`/Missing/MissingDetail2/${post.id}`} style={{ textDecoration: 'none' }}>
+                        <div id="ml_container">
+                            <img src={post.image1} id="ml_photo" alt="animalphoto" />
+                        </div>
+                        <div id="listinform">
                             <p id="main">
-                            {post.animal_type === 'dog' ? <span>개</span> : post.animal_type === 'cat' ? <span>고양이</span> : <span>기타</span>}&nbsp;
-                                <span>{post.kind}</span>&nbsp;
+                            {post.animal_type === 'dog' ? <span>[개]</span> : post.animml_type === 'cat' ? <span>[고양이]</span> : <span>[기타]</span>}&nbsp;
+                                <span> {post.kind}</span>&nbsp;
                                 <span>({post.gender})</span>
                             </p>
                             <p id="sub">
                                 <span>{post.is_neutered}, </span>
-                                <span>{post.age}, </span>
-                                <span>{post.weight}, </span>
-                                <span>{post.writer_username}</span>
+                                <span>{post.age} </span>
                             </p>
+                            <div id="missinform">
+                                <p><span id="postinform">목격장소</span> {post.found_place}</p>
+                                <p><span id="postinform">목격일시</span> {post.found_date}</p>
+                            </div>
                         </div>
                     </Link>
                 </div>

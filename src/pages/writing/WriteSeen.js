@@ -22,7 +22,7 @@ function WriteSeen(props) {
     const [animalType, setAnimalType] = useState("");
     const [kind, setKind] = useState("");
     const [gender, setGender] = useState("");
-    const [neutured, setNeutured] = useState("");
+    const [neutered, setIs_neutered] = useState("");
     const [age, setAge] = useState("");
     const [color, setColor] = useState("");
     const [title, setTitle] = useState("");
@@ -49,7 +49,7 @@ function WriteSeen(props) {
       formData.append("animal_type", animalType);
       formData.append("kind", kind);
       formData.append("gender", gender);
-      formData.append("neutered", neutured);
+      formData.append("is_neutered", neutered);
       formData.append("age", age);
       formData.append("color", color);
       formData.append("title", title); 
@@ -220,7 +220,7 @@ function WriteSeen(props) {
                 id="ws_form_neutered1"
                 className="ws_form_neutered"
                 value="중성화O"
-                onChange={(e) => setNeutured(e.target.value)}
+                onChange={(e) => setIs_neutered(e.target.value)}
               />
               <label htmlFor="ws_form_neutered1" className="radioLabel">
                 O
@@ -231,7 +231,7 @@ function WriteSeen(props) {
                 id="ws_form_neutered2"
                 className="ws_form_neutered"
                 value="중성화X"
-                onChange={(e) => setNeutured(e.target.value)}
+                onChange={(e) => setIs_neutered(e.target.value)}
               />
               <label htmlFor="ws_form_neutered1" className="radioLabel">
                 X
@@ -242,7 +242,7 @@ function WriteSeen(props) {
                 id="ws_form_neutered3"
                 className="ws_form_neutered"
                 value="미확인"
-                onChange={(e) => setNeutured(e.target.value)}
+                onChange={(e) => setIs_neutered(e.target.value)}
               />
               <label htmlFor="ws_form_neutered1" className="radioLabel">
                 미확인

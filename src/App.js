@@ -32,6 +32,7 @@ import Missing from "./pages/missing/Missing";
 import Missed from "./pages/missing/Missed";
 import Seen from "./pages/missing/Seen";
 import MissingDetail from "./pages/missing/MissingDetail";
+import MissingDetail2 from "./pages/missing/MissingDetail2";
 import Protection from "./pages/protection/Protection";
 import ProtectDetail from "./pages/protection/ProtectDetail";
 import Review from "./pages/review/Review";
@@ -116,8 +117,12 @@ function App() {
         </Route>
 
         <Route
-          path="/Missing/MissingDetail"
+          path="/Missing/MissingDetail/:postId"
           element={<MissingDetail />}
+        ></Route>
+        <Route
+          path="/Missing/MissingDetail2/:postId"
+          element={<MissingDetail2 />}
         ></Route>
         <Route
           path="/Missing/Missed/WriteMissing"

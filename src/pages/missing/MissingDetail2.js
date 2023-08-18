@@ -3,10 +3,10 @@ import '../../css/Missing.css';
 import { Link } from 'react-router-dom';
 import { useParams } from "react-router-dom";
 import Banner from '../../components/Banner';
-import MissingTag from '../../components/MissingTag';
+import MissingTag2 from '../../components/MissingTag2';
 import axios from "axios";
 
-function MissingDetail(props) {
+function MissingDetail2(props) {
     const [liked, setLiked] = useState(false);
 
     const handleLikeClick = () => {
@@ -21,7 +21,7 @@ function MissingDetail(props) {
         const fetchData = async () => {
         try {
             const response = await axios.get(
-            `http://127.0.0.1:8000/losts/${postId}/`
+            `http://127.0.0.1:8000/founds/${postId}/`
             );
             const postData = response.data; // 서버에서 받아온 포스트 데이터
             setData(postData);
@@ -37,17 +37,16 @@ function MissingDetail(props) {
         return <div>Loading...</div>; // 데이터가 로드되기 전에 로딩 중 메시지 출력
     }
 
-
     return (
         <>
         <Banner/>
         <div key={data.id}>
         <div style={{ overflowX: 'hidden', overflowY: 'auto', height: '725px'}}>
         <div id="written">
-            <img src={process.env.PUBLIC_URL + '/assets/icons/profile.png'}  id="profile" alt="profile"/>
+            <img src={process.env.PUBLIC_URL + '/assets/icons/profile.png'} id="profile" alt="profile"/>
             <div id="information">
                 <p id="writer">{data.writer_username}</p>
-                <p id="time">2023-08-10 23:24  조회 104</p>
+                <p id="time">2023-08-10 23:24</p>
             </div>
             <button
                     style={{
@@ -85,10 +84,9 @@ function MissingDetail(props) {
                 style={{marginLeft : '300px', marginTop:'80px',float: 'right', position:'fixed'}}/>
             </Link>
 
-        <MissingTag postData={data}/>
-        </div></div>
+        <MissingTag2 postData={data}/></div></div>
         </>
     );
 }
 
-export default MissingDetail;
+export default MissingDetail2;
