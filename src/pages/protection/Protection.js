@@ -74,8 +74,6 @@ function Protection(props) {
       )}
 
       <div style={{ overflowX: "hidden", overflowY: "auto", height: "620px" }}>
-        <p id="count">n마리</p>
-
         <Link to="/Protection/WriteProtection">
           <img
             src={process.env.PUBLIC_URL + "/assets/icons/floatingwrite.png"}

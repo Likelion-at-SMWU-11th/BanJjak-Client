@@ -121,7 +121,6 @@ function Adoption(props) {
           marginTop: "1px",
         }}
       >
-        <p id="count">n마리</p>
         <br />
 
         <div id="adoptlist">
