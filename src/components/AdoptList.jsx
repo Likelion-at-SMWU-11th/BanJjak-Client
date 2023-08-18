@@ -9,6 +9,7 @@ const AdoptList = ({selectedSpecies}) => {
     
     useEffect(()=>{
         const fetchData = async()=> {
+            //let url = `${window.location.origin}/`;
             let url = 'http://127.0.0.1:8000/posts/';
 
             if (selectedSpecies === '개') {

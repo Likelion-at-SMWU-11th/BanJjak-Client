@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import '../css/Missing.css';
 
-const ProtectList = ({selectedSpecies}) => {
+const MissingList2 = ({selectedSpecies}) => {
 
     const [dataArray,setDataArray]=useState([]);
     
     useEffect(()=>{
         const fetchData = async()=> {
-            let url = 'http://127.0.0.1:8000/requests/';
+            let url = 'http://127.0.0.1:8000/founds/';
             if (selectedSpecies === '개') {
               url += '?animal_type=dog';
             } else if (selectedSpecies === '고양이') {
@@ -58,4 +58,4 @@ const ProtectList = ({selectedSpecies}) => {
     );
 };
 
-export default ProtectList;
+export default MissingList2;
