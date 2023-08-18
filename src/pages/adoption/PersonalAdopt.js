@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import AdoptList2 from "../../components/AdoptList2";
 
 function PersonalAdopt(props) {
+  const { selectedSpecies } = props;
   return (
     <div>
       <Link to="/Guidance/Agreement">
@@ -19,7 +20,7 @@ function PersonalAdopt(props) {
           style={{ position: "fixed", marginLeft: "240px", marginTop: "400px" }}
         />
       </Link>
-      <AdoptList2 />
+      <AdoptList2 selectedSpecies={selectedSpecies} />
     </div>
   );
 }

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import AdoptList from "../../components/AdoptList";
 
 function ShelterAdopt(props) {
+  const { selectedSpecies } = props;
   return (
     <div>
       <Link to="/Guidance/Agreement">
@@ -12,7 +13,7 @@ function ShelterAdopt(props) {
           style={{ position: "fixed", marginLeft: "300px", marginTop: "400px" }}
         />
       </Link>
-      <AdoptList />
+      <AdoptList selectedSpecies={selectedSpecies} />
     </div>
   );
 }

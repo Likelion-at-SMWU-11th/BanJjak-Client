@@ -61,7 +61,7 @@ const CustomCheckbox = styled.input`
         background-image: url('${process.env.PUBLIC_URL}/assets/icons/check.png'); /* public 폴더 내 이미지 경로 설정 */
     }
 `;
-  const FilteringModal = ({ isOpen, onClose }) => {
+  const FilteringModal = ({ isOpen, onClose, onSearch }) => {
   const modalRef = useRef(null);
   const navigate=useNavigate(); 
 
@@ -72,23 +72,22 @@ const CustomCheckbox = styled.input`
   };
   
   const handleSearchButtonClick = () => {
+    onSearch(selectedCheckbox); // Pass the selectedCheckbox value to onSearch
+    onClose(); // Close the modal
+  
     // 선택한 동물 종류에 따라 다른 URL로 이동
-    const currentPath=window.location.pathname;
-    let targetUrl=currentPath;
-    if (selectedCheckbox === 'dog') {
-      targetUrl+='/'+selectedCheckbox;
-      navigate(targetUrl);
-    } else if (selectedCheckbox === 'cat') {
-      targetUrl+=selectedCheckbox;
-      navigate(targetUrl);
-    } else if (selectedCheckbox === 'else') {
-      targetUrl+=selectedCheckbox;
-      navigate(targetUrl);
-    } else if (selectedCheckbox == 'all') {
-      // 'all'을 선택했을 때에 대한 처리
-      navigate(targetUrl);
-      onClose();
-    }
+    // const currentPath=window.location.pathname;
+    // let targetUrl=currentPath;
+    // if (selectedCheckbox === '개') {
+    //   onSearch(selectedCheckbox);
+    // } else if (selectedCheckbox === '고양이') {
+    //   onSearch(selectedCheckbox);
+    // } else if (selectedCheckbox === '기타') {
+    //   onSearch(selectedCheckbox);
+    // } else if (selectedCheckbox === '모든 동물') {
+    //   onSearch(selectedCheckbox);
+    //   onClose();
+    // }
   };
 
   useEffect(() => {
@@ -120,10 +119,10 @@ const CustomCheckbox = styled.input`
       <div className="Modal-content">
           <p>동물</p>
           <form id="modal_form1" size="1">
-                <CustomCheckbox type="radio" id="modal_check1" value="all" name="species" checked={selectedCheckbox === 'all'} onChange={() => handleCheckboxChange('all')}/><label htmlFor="modal_check1">모든 동물</label><hr/>
-                <CustomCheckbox type="radio" id="modal_check2" value="dog" name="species" onChange={() => handleCheckboxChange('dog')}/><label htmlFor="modal_check2">개</label><hr/>
-                <CustomCheckbox type="radio" id="modal_check3" value="cat" name="species" onChange={() => handleCheckboxChange('cat')}/><label htmlFor="modal_check3">고양이</label><hr/>
-                <CustomCheckbox type="radio" id="modal_check4" value="else" name="species" onChange={() => handleCheckboxChange('else')}/><label htmlFor="modal_check4">기타</label><br/>
+                <CustomCheckbox type="radio" id="modal_check1" value="all" name="species" checked={selectedCheckbox === '모든 동물'} onChange={() => handleCheckboxChange('모든 동물')}/><label htmlFor="modal_check1">모든 동물</label><hr/>
+                <CustomCheckbox type="radio" id="modal_check2" value="dog" name="species" onChange={() => handleCheckboxChange('개')}/><label htmlFor="modal_check2">개</label><hr/>
+                <CustomCheckbox type="radio" id="modal_check3" value="cat" name="species" onChange={() => handleCheckboxChange('고양이')}/><label htmlFor="modal_check3">고양이</label><hr/>
+                <CustomCheckbox type="radio" id="modal_check4" value="else" name="species" onChange={() => handleCheckboxChange('기타')}/><label htmlFor="modal_check4">기타</label><br/>
                 <input type="button" id="modal_btn" value="검색하기" onClick={handleSearchButtonClick}/>
             </form>
         </div>

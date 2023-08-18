@@ -105,7 +105,13 @@ function Adoption(props) {
       <br />
 
       {/* Correct placement of the FilteringModal */}
-      {modalOpen && <FilteringModal isOpen={modalOpen} onClose={closeModal} />}
+      {modalOpen && (
+        <FilteringModal
+          isOpen={modalOpen}
+          onClose={closeModal}
+          onSearch={handleSpeciesChange}
+        />
+      )}
 
       <div
         style={{
@@ -119,8 +125,10 @@ function Adoption(props) {
         <br />
 
         <div id="adoptlist">
-          {isShelterAdopt && <ShelterAdopt />}
-          {!isShelterAdopt && <PersonalAdopt />}
+          {isShelterAdopt && <ShelterAdopt selectedSpecies={selectedSpecies} />}
+          {!isShelterAdopt && (
+            <PersonalAdopt selectedSpecies={selectedSpecies} />
+          )}
         </div>
       </div>
     </>

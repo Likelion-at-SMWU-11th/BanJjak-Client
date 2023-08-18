@@ -3,22 +3,33 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import '../css/Missing.css';
 
-const AdoptList2 = () => {
+const AdoptList2 = ({selectedSpecies}) => {
 
     const [dataArray,setDataArray]=useState([]);
     
     useEffect(()=>{
         const fetchData = async()=> {
+            let url = 'http://127.0.0.1:8000/userposts/';
+
+            if (selectedSpecies === '개') {
+              url += '?animal_type=dog';
+            } else if (selectedSpecies === '고양이') {
+              url += '?animal_type=cat';
+            } else if (selectedSpecies === '기타') {
+              url += '?animal_type=etc';
+            }
+        
             try {
-                const response=await axios.get('http://127.0.0.1:8000/userposts/');
-                const dataArray = response.data.results; // 서버에서 받아온 데이터를 그대로 사용
-                setDataArray(dataArray);
+              const response = await axios.get(url);
+              const dataArray = response.data.results;
+              setDataArray(dataArray);
+            
             } catch(error){
                 console.log(error)
             }
         };
         fetchData();
-    },[]);
+    },[selectedSpecies]);
     
     return (
         <>
