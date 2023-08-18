@@ -3,10 +3,7 @@ import axios from "axios";
 import "../../css/MyPost.css";
 import Banner from "../../components/Banner";
 import styled from "styled-components";
-import MyPostPreview1 from "../../components/MyPostPreview1";
-import MyPostPreview2 from "../../components/MyPostPreview2";
-import MyPostPreview3 from "../../components/MyPostPreview3";
-import MyPostPreview4 from "../../components/MyPostPreview4";
+import LikePreview from "../../components/LikePreview";
 
 const PreviewContainer = styled.div`
   display: flex;
@@ -21,7 +18,6 @@ const PreviewContainer = styled.div`
 `;
 
 function MyPost() {
-  const [userPosts, setUserPosts] = useState([]);
   const [userUserPosts, setUserUserPosts] = useState([]);
   const [userLosts, setUserLosts] = useState([]);
   const [userFounds, setUserFounds] = useState([]);
@@ -38,7 +34,6 @@ function MyPost() {
       })
       .then((response) => {
         const data = response.data;
-        setUserPosts(data.user_posts);
         setUserUserPosts(data.user_userposts);
         setUserLosts(data.user_losts);
         setUserFounds(data.user_founds);
@@ -60,7 +55,7 @@ function MyPost() {
           <p>입양하기</p>
           <PreviewContainer>
             {userUserPosts.map((post) => (
-              <MyPostPreview1 key={post.id} post={post} />
+              <LikePreview key={post.id} post={post} />
             ))}
           </PreviewContainer>
         </div>
@@ -69,12 +64,12 @@ function MyPost() {
           <p>실종/목격</p>
           <PreviewContainer>
             {userLosts.map((lost) => (
-              <MyPostPreview2 key={lost.id} post={lost} />
+              <LikePreview key={lost.id} post={lost} />
             ))}
           </PreviewContainer>
           <PreviewContainer>
             {userFounds.map((lost) => (
-              <MyPostPreview2 key={lost.id} post={lost} />
+              <LikePreview key={lost.id} post={lost} />
             ))}
           </PreviewContainer>
         </div>
@@ -88,7 +83,7 @@ function MyPost() {
           <p>임보요청</p>
           <PreviewContainer>
             {userRequests.map((request) => (
-              <MyPostPreview3 key={request.id} post={request} />
+              <LikePreview key={request.id} post={request} />
             ))}
           </PreviewContainer>
         </div>
@@ -97,7 +92,7 @@ function MyPost() {
           <p>입양후기</p>
           <PreviewContainer>
             {userReviews.map((review) => (
-              <MyPostPreview4 key={review.id} post={review} />
+              <LikePreview key={review.id} post={review} />
             ))}
           </PreviewContainer>
         </div>

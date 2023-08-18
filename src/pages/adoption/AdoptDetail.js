@@ -38,9 +38,43 @@ const WhiteBtn = styled.button`
 
 function AdoptDetail(props) {
   const [liked, setLiked] = useState(false);
-
-  const handleLikeClick = () => {
-    setLiked(!liked);
+  const token = localStorage.getItem("token");
+  const handleLikeClick = async () => {
+    if (liked) {
+      try {
+        await axios.delete(
+          "http://127.0.0.1:8000/likes/posts/delete/",
+          {
+            data: { id: data.id },
+          },
+          {
+            headers: {
+              Authorization: `Token ${token}`,
+            },
+          }
+        );
+        setLiked(false);
+      } catch (error) {
+        console.log(error);
+      }
+    } else {
+      try {
+        await axios.post(
+          "http://127.0.0.1:8000/likes/posts/add/",
+          {
+            id: data.id,
+          },
+          {
+            headers: {
+              Authorization: `Token ${token}`,
+            },
+          }
+        );
+        setLiked(true);
+      } catch (error) {
+        console.log(error);
+      }
+    }
   };
 
   const { postId } = useParams();
