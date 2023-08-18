@@ -19,7 +19,7 @@ const LikePreview = ({ post }) => {
         }}
       >
         <img
-          src={`http://127.0.0.1:8000/${post.image1}`}
+          src={`http://52.78.109.86:8080/${post.image1}`}
           id="al_photo"
           alt="animalphoto"
         />

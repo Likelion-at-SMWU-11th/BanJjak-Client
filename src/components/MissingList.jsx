@@ -9,7 +9,7 @@ const MissingList = ({selectedSpecies}) => {
     
     useEffect(()=>{
         const fetchData = async()=> {
-            let url = 'http://127.0.0.1:8000/losts/';
+            let url = 'http://52.78.109.86:8080/losts/';
             if (selectedSpecies === '개') {
               url += '?animal_type=dog';
             } else if (selectedSpecies === '고양이') {

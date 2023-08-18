@@ -282,7 +282,7 @@ const Posting = () => {
     // formData.append("hastags", null);
     try {
       const response=axios.post(
-        "http://127.0.0.1:8000/posts/",
+        "http://52.78.109.86:8080/posts/",
         formData,
         {
           headers: {
