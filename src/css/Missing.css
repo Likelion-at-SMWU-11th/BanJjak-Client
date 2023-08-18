@@ -34,13 +34,14 @@
 
 /* MissingList.jsx 컴포넌트에 사용되는 css*/
 
-#missinglist {
+#ml_list {
     width: 340px;
     height : 111px;
     border : 1px solid #BCBCBC;
     border-radius : 10px;
     margin : 25px;
     padding : 0px;
+    padding-bottom : 15px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -52,6 +53,7 @@
     border-top-left-radius : 8px;
     border-bottom-left-radius : 8px;
     display : inline-block;
+    margin-top : 15px;
 }
 
 #ml_photo { 
@@ -60,6 +62,7 @@
     object-fit : cover;
     border-top-left-radius : 8px;
     border-bottom-left-radius : 8px;
+    margin-bottom : -10px;
 }
 
 #listinform { /* 정보 p태그를 묶는 div태그*/
@@ -68,7 +71,7 @@
     height : 110px;
     border-top-right-radius : 10px;
     border-bottom-right-radius : 10px;
-    margin : -2px;
+    margin : -10% -2px;
     line-height : 15px;
 }
 
@@ -81,29 +84,41 @@
 #sub { /*상세정보 p태그*/
     margin : 0px 0px;
     color : #3E3E3E;
-    font-size : 11px
+    font-size : 11px;
+    margin-bottom : 30px;
 }
 
 #missinform {
-    margin : 10px 10px;
+    margin : 0px 10px;
     color : #3E3E3E;
     border-top : 1px solid #BCBCBC;
     font-size : 11px;
-    font-weight : bold;
     line-height : 17px;
     padding-top : 7px;
+    padding-bottom : 20px;
 }
+
+#postinform {
+    font-weight : bold;
+  }
 
 
 
 /* MissingDetail.js 페이지에 사용되는 css */
 
-#profile {
+#profile_container {
     width : 57px;
     height : 57px;
     margin-top : 20px;
     margin-left : 20px;
     margin-bottom : -15px;
+    border-radius : 28px;
+}
+
+#profile {
+    width : 100%;
+    height : 100%;
+    object-fit : cover;
 }
 
 #information { /* 프로필 간단정보 div태그*/
@@ -126,10 +141,10 @@
 
 #md_container1 {
     display : inline-block;
-    width : 167px;
+    width : 350px;
     height : 167px;
     border-radius : 10px;
-    margin : 25px 10px 0px 15px;
+    margin : 25px 0px 0px 20px;
 }
 
 #md_container2 {
@@ -149,7 +164,7 @@
 #hr {
     width : 340px;
     border : 0.5px solid #ECECEC;
-    margin : 20px;
+    margin : 10px;
 }
 
 #text {
@@ -161,6 +176,7 @@
     color : #3E3E3E;
     text-align : left;
     font-weight : bolder;
+    margin-top : -20px;
     margin-bottom : 20px;
 }
 
@@ -204,3 +220,4 @@
   ::-webkit-scrollbar-track {
     background-color: #f1f1f1;
   }
+
