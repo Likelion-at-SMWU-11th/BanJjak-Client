@@ -1,6 +1,19 @@
 import React from 'react';
 import '../../css/Liked.css';
 import Banner from '../../components/Banner';
+import styled from 'styled-components';
+import LikePreview from '../../components/LikePreview';
+
+const PreviewContainer = styled.div`
+    display: flex;
+    overflow-x: auto;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+`;
 
 function Liked() {
     return (
@@ -9,25 +22,38 @@ function Liked() {
 
         <p id="l_title">나의 관심동물</p>
 
-        <div style={{overflowX : 'hidden', overflowY: 'auto', height :'670px'}}>
+        <div>
         <div id="l_adoption">
                 <p>입양하기</p>
-                <hr id="l_hr"/>
+                <PreviewContainer>
+                <LikePreview/>
+                <LikePreview/>
+                </PreviewContainer>
             </div>
 
             <div id="l_missing">
                 <p>실종/목격</p>
-                <hr id="l_hr"/>
+                <PreviewContainer>
+                <LikePreview/>
+                <LikePreview/>
+                <LikePreview/>
+                </PreviewContainer>
             </div>
 
             <div id="l_protection">
                 <p>임보요청</p>
-                <hr id="l_hr"/>
+                <PreviewContainer>
+                <LikePreview/>
+                <LikePreview/>
+                </PreviewContainer>
             </div>
 
             <div id="l_review">
                 <p>입양후기</p>
-                <hr id="l_hr"/>
+                <PreviewContainer>
+                <LikePreview/>
+                <LikePreview/>
+                </PreviewContainer>
             </div>
         </div>
         </>
