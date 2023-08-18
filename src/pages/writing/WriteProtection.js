@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import "../../css/Writing.css";
 import axios from "axios";
 
@@ -9,6 +9,13 @@ function WriteProtection(props) {
   const handleExitClick = () => {
     // Missing 페이지로 이동
     navigate("/Protection");
+  };
+
+  const handleLinkClick = () => {
+    // 페이지 이동
+    window.location.href = "/Protection";
+    // 페이지 새로고침
+    window.location.reload();
   };
 
   // 저장된 토큰 가져오기
@@ -45,24 +52,20 @@ function WriteProtection(props) {
   //서버에 post api 요청
   const handlePostRequest = async () => {
     if (
-      !name ||
-      !openChat ||
-      !animalType ||
-      !kind ||
-      !gender ||
-      !neutured ||
-      !weight ||
-      !age ||
-      !reason ||
-      !title ||
-      !content ||
-      !alert ||
-      !selectedFile
+      name &&
+      openChat &&
+      animalType &&
+      kind &&
+      gender &&
+      neutured &&
+      weight &&
+      age &&
+      reason &&
+      title &&
+      content &&
+      alert &&
+      selectedFile
     ) {
-      window.alert("모든 항목을 입력해주세요.");
-    }
-
-    if (name) {
       formData.append("contact", openChat);
       formData.append("name", name);
       formData.append("animal_type", animalType);
@@ -76,6 +79,8 @@ function WriteProtection(props) {
       formData.append("content", content);
       formData.append("alert", alert);
       formData.append("image1", selectedFile);
+    } else {
+      window.alert("모든 항목을 입력해주세요.");
     }
 
     try {
@@ -92,7 +97,7 @@ function WriteProtection(props) {
 
       // POST 요청이 성공한 경우의 처리
       console.log("POST 요청 성공:", response.data);
-      navigate("/Protection");
+      navigate("/Protection"); // 페이지 전환
       //handlePostSuccess(response.data);
       // setModalOpen(true);
     } catch (error) {
@@ -378,7 +383,9 @@ function WriteProtection(props) {
 
         <form>
           <button id="wp_btn" onClick={handlePostRequest}>
-            등록하기
+            <a href="/Protection" onClick={handleLinkClick}>
+              등록하기
+            </a>
           </button>
         </form>
       </div>

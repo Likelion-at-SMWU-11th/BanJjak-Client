@@ -126,10 +126,15 @@ function App() {
         <Route path="/Missing/Seen/WriteSeen" element={<WriteSeen />}></Route>
 
         <Route path="/Protection" element={<Protection />}></Route>
+
         <Route
-          path="/Protection/ProtectDetail"
+          path="/Protection/ProtectDetail/:postId"
           element={<ProtectDetail />}
         ></Route>
+        {/* <Route
+          path="/Protection/ProtectDetail"
+          element={<ProtectDetail />}
+        ></Route> */}
         <Route
           path="/Protection/WriteProtection"
           element={<WriteProtection />}

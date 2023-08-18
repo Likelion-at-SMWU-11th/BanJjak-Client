@@ -36,7 +36,8 @@ const ProtectList = ({selectedSpecies}) => {
                 <div key={post.id}  id="al_list">
                     {/* 포스트 아이템을 렌더링하는 코드 작성 */}
                     {/* 예시: */}
-                    <Link to={`/Adoption/AdoptDetail2/${post.id}`} style={{ textDecoration: 'none' }}>
+                    <Link to={`/Protection/ProtectDetail/${post.id}`} style={{ textDecoration: 'none' }}>
+                    {/* <Link to={`/Protection/ProtectDetail`} style={{ textDecoration: 'none' }}> */}
                         <div id="al_container">
                             <img src={post.image1} id="al_photo" alt="animalphoto" />
                             <p id="main">

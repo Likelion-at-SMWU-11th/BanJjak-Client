@@ -649,3 +649,8 @@ hr {
 .radioLabel {
   margin-left: 7px;
 }
+
+button > a {
+  color: white;
+  text-decoration: none;
+}
