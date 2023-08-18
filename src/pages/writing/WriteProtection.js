@@ -92,6 +92,7 @@ function WriteProtection(props) {
 
       // POST 요청이 성공한 경우의 처리
       console.log("POST 요청 성공:", response.data);
+      navigate("/Protection");
       //handlePostSuccess(response.data);
       // setModalOpen(true);
     } catch (error) {
