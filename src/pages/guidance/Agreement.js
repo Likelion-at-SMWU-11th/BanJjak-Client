@@ -88,7 +88,7 @@ function Agreement(props) {
       try {
         // Send a PUT request to update user's is_agree field
         await axios.put(
-          "http://127.0.0.1:8000/users/changeuserinfo/isagree/",
+          "http://52.78.109.86:8080/users/changeuserinfo/isagree/",
           { is_agree: true },
           {
             headers: {

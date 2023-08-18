@@ -8,13 +8,13 @@ const HomePreviewContainer = styled.div`
     flex: 0 0 auto;
 `;
 
-const HomePreview = () => {
+const HomePreview2 = () => {
     const [dataArray,setDataArray]=useState([]);
     
     useEffect(()=>{
         const fetchData = async()=> {
             //let url = `${window.location.origin}/`;
-            let url = 'http://52.78.109.86:8080/posts/';
+            let url = 'http://52.78.109.86:8080/requests/';
 
 
             try {
@@ -46,4 +46,4 @@ const HomePreview = () => {
     );
 }; 
 
-export default HomePreview;
+export default HomePreview2;

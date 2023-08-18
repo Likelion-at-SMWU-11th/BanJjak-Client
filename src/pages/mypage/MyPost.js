@@ -27,7 +27,7 @@ function MyPost() {
   useEffect(() => {
     // Make a GET request to fetch user's posts
     axios
-      .get("http://127.0.0.1:8000/likes/my/", {
+      .get("http://52.78.109.86:8080/likes/my/", {
         headers: {
           Authorization: `Token ${localStorage.getItem("token")}`,
         },

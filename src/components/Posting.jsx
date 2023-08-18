@@ -233,7 +233,7 @@ const Posting = () => {
   // const floatModal = async() =>{
   //   try{
   //     const token = localStorage.getItem("token");
-  //     const response = await axios.get("http://127.0.0.1:8000/users/get_username/",{
+  //     const response = await axios.get("http://52.78.109.86:8080/users/get_username/",{
   //       headers:{
   //         Authorization: `Token ${token}`,
   //      },

@@ -26,7 +26,7 @@ function EditPW() {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.put(
-        "http://127.0.0.1:8000/users/changeuserinfo/pw/",
+        "http://52.78.109.86:8080/users/changeuserinfo/pw/",
         {
           old_pw: oldPassword,
           new_pw: newPassword,
