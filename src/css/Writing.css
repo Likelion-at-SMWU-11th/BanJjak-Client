@@ -107,6 +107,15 @@
   font-size: 15px;
 }
 
+#wa_form_reason {
+  width: 200px;
+  margin-left: 5px;
+  border: 1px solid #dbdbdb;
+  padding: 0.3rem 0.5rem;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
 #wa_form_message {
   width: 340px;
   height: 60px;
