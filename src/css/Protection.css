@@ -1,160 +1,166 @@
 /*Protection.js 페이지에 사용되는 css*/
 
-#lookfor { /* 임보구함 div태그*/
-    display : inline-block;
-    margin: 0px;
-    width : 100%;
-    height : 48px;
-    padding : 15px 10px 0px;
-    text-align : center;
-    font-size : 15px;
-    font-weight : bold;
-    color : #00AC78;
-    border-bottom : 1px solid #00AC78;
+#lookfor {
+  /* 임보구함 div태그*/
+  display: inline-block;
+  margin: 0px;
+  width: 100%;
+  height: 48px;
+  padding: 15px 10px 0px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  color: #00ac78;
+  border-bottom: 1px solid #00ac78;
 }
 
 #floatingwrite {
-    position : fixed;
-    bottom : 15%;
-    left : 78%;
+  position: fixed;
+  bottom: 15%;
+  left: 78%;
 }
-
 
 /*ProtectList.jsx 컴포넌트에서 사용되는 Css*/
 
-#pl_list { /* ProtectList.jsx 컴포넌트 전체를 묶는 div태그*/
-    width : 340px;
-    height : 195px;
-    border : 1px solid #BCBCBC;
-    border-radius : 10px;
-    margin : 25px;
-    line-height : 12px;
+#pl_list {
+  /* ProtectList.jsx 컴포넌트 전체를 묶는 div태그*/
+  width: 340px;
+  height: 195px;
+  border: 1px solid #bcbcbc;
+  border-radius: 10px;
+  margin: 25px;
+  line-height: 12px;
 }
 
-#pl_container { /* 동물 사진 img태그*/
-    width: 340px;
-    height : 140px;
-    border-top-left-radius : 10px;
-    border-top-right-radius : 10px;
-    margin-bottom : 0px;
+#pl_container {
+  /* 동물 사진 img태그*/
+  width: 340px;
+  height: 140px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin-bottom: 0px;
 }
 
-#pl_photo { /* 동물 사진 img태그*/
-    width: 99%;
-    height : 100%;
-    object-fit : cover;
-    border-top-left-radius : 10px;
-    border-top-right-radius : 10px;
+#pl_photo {
+  /* 동물 사진 img태그*/
+  width: 99%;
+  height: 100%;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
-#main { /*주요정보 P태그*/
-    margin : 10px 10px;
-    color : #3E3E3E;
-    font-size : 15px;
-    font-weight : bold;
+#main {
+  /*주요정보 P태그*/
+  margin: 10px 10px;
+  color: #3e3e3e;
+  font-size: 15px;
+  font-weight: bold;
 }
 
-#sub { /*상세정보 p태그*/
-    margin : 8px 10px;
-    color : #3E3E3E;
-    font-size : 11px
+#sub {
+  /*상세정보 p태그*/
+  margin: 8px 10px;
+  color: #3e3e3e;
+  font-size: 11px;
 }
-
-
-
 
 /* ProtectionDetail.js 페이지에 사용되는 css */
 
-#profile {
-    width : 57px;
-    height : 57px;
+/* #profile {
+    width : 100%;
+    height : 100%;
     margin-top : 20px;
     margin-left : 20px;
     margin-bottom : -15px;
-}
+} */
 
-#information { /* 프로필 간단정보 div태그*/
-    display : inline-block;
-    margin-left : 20px;
-    line-height : 20px;
+#information {
+  /* 프로필 간단정보 div태그*/
+  /* display: inline-block; */
+  margin-left: 20px;
+  line-height: normal;
+  margin-top: 1.7rem;
 }
 
 #writer {
-    font-size : 17px;
-    font-weight : bolder;
-    color : #00AC78
+  font-size: 17px;
+  font-weight: bolder;
+  color: #00ac78;
 }
 
-#time { /* 프로필 전화번호*/
-    font-size : 13px;
-    color : #D9D9D9;
+#time {
+  /* 프로필 전화번호*/
+  font-size: 13px;
+  margin-bottom: 0.5rem;
+  color: #d9d9d9;
 }
-
 
 #pd_container1 {
-    display : inline-block;
-    width : 167px;
-    height : 167px;
-    border-radius : 10px;
-    margin : 25px 10px 0px 18px;
+  display: inline-block;
+  width: 300px;
+  height: 167px;
+  border-radius: 10px;
+  margin-left: "10px";
 }
 
 #pd_container2 {
-    display : inline-block;
-    width : 167px;
-    height : 167px;
-    border-radius : 10px;
+  display: inline-block;
+  width: 167px;
+  height: 167px;
+  border-radius: 10px;
 }
 
-#pd_photo1, #pd_photo2 {
-    width: 100%;
-    height : 100%;
-    object-fit : cover;
-    border-radius : 10px;
+#pd_photo1,
+#pd_photo2 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 #hr {
-    width : 340px;
-    border : 0.5px solid #ECECEC;
-    margin : 20px;
+  width: 340px;
+  border: 0.5px solid #ececec;
+  margin: 20px;
 }
 
 #text {
-    margin : 20px;
+  margin: 20px;
 }
 
 #protect_title {
-    font-size : 18px;
-    color : #3E3E3E;
-    text-align : left;
-    font-weight : bolder;
-    margin-bottom : 20px;
+  font-size: 18px;
+  color: #3e3e3e;
+  text-align: left;
+  font-weight: bolder;
+  margin-bottom: 1rem;
 }
 
 #content {
-    font-size : 14px;
-    color : #3E3E3E;
-    line-height : 20px;
+  font-size: 14px;
+  color: #3e3e3e;
+  line-height: 20px;
 }
 
 #property {
-    margin : 25px;
-    font-size : 15px;
-    line-height : 20px;
+  margin: 25px;
+  font-size: 15px;
+  line-height: 20px;
 }
 
 #property_name {
-    color : #8E8E8E;
-    line-height : 30px;
+  color: #8e8e8e;
+  line-height: 30px;
 }
 
 #property ul li {
-    list-style: disc; /* 원하는 스타일로 변경 가능 (disc, circle, square 등) */
-    margin-left : 40px;
+  list-style: disc; /* 원하는 스타일로 변경 가능 (disc, circle, square 등) */
+  margin-left: 40px;
 }
 
 #floatingchat {
-    position : fixed;
-    bottom : 15%;
-    left : 78%;
+  position: fixed;
+  bottom: 15%;
+  left: 78%;
 }
