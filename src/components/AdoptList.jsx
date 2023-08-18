@@ -10,7 +10,7 @@ const AdoptList = ({selectedSpecies}) => {
     useEffect(()=>{
         const fetchData = async()=> {
             //let url = `${window.location.origin}/`;
-            let url = 'http://127.0.0.1:8000/posts/';
+            let url = 'http://52.78.109.86:8080/posts/';
 
             if (selectedSpecies === '개') {
               url += '?animal_type=dog';
