@@ -401,4 +401,5 @@ const imgInContainerStyle = {
   height: "100%",
   objectFit: "cover",
 };
+
 export default WriteMissing;
