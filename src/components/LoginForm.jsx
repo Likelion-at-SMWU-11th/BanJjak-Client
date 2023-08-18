@@ -122,7 +122,7 @@ const LoginForm = ({ onLoginSuccess }) => {
 
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8000/accounts/user/login/",
+        "http://52.78.109.86:8080/accounts/user/login/",
          //로그인 요청에 필요한 데이터
         {
           email: email,

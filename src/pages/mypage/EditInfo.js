@@ -27,7 +27,7 @@ function EditInfo() {
       try {
         const token = localStorage.getItem("token");
         const response = await axios.get(
-          "http://127.0.0.1:8000/users/getUserInfo/",
+          "http://52.78.109.86:8080/users/getUserInfo/",
           {
             headers: {
               Authorization: `Token ${token}`,
@@ -58,7 +58,7 @@ function EditInfo() {
       console.log("프로필 변경 : " + formData.get("profile"));
 
       const response = await axios.put(
-        "http://127.0.0.1:8000/users/userChangeProfile/",
+        "http://52.78.109.86:8080/users/userChangeProfile/",
         formData,
         {
           headers: {
@@ -80,7 +80,7 @@ function EditInfo() {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.put(
-        "http://127.0.0.1:8000/users/changeuserinfo/",
+        "http://52.78.109.86:8080/users/changeuserinfo/",
         { username: nickname },
         {
           headers: {
@@ -101,7 +101,7 @@ function EditInfo() {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.put(
-        "http://127.0.0.1:8000/users/changeuserinfo/",
+        "http://52.78.109.86:8080/users/changeuserinfo/",
         { phone: phoneNumber },
         {
           headers: {

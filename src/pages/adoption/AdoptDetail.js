@@ -50,7 +50,7 @@ function AdoptDetail(props) {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://127.0.0.1:8000/posts/${postId}/`
+          `http://52.78.109.86:8080/posts/${postId}/`
         );
         const postData = response.data; // 서버에서 받아온 포스트 데이터
         setData(postData);

@@ -24,7 +24,7 @@ const ShelterEditInfo = () => {
       try {
         const token = localStorage.getItem("token");
         const response = await axios.get(
-          "http://127.0.0.1:8000/users/changemanagerinfo/",
+          "http://52.78.109.86:8080/users/changemanagerinfo/",
           {
             headers: {
               Authorization: `Token ${token}`,
@@ -49,7 +49,7 @@ const ShelterEditInfo = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.put(
-        "http://127.0.0.1:8000/users/changemanagerinfo/",
+        "http://52.78.109.86:8080/users/changemanagerinfo/",
         { username: nickname },
         {
           headers: {
@@ -71,7 +71,7 @@ const ShelterEditInfo = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.put(
-        "http://127.0.0.1:8000/users/changemanagerinfo/",
+        "http://52.78.109.86:8080/users/changemanagerinfo/",
         { phone: phoneNumber },
         {
           headers: {

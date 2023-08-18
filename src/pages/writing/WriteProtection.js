@@ -80,7 +80,7 @@ function WriteProtection(props) {
 
     try {
       const response = axios
-        .post("http://127.0.0.1:8000/requests/", formData, {
+        .post("http://52.78.109.86:8080/requests/", formData, {
           headers: {
             Authorization: `Token ${token}`, // 헤더에 토큰 추가
             "Content-Type": "multipart/form-data", // 멀티파트 형식 설정

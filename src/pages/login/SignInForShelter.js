@@ -77,7 +77,7 @@ const SignInForShelter = () => {
     // axios POST 요청을 사용하여 formData를 서버로 보냅니다.
 
     axios
-      .post("http://127.0.0.1:8000/accounts/manager/signin/", dataToSend, {
+      .post("http://52.78.109.86:8080/accounts/manager/signin/", dataToSend, {
         headers: {
           "Content-Type": "application/json", // JSON 데이터 전송을 위한 헤더 설정
         },
