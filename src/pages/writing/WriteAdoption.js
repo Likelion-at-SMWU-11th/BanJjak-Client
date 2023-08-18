@@ -143,7 +143,7 @@ function WriteAdoption() {
                 name="animal"
                 id="wa_form_animal1"
                 className="wa_form_animal"
-                value="개"
+                value="dog"
                 onChange={(e) => setAnimalType(e.target.value)}
               />
               <label htmlFor="wa_form_animal1" className="radioLabel">
@@ -154,7 +154,7 @@ function WriteAdoption() {
                 name="animal"
                 id="wa_form_animal2"
                 className="wa_form_animal"
-                value="고양이"
+                value="cat"
                 onChange={(e) => setAnimalType(e.target.value)}
               />
               <label htmlFor="wa_form_animal2" className="radioLabel">
@@ -165,7 +165,7 @@ function WriteAdoption() {
                 name="animal"
                 id="wa_form_animal3"
                 className="wa_form_animal"
-                value="기타"
+                value="etc"
                 onChange={(e) => setAnimalType(e.target.value)}
               />{" "}
               <label htmlFor="wa_form_animal3" className="radioLabel">

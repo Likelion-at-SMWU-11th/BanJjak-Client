@@ -260,7 +260,6 @@ const Posting = () => {
     if (name && content && alert) {
       formData.append("name", name);
       formData.append("kind", kind);
-      formData.append("animal_type", animalValue);
       formData.append("weight", weight);
       formData.append("age", age);
       formData.append("gender", sexValue);
@@ -268,6 +267,16 @@ const Posting = () => {
       formData.append("content", content);
       formData.append("alert", alert);
       formData.append('image1',selectedFile)
+  }
+
+  if(animalValue){
+    if (animalValue === '개') {
+      formData.append("animal_type", 'dog');
+    } else if (animalValue === '고양이') {
+      formData.append("animal_type", 'cat');
+    } else if (animalValue === '기타') {
+      formData.append("animal_type", 'etc');
+    }
   }
   
     // formData.append("hastags", null);

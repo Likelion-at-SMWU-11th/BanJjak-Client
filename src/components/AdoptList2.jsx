@@ -30,7 +30,7 @@ const AdoptList2 = () => {
                         <div id="al_container">
                             <img src={post.image1} id="al_photo" alt="animalphoto" />
                             <p id="main">
-                                <span>{post.animal_type}</span>&nbsp;
+                            {post.animal_type === 'dog' ? <span>개</span> : post.animal_type === 'cat' ? <span>고양이</span> : <span>기타</span>}&nbsp;
                                 <span>{post.kind}</span>&nbsp;
                                 <span>({post.gender})</span>
                             </p>
